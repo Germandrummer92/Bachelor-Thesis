@@ -13,11 +13,26 @@
 \chapter{Introduction}
 \label{ch:Introduction}
 
+The following Bachelorthesis will try to formalize the following process: Replacing the abstract notion of the control program in a verified (by Ke\kern-.2emYmaera) Cyber-Physical-System (\textit{CPS}) with an actual implementation through a form of Formal Refinement and being able to verify that the entire CPS still satisfys the required safety constraints, using both Ke\kern-.2emYmaera and Ke\kern-.2emY. 
+
+CPS are generally modelled as either Hybrid Automata or - Programs.(See ref.~\cite{platzerb}). Mostly, this means, that an abstract version of the discrete control program is modelled, often as a non-deterministic assignment of a control value (See app.~\ref{fig:ex_control}). To replace this non-deterministic assignment with an actual implementation a certain ''glue'' or ''coupling'' has to be found to translate discrete and real continous values into each other. To explain this process we will take a look at the following: 
+
+\begin{enumerate}[label=\bfseries \Roman*:]
+
+\item CPS Watertank (Example taken from Ke\kern-.2emYmaera) refined.
+\item Introduction of Formalized used in both examples.
+\item CPS Gear-Backlash (See ref.~\cite{bla}) refined.
+\end{enumerate}
+
+
+
+
+
 %% -------------------
 %% | Example content |
 %% -------------------
-
-This is the SDQ thesis template.
+\iffalse
+\todo{This is the SDQ thesis template.
 For more information on the formatting of theses at SDQ, please refer to
 \url{https://sdqweb.ipd.kit.edu/wiki/Ausarbeitungshinweise} or to your advisor.
 
@@ -55,7 +70,7 @@ ghi & jkl\\
 
 \section{Example: Todo-Note}
 Meaningless text.
-\todo{Replace with meaningful text. (This note is only shown in draft mode.)}
+Replace with meaningful text. (This note is only shown in draft mode.)
 
 \section{Example: Formula}
 One of the nice things about the Linux Libertine font is that it comes with
@@ -64,7 +79,8 @@ a math mode package.
 f(x)=\Omega(g(x))\ (x\rightarrow\infty)\;\Leftrightarrow\;
 \limsup_{x \to \infty} \left|\frac{f(x)}{g(x)}\right|> 0
 \end{displaymath}
-
+}
+\fi
 %% --------------------
 %% | /Example content |
 %% --------------------
