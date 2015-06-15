@@ -13,16 +13,33 @@
 \chapter{Introduction}
 \label{ch:Introduction}
 
-The following Bachelorthesis will try to formalize the following process: Replacing the abstract notion of the control program in a verified (by Ke\kern-.2emYmaera) Cyber-Physical-System (\textit{CPS}) with an actual implementation through a form of Formal Refinement and being able to verify that the entire CPS still satisfys the required safety constraints, using both Ke\kern-.2emYmaera and Ke\kern-.2emY. 
+The following Bachelorthesis will try to formalize the following process: Replacing the abstract notion of the control program in a verified (by Ke\kern-.2emYmaera) Cyber-Physical-System (\textit{CPS}) with an actual verified (by Ke\kern-.2emY) implementation through a form of Formal Refinement and being able to verify that the entire CPS still satisfys the required safety constraints, using both Ke\kern-.2emYmaera and Ke\kern-.2emY. 
 
-CPS are generally modelled as either Hybrid Automata or - Programs.(See ref.~\cite{platzerb}). Mostly, this means, that an abstract version of the discrete control program is modelled, often as a non-deterministic assignment of a control value (See app.~\ref{fig:ex_control}). To replace this non-deterministic assignment with an actual implementation a certain ''glue'' or ''coupling'' has to be found to translate discrete and real continous values into each other. To explain this process we will take a look at the following: 
+CPS are generally modelled as either Hybrid Automata or - Programs.(See ref.~\cite{platzerb}). Mostly, this means, that an abstract version of the discrete control program is modelled, as a non-deterministic assignment of a control value (See app.~\ref{fig:ex_control}). To replace this non-deterministic assignment with an actual implementation a certain ''glue'' or ''coupling'' has to be found to translate discrete and real continous values into each other.
+
+ In logic this can be expressed as:
+\begin{equation}
+\centering
+\begin{split}
+\textbf{If}~ (\models [ controlValue := \ast, ?\psi(controlValue) \dots] \alpha~verified \\ \wedge \textit{``glue''(discreteVariables, continuousVariables)} \\
+\textbf{Then}~ [controlValue := JavaProgram \dots] \alpha~also~verified
+\end{split}
+\label{eq:Main_LogicRefinement}
+\end{equation} To explain this process we will take a look at the following: 
 
 \begin{enumerate}[label=\bfseries \Roman*:]
 
-\item CPS Watertank (Example taken from Ke\kern-.2emYmaera) refined.
-\item Introduction of Formalized used in both examples.
-\item CPS Gear-Backlash (See ref.~\cite{bla}) refined.
+\item Example-based Refinement on CPS Watertank (Example taken from Ke\kern-.2emYmaera).
+\item Introduction of Formalized process to gain an actual implementation from a hybrid model.
+\item Application of formalized process on example: CPS Gear-Backlash (See ref.~\cite{bla}).
 \end{enumerate}
+
+\section{Introducing Cyber-Physical-Systems}
+In this thesis we take a close look at \textbf{CPS}. These are systems in which a physical aspect or value is controlled by a computer (program). For example, an aircraft control system in which the computer exerts a form of speed control on the airplane would be a CPS. 
+
+In our case we take a closer look at the closely related notion of \textit{Hybrid Systems}, in which discrete values (in the control program) and continuous values (in the physical world) coexist. The difficulty in analyzing these kinds of systems stems from the ``hybridness'' of the systems: There is always some form of translation necessary to go from the program (discrete values) to the physical (continous reals) world. 
+
+ two basic modelling approaches exist for hybrid systems: Hybrid Automata that are based on Non-Determnistic Finite Automata.
 
 
 
