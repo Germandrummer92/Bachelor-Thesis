@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  15 JUN 2015 00:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  16 JUN 2015 20:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1612,6 +1612,9 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (c:/texlive/2014/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )))
+(c:/texlive/2014/texmf-dist/tex/latex/tools/xr.sty
+Package: xr 1994/05/28 v5.02 eXternal References (DPC)
+)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1642,66 +1645,66 @@ File: german.lbx 2014/06/25 v2.9a biblatex localization (PK/JW/AB)
 (./sections/appendix.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 79.
-LaTeX Font Info:    Try loading font information for OML+nxlmi on input line 79
+LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 83.
+LaTeX Font Info:    Try loading font information for OML+nxlmi on input line 83
 .
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/omlnxlmi.fd
 File: omlnxlmi.fd 2013/11/19 Fontinst v1.933 font definitions for OML/nxlmi.
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/ntxsy/m/n on input line 79.
-LaTeX Font Info:    Try loading font information for OMS+ntxsy on input line 79
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/ntxsy/m/n on input line 83.
+LaTeX Font Info:    Try loading font information for OMS+ntxsy on input line 83
 .
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/omsntxsy.fd
 File: omsntxsy.fd 2012/11/14 Fontinst v1.933 font definitions for OMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 79.
-LaTeX Font Info:    Try loading font information for U+ntxexa on input line 79.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 83.
+LaTeX Font Info:    Try loading font information for U+ntxexa on input line 83.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 79.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 83.
 
 (c:/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 79.
-LaTeX Font Info:    Try loading font information for LY1+ptm on input line 79.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 83.
+LaTeX Font Info:    Try loading font information for LY1+ptm on input line 83.
 
 (c:/texlive/2014/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
 LaTeX Font Info:    Try loading font information for T1+LinuxLibertineT-TLF on 
-input line 79.
+input line 83.
 
 (c:/texlive/2014/texmf-dist/tex/latex/libertine/t1linuxlibertinet-tlf.fd
 File: T1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for T1/Li
 nuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 79.
+(Font)              scaled to size 12.0pt on input line 83.
 \c@mv@tabular=\count317
 \c@mv@boldtabular=\count318
-LaTeX Info: Redefining \microtypecontext on input line 79.
+LaTeX Info: Redefining \microtypecontext on input line 83.
 
 
 Package microtype Warning: `draft' option active.
@@ -1741,7 +1744,7 @@ ABD: EveryShipout initializing macros
 
 Package hyperref Warning: Draft mode on.
 
-Package hyperref Info: Link coloring OFF on input line 79.
+Package hyperref Info: Link coloring OFF on input line 83.
 (c:/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1750,9 +1753,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count325
 )
-LaTeX Info: Redefining \ref on input line 79.
-LaTeX Info: Redefining \pageref on input line 79.
-LaTeX Info: Redefining \nameref on input line 79.
+LaTeX Info: Redefining \ref on input line 83.
+LaTeX Info: Redefining \pageref on input line 83.
+LaTeX Info: Redefining \nameref on input line 83.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1762,69 +1765,69 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' not found.
 
 No file thesis.bbl.
-Package biblatex Info: Reference section=0 on input line 79.
-Package biblatex Info: Reference segment=0 on input line 79.
+Package biblatex Info: Reference section=0 on input line 83.
+Package biblatex Info: Reference segment=0 on input line 83.
 <logos/kitlogo_en_cmyk.pdf, id=4, 198.7425pt x 92.345pt>
 File: logos/kitlogo_en_cmyk.pdf Graphic file (type pdf)
 
 <use logos/kitlogo_en_cmyk.pdf>
-Package pdftex.def Info: logos/kitlogo_en_cmyk.pdf used on input line 86.
+Package pdftex.def Info: logos/kitlogo_en_cmyk.pdf used on input line 90.
 (pdftex.def)             Requested size: 110.22453pt x 51.21504pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 86.
+(Font)              scaled to size 24.88pt on input line 90.
 LaTeX Font Info:    Try loading font information for T1+SourceSansPro-LF on inp
-ut line 86.
+ut line 90.
 
 (c:/texlive/2014/texmf-dist/tex/latex/sourcesanspro/t1sourcesanspro-lf.fd
 File: T1SourceSansPro-LF.fd 2014/07/28 (autoinst) Font definitions for T1/Sourc
 eSansPro-LF.
 )
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
-(Font)              scaled to size 22.88956pt on input line 86.
+(Font)              scaled to size 22.88956pt on input line 90.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 22.88956pt on input line 86.
+(Font)              scaled to size 22.88956pt on input line 90.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 86.
+(Font)              scaled to size 14.4pt on input line 90.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 86.
+(Font)              scaled to size 17.28pt on input line 90.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.5pt on input line 86.
+(Font)              scaled to size 12.5pt on input line 90.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.4pt on input line 86.
-LaTeX Font Info:    Try loading font information for U+ntxmia on input line 86.
+(Font)              scaled to size 9.4pt on input line 90.
+LaTeX Font Info:    Try loading font information for U+ntxmia on input line 90.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsya on input line 86.
+LaTeX Font Info:    Try loading font information for U+ntxsya on input line 90.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxsya.fd
 File: untxsya.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsya.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyb on input line 86.
+LaTeX Font Info:    Try loading font information for U+ntxsyb on input line 90.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxsyb.fd
 File: untxsyb.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyb.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 86.
+LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 90.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.5pt on input line 86.
+(Font)              scaled to size 10.5pt on input line 90.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.9pt on input line 86.
+(Font)              scaled to size 7.9pt on input line 90.
 
 <title-background.pdf, id=5, 597.50786pt x 845.04686pt>
 File: title-background.pdf Graphic file (type pdf)
 
 <use title-background.pdf>
-Package pdftex.def Info: title-background.pdf used on input line 86.
+Package pdftex.def Info: title-background.pdf used on input line 90.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
  [1
 
@@ -1882,20 +1885,20 @@ Package babel Info: Redefining ngerman shorthand "~
 
 ])
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 107.
+(babel)             in language  on input line 111.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 107.
+(babel)             in language  on input line 111.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 107.
+(babel)             in language  on input line 111.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 107.
+(babel)             in language  on input line 111.
  [3] [4
 
 
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 11
-2.
+6.
  (./thesis.toc
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.8pt on input line 15.
@@ -1910,7 +1913,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 11
-4.
+8.
  (./thesis.lof)
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
@@ -1921,7 +1924,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 11
 
 ]
 Package tocbasic Info: character protrusion at lot deactivated on input line 11
-5.
+9.
  (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
@@ -1937,91 +1940,129 @@ Chapter 1.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 12.0pt on input line 16.
 
-LaTeX Warning: Citation 'platzerb' on page 1 undefined on input line 18.
+LaTeX Warning: Citation 'platzer2010b' on page 1 undefined on input line 18.
 
 
-LaTeX Warning: Citation 'bla' on page 1 undefined on input line 34.
+LaTeX Warning: Reference `ch:Watertank:Glue' on page 1 undefined on input line 
+18.
+
+
+Overfull \hbox (24.67259pt too wide) in paragraph at lines 18--19
+[]\T1/LinuxLibertineT-TLF/m/n/12 CPS are gen-er-ally mod-elled as ei-ther Hy-br
+id Au-tomata or - Pro-grams.(See ref. [[]
+ []
+
+
+LaTeX Warning: Citation 'bla' on page 1 undefined on input line 35.
 
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 15.89755pt on input line 37.
-) [1
+(Font)              scaled to size 15.89755pt on input line 38.
+[1
 
 
 
-]
+])
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sl' in size <12> not a
+vailable
+(Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on i
+nput line 127.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 12.0pt on input line 127.
+ [2]
 \openout2 = `sections/content.aux'.
 
- (./sections/content.tex [2
+ (./sections/content.tex
 
+Package xr Warning: 
+No file introduction.aux
+LABELS NOT IMPORTED.
+ on input line 14.
 
-
-
-]
 Chapter 2.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 13.24796pt on input line 16.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
-(Font)              scaled to size 13.24796pt on input line 16.
 
-LaTeX Warning: Reference `fig:HA_Watertank' on page 3 undefined on input line 1
+LaTeX Warning: Citation 'keYmaera' on page 3 undefined on input line 22.
+
+
+LaTeX Warning: Reference `fig:HA_Watertank' on page 3 undefined on input line 2
 7.
 
-) [3]
-\openout2 = `sections/evaluation.aux'.
-
- (./sections/evaluation.tex [4
+[3
 
 
+
+
+] [4
 
 
 ]
 Chapter 3.
-) [5]
-\openout2 = `sections/conclusion.aux'.
 
- (./sections/conclusion.tex [6
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
+
+ []
+
+
+LaTeX Warning: Reference `eq':Main_LogicRefinement' on page 5 undefined on inpu
+t line 59.
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Overfull \hbox (89.91956pt too wide) has occurred while \output is active
+[]|\T1/LinuxLibertineT-TLF/m/it/12 3. Introduction of formalized process of usi
+ng Refinement to gain a concrete implementation from a hybrid model []
+ []
+
+[6]
+\openout2 = `sections/evaluation.aux'.
+
+ (./sections/evaluation.tex
+Chapter 4.
+) [7
 
 
 
 
 ]
-Chapter 4.
-) [7]
+\openout2 = `sections/conclusion.aux'.
 
-LaTeX Warning: Empty bibliography on input line 134.
+ (./sections/conclusion.tex [8
+
+
+
+
+]
+Chapter 5.
+) [9]
+
+LaTeX Warning: Empty bibliography on input line 138.
 
 \openout2 = `sections/appendix.aux'.
 
-(./sections/appendix.tex [8
+(./sections/appendix.tex [10
 
 
 
 
 ]
 Appendix A.
-<Images/ex_control.png, id=92, 179.16937pt x 186.6975pt>
+<Images/ex_control.png, id=97, 179.16937pt x 186.6975pt>
 File: Images/ex_control.png Graphic file (type png)
 
 <use Images/ex_control.png>
 Package pdftex.def Info: Images/ex_control.png used on input line 24.
 (pdftex.def)             Requested size: 432.51132pt x 455.0199pt.
-) [9]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sl' in size <12> not a
-vailable
-(Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on i
-nput line 141.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 141.
- [10 <./Images/ex_control.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
+) [11] [12 <./Images/ex_control.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
  (./thesis.aux
 (./sections/declaration.aux) (./sections/abstract_en.aux)
 (./sections/abstract_de.aux) (./sections/introduction.aux)
 (./sections/content.aux) (./sections/evaluation.aux) (./sections/conclusion.aux
 ) (./sections/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 143.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 147.
 
 
 LaTeX Warning: There were undefined references.
@@ -2034,35 +2075,34 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
  ) 
 Here is how much of TeX's memory you used:
- 29265 strings out of 493109
- 529422 string characters out of 6138587
- 1024156 words of memory out of 5000000
- 32097 multiletter control sequences out of 15000+600000
- 184269 words of font info for 143 fonts, out of 8000000 for 9000
+ 29296 strings out of 493109
+ 529831 string characters out of 6138587
+ 1025529 words of memory out of 5000000
+ 32127 multiletter control sequences out of 15000+600000
+ 165155 words of font info for 140 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 80i,17n,82p,939b,2798s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2014/texmf-dist/fonts/enc/dvips/sourcesanspro/a_ggs4wk.enc}{c:/te
-xlive/2014/texmf-dist/fonts/enc/dvips/newtx/libertinealt.enc}{c:/texlive/2014/t
-exmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvi
-ps/libertine/lbtn_7grukw.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/libert
-ine/lbtn_nh77jq.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_
-76gpa5.enc}<c:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertin
+ 80i,17n,82p,927b,2798s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2014/texm
+f-dist/fonts/enc/dvips/newtx/libertinealt.enc}{c:/texlive/2014/texmf-dist/fonts
+/enc/dvips/libertine/lbtn_7grukw.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvip
+s/libertine/lbtn_nh77jq.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/liberti
+ne/lbtn_76gpa5.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/sourcesanspro/a_
+ggs4wk.enc}<c:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertin
 eT.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.
 pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb
 ><c:/texlive/2014/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold
-.pfb><c:/texlive/2014/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-
-Semibold.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><
-c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2014
-/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2014/texmf-dist/fon
-ts/type1/public/newtx/zxlr.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/n
-ewtx/zxlri.pfb>
-Output written on thesis.pdf (24 pages, 380402 bytes).
+.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texli
+ve/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2014/texmf-d
+ist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2014/texmf-dist/fonts/type1
+/public/newtx/zxlr.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxl
+ri.pfb>
+Output written on thesis.pdf (26 pages, 339734 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

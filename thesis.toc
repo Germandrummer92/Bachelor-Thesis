@@ -16,28 +16,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Example-based Refinement on CPS Watertank}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.0.1}Finding the concrete Control Value Assisgnment}{3}{subsection.2.0.1}
+\contentsline {section}{\numberline {2.1}Finding the concrete Control Value Assisgnment}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.0.2}Refining the original Hybrid Automata}{3}{subsection.2.0.2}
+\contentsline {section}{\numberline {2.2}Refining the original Hybrid Automata}{3}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.0.3}Finding the correct Program Safety Condition}{3}{subsection.2.0.3}
+\contentsline {section}{\numberline {2.3}Finding the correct Program Safety Condition}{3}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.0.4}The (simple) Java Control Program}{3}{subsection.2.0.4}
+\contentsline {section}{\numberline {2.4}The (simple) Java Control Program}{3}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.0.5}Finding the glue between Java and the Hybrid Model of the system}{3}{subsection.2.0.5}
+\contentsline {section}{\numberline {2.5}Finding the glue between Java and the Hybrid Model of the system}{3}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.0.6}Verification based on Ke\kern -.2emYmaera}{3}{subsection.2.0.6}
+\contentsline {section}{\numberline {2.6}Verification based on Ke\kern -.2emYmaera}{3}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Evaluation}{5}{chapter.3}
+\contentsline {chapter}{\numberline {3}Introduction of formalized process of using Refinement to gain a concrete implementation from a hybrid model}{5}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}First Section}{5}{section.3.1}
+\contentsline {section}{\numberline {3.1}Abstracting original hybrid model to better split actual control system ``hook'' and physical evolutions}{6}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Second Section}{5}{section.3.2}
+\contentsline {section}{\numberline {3.2}Finding the necessary safety condition of the control value for verification with Ke\kern -.2emYmaera}{6}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Third Section}{5}{section.3.3}
+\contentsline {section}{\numberline {3.3}Implementing control program according to safety condition as its specification and Verification by Ke\kern -.2emY.}{6}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Conclusion}{7}{chapter.4}
+\contentsline {section}{\numberline {3.4}Finding the correct glue between hybrid model and control program and verifying it with Ke\kern -.2emYmaera}{6}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{9}{appendix.A}
+\contentsline {section}{\numberline {3.5}Evaluating results}{6}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Images}{9}{section.A.1}
+\contentsline {chapter}{\numberline {4}Evaluation}{7}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}First Section}{7}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Second Section}{7}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Third Section}{7}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Conclusion}{9}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix}{11}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Images}{11}{section.A.1}

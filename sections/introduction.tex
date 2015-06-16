@@ -13,16 +13,17 @@
 \chapter{Introduction}
 \label{ch:Introduction}
 
-The following Bachelorthesis will try to formalize the following process: Replacing the abstract notion of the control program in a verified (by Ke\kern-.2emYmaera) Cyber-Physical-System (\textit{CPS}) with an actual verified (by Ke\kern-.2emY) implementation through a form of Formal Refinement and being able to verify that the entire CPS still satisfys the required safety constraints, using both Ke\kern-.2emYmaera and Ke\kern-.2emY. 
+This bachelorthesis will try to formalize the following process: Replacing the abstract notion of the control program in a verified (by \keym) Cyber-Physical-System (\textit{CPS}) with an actual verified (by \key) implementation through a form of Formal Refinement and being able to verify that the entire CPS still satisfys the required safety constraints, using both \keym~and \key. 
 
-CPS are generally modelled as either Hybrid Automata or - Programs.(See ref.~\cite{platzerb}). Mostly, this means, that an abstract version of the discrete control program is modelled, as a non-deterministic assignment of a control value (See app.~\ref{fig:ex_control}). To replace this non-deterministic assignment with an actual implementation a certain ''glue'' or ''coupling'' has to be found to translate discrete and real continous values into each other.
+CPS are generally modelled as either Hybrid Automata or - Programs.(See ref.~\cite{platzer2010b}). Mostly, this means, that an abstract version of the discrete control program is modelled, as a non-deterministic assignment of one or multiple control value (See app.~\ref{fig:ex_control}). To replace this non-deterministic assignment with an actual implementation a certain ''glue'' or ''coupling'' has to be found to translate discrete and real continous values into each other. Glue in this case refers to a relation that encompasses both the discrete and real values. In certain cases (See chap.~\ref{ch:Watertank:Glue}), glue will be a concrete function, but no in general.
 
- In logic this can be expressed as:
+If we try to express the goal of this thesis in logic, we get equation~\ref{eq:Main_LogicRefinement}. Here, \(\psi\) is the safety condition that acts both as a specification for our later implementation and the goal the program result is verified against. Glue is the aforementioned relation to be able to translate from the real into the discrete world and vice versa.
+
 \begin{equation}
 \centering
 \begin{split}
-\textbf{If}~ (\models [ controlValue := \ast, ?\psi(controlValue) \dots] \alpha~verified \\ \wedge \textit{``glue''(discreteVariables, continuousVariables)} \\
-\textbf{Then}~ [controlValue := JavaProgram \dots] \alpha~also~verified
+\textbf{If}~ (\models [ controlValue := \ast, ?\psi(controlValue) \dots] \alpha~\textrm{verified} \\ \wedge \textit{``glue''(discreteVariables, continuousVariables)}~\textrm{verified} \\
+\textbf{Then}~ [controlValue := JavaProgram \dots] \alpha~\textrm{also verified}
 \end{split}
 \label{eq:Main_LogicRefinement}
 \end{equation} To explain this process we will take a look at the following: 
@@ -30,7 +31,7 @@ CPS are generally modelled as either Hybrid Automata or - Programs.(See ref.~\ci
 \begin{enumerate}[label=\bfseries \Roman*:]
 
 \item Example-based Refinement on CPS Watertank (Example taken from Ke\kern-.2emYmaera).
-\item Introduction of Formalized process to gain an actual implementation from a hybrid model.
+\item Introduction of formalized process of using Refinement to gain a concrete implementation from a hybrid model.
 \item Application of formalized process on example: CPS Gear-Backlash (See ref.~\cite{bla}).
 \end{enumerate}
 

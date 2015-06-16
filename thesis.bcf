@@ -1968,8 +1968,9 @@
     <bcf:datasource type="file" datatype="bibtex">thesis.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">platzerb</bcf:citekey>
+    <bcf:citekey order="1">platzer2010b</bcf:citekey>
     <bcf:citekey order="2">bla</bcf:citekey>
+    <bcf:citekey order="3">keYmaera</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>
