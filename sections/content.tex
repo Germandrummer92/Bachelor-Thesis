@@ -113,7 +113,10 @@ For testing purposes, we also implemented a complete simulator of the Watertank 
 \section{Finding the glue between Java and the Hybrid Model of the system}
 \label{sec:Watertank:Glue}
 
-The most important and also difficult part of our process, was finding the glue between the real parts of the hybrid system and our java control program. As real values (used in the hybrid model) and discrete values (used in our java implementation) are fundamentally different, a certain transformation has to occur.  In the Watertank example, this means, that the waterlevel as well as the last valve-value (be it fill or drain), which are passed to the control method, have to be converted into one direction by the glue. Also, the result of the computation in the method (so the new valve value) has to be converted in the other direction. In general the glue is not necessarily a bijective function, as some values will not exist in both worlds, making it a relation. For the Watertank, fortunately, this problem doesn't exist, so finding a 
+The most important and also difficult part of our process, was finding the glue between the real parts of the hybrid system and our java control program. As real values (used in the hybrid model) and discrete values (used in our java implementation) are fundamentally different, a certain transformation has to occur.  In the Watertank example, this means, that the waterlevel as well as the last valve-value (be it fill or drain), which are passed to the control method, have to be converted into one direction by the glue. Also, the result of the computation in the method (so the new valve value) has to be converted in the other direction. In general the glue is not necessarily a bijective function, as some values will not exist in both worlds, making it a relation. For the Watertank, fortunately, this problem doe not exist, so finding a function translating the waterlevel and valve values into each other proved relatively easy. 
+
+As we went along, we figured out how a general glue proof should look (See fig.~\ref{eq:glueGeneral}).
+
 \section{Verification based on \keym}
 \label{sec:Watertank:Verification}
 
