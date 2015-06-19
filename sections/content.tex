@@ -19,17 +19,64 @@
 \chapter{Example-based Refinement on CPS Watertank}
 \label{ch:Watertank}
 
-To get a better understanding of the tasks involved in refining a hybrid model into a implementation with all necessary intermediate verification steps, we used one of the out-of-the-box examples provided in the \keym~tutorial~\cite{keYmaera}.
+To get a better understanding of the tasks involved in refining a hybrid model into a implementation with all necessary intermediate verification steps, we used one of the out-of-the-box examples provided in the \keym~tutorial~\cite{keYmaera}, a Watertank (See fig.~\ref{fig:watertank}).
+
+\begin{figure}
+	\setcounter{figure}{0}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/watertank}
+	\caption{Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite{keymaeraGuide}.}
+	\label{fig:watertank}
+\end{figure}
+
+The ``control'' part of this hybrid system is the valve, it can either drain the watertank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goalof the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. As our goal is to find a concrete implementation,  we first took a look at the hybrid model of the watertank. It is provided both in the form of a hybrid automata (See fig.~\ref{fig:watertank_ha}) and a hybrid program (See fig.~\ref{fig:watertank_hp}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/watertank_ha}
+	\caption{The watertank CPS expressed as a hyrbrid automata~\cite{keymaeraGuide}.}
+	\label{fig:watertank_ha}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/watertank_hp}
+	\caption{The watertank CPS expressed as a hybrid program~\cite{keymaeraGuide}.}
+	\label{fig:watertank_hp}
+\end{figure}
 
 \section{Finding the concrete Control Value Assisgnment}
 \label{sec:Watertank:ControlValue}
 
-In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, the first challenge we faced was finding a spot in which a concrete control value is actually assigned. Taking a look at the Hybrid Automata describing the Watertank (See Fig.~\ref{fig:HA_Watertank}), 
+In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, the first challenge we faced was finding a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment(s) the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. Taking a look at the Hybrid Automata describing the Watertank (See fig.~\ref{fig:watertank_ha}), it became obvious, that the hybrid model of the watertank required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministical control program implementation impossible. Therefore, we tried to remodel the model to better serve our purpose, featuring a clear ticked hook that is called upon at deterministic times. (See fig.~\ref{fig:watertank_hp_ref}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/watertank_hp_ref}
+	\caption{The watertank cps after remodelling to account for hook.}
+	\label{fig:watertank_hp_ref}
+\end{figure}
+
+We tried to keep the model mostly equivalent to the original, preserving the 2 clock ticks of time needed for the valve to change its state from drain to fill and vice-versa. This then proved difficult, when trying to think of possible implementations, as the program hook could be called again before the valve would have actually changed its state. To simplify this problem, we decided to only model cases in which the actual program tick (so the time between two hook calls)  is greater than 2 clock ticks (however long they may be).  This means, that the valve or control program doesn't have to have a (possibly infinite) list of the last control values assigned, which could be the case if the program was called more frequently than the valve is able to change states.
+
 \section{Refining the original Hybrid Automata}
 \label{sec:Watertank:Refinining}
 
 \section{Finding the correct Program Safety Condition}
 \label{sec:Watertank:SafetyCond}
+
+The next step we attempted was finding the correct postcondition for the program hook (\(\psi\) in eq.~\ref{eq:Main_LogicRefinement}), which would then serve as the abstraction of the java control program we would later implement. This means, that the program would be built accordingly, so that it could be verified against this postcondition. The original postcondition we devised:
+
+\begin{equation}
+	\centering
+	\begin{split}
+		\psi \equiv ?( y + 2* valve + tick -2 * new  >= 1~\&~ \\ 2 * valve * (tick - 2) * new <= 12~\&~ \\  y + 2* valve >= 1~\&~ y + 2 * valve <= 12) 
+	\end{split}
+\label{eq:postCondOrig}
+\end{equation}
+
+When trying to verify the entire hybrid program (see comment in line 5 of the problem in fig.~\ref{fig:watertank_hp_ref}), this postcondition did not work. This means, that even in such a simple CPS as this watertank control system, finding the hook postcondition was non-trivial and only with the help of \keym's counterexamples did we manage to find the correct postcondition (See eq.~\ref{eq:postCondOrigCorrect}). 
+As can be seen in sec.~\ref{sec:Watertank:Glue}, this postcondition later on changed, as the glue proof part would not work with the original postcondition we came up with.
 
 \section{The (simple) Java Control Program}
 \label{sec:Watertank:Java}
@@ -56,7 +103,7 @@ To aid readability we will now give an overview of the process without explanati
 \item Finding the necessary safety condition of the control value for verification with \keym.
 \item Implementing control program according to safety condition as its specification and Verification by \key.
 \item Finding the correct ``glue'' between hybrid model and control program and its verification by \keym.
-\item Result evaluation: Was eq. ~\ref{eq':Main_LogicRefinement} proven?
+\item Result validation: Was eq. ~\ref{eq':Main_LogicRefinement} proven?
 \end{enumerate}
 
 \section{Abstracting original hybrid model to better split actual control system ``hook'' and physical evolutions}
