@@ -90,16 +90,30 @@ When trying to verify the entire hybrid program (see comment in line 5 of the pr
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/watertank_keym_ver}
-	\caption{The result of automatic verification by \keym~ of the watertank hybrid program that includes our hook (See fig~\ref{fig:watertank_hp_ref}).}
+	\caption{The result of automatic verification by \keym~ of the Watertank hybrid program that includes our hook (See fig~\ref{fig:watertank_hp_ref}).}
 	\label{fig:KeymaeraVerWatertank}
 \end{figure}
 
 \section{The (simple) Java Control Program}
 \label{sec:Watertank:Java}
 
+After completing verification of our hybrid model with \keym, we proceeded to implement a (simple) control program for the Watertank. Finding a suitable implementation proved difficult, as a parallel implementation (Both the control system and the differential equations working in parallel, modifying the water level) seemed more intuitive. This would defeat the purpose of actually finding a suitable hook and was more based on our understanding of the original hybrid model and not our version including the hook.
+
+Using our understanding of a singular hook of the control system into the Watertank as well as the hook postcondition from the previous section as our specification for the actual control method, that would return the control value to the Watertank's valve, we then managed to implement a suitable discrete control method (See fig.~\ref{fig:source_controlMethod}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/source_control_method}
+	\caption{The actual control method implemented.}
+	\label{fig:source_controlMethod}
+\end{figure}
+The control method consists only of simple if-else-statements and just assigns the best-case (keep raising level if we were raising, keep lowering if we are lowering as long as postcondition is still valid) value to the valve.
+For testing purposes, we also implemented a complete simulator of the Watertank CPS (See app.~\ref{app:fig:source_sim}).
+
 \section{Finding the glue between Java and the Hybrid Model of the system}
 \label{sec:Watertank:Glue}
 
+The most important and also difficult part of our process, was finding the glue between the real parts of the hybrid system and our java control program. As real values (used in the hybrid model) and discrete values (used in our java implementation) are fundamentally different, a certain transformation has to occur.  In the Watertank example, this means, that the waterlevel as well as the last valve-value (be it fill or drain), which are passed to the control method, have to be converted into one direction by the glue. Also, the result of the computation in the method (so the new valve value) has to be converted in the other direction. In general the glue is not necessarily a bijective function, as some values will not exist in both worlds, making it a relation. For the Watertank, fortunately, this problem doesn't exist, so finding a 
 \section{Verification based on \keym}
 \label{sec:Watertank:Verification}
 

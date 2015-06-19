@@ -22,11 +22,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Finding the correct Program Safety Condition}{6}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}The (simple) Java Control Program}{7}{section.2.4}
+\contentsline {section}{\numberline {2.4}The (simple) Java Control Program}{6}{section.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Finding the glue between Java and the Hybrid Model of the system}{7}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Verification based on Ke\kern -.2emYmaera}{7}{section.2.6}
+\contentsline {section}{\numberline {2.6}Verification based on Ke\kern -.2emYmaera}{8}{section.2.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Introduction of formalized process of using Refinement to gain a concrete implementation from a hybrid model}{9}{chapter.3}
 \defcounter {refsection}{0}\relax 
