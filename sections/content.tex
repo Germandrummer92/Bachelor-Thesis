@@ -10,7 +10,7 @@
 %%
 %% Version 1.1, 2014-11-21
 
-%To be able to reference labels in other document
+%To be able to reference labels in other file
 \externaldocument{introduction}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,7 +19,7 @@
 \chapter{Example-based Refinement on CPS Watertank}
 \label{ch:Watertank}
 
-To get a better understanding of the tasks involved in refining a hybrid model into a implementation with all necessary intermediate verification steps, we used one of the out-of-the-box examples provided in the \keym~tutorial~\cite{keYmaera}, a Watertank (See fig.~\ref{fig:watertank}).
+To get a better understanding of the tasks involved in refining a hybrid model into a implementation with all necessary intermediate verification steps, we took a look at one of the out-of-the-box examples provided in the \keym~tutorial~\cite{keYmaera}, a Watertank (See fig.~\ref{fig:watertank}).
 
 \begin{figure}
 	\setcounter{figure}{0}
@@ -29,19 +29,19 @@ To get a better understanding of the tasks involved in refining a hybrid model i
 	\label{fig:watertank}
 \end{figure}
 
-The ``control'' part of this hybrid system is the valve, it can either drain the watertank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goalof the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. As our goal is to find a concrete implementation,  we first took a look at the hybrid model of the watertank. It is provided both in the form of a hybrid automata (See fig.~\ref{fig:watertank_ha}) and a hybrid program (See fig.~\ref{fig:watertank_hp}).
+The ``control'' part of this hybrid system is the valve, it can either drain the watertank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goal of the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. As our goal is to find a concrete implementation,  we first took a look at the hybrid model of the watertank. It is provided both in the form of a hybrid automata (See fig.~\ref{fig:watertank_ha}) and a hybrid program (See fig.~\ref{fig:watertank_hp}).
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/watertank_ha}
-	\caption{The watertank CPS expressed as a hyrbrid automata~\cite{keymaeraGuide}.}
+	\caption{The Watertank CPS expressed as a hybrid automata~\cite{keymaeraGuide}.}
 	\label{fig:watertank_ha}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/watertank_hp}
-	\caption{The watertank CPS expressed as a hybrid program~\cite{keymaeraGuide}.}
+	\caption{The Watertank CPS expressed as a hybrid program~\cite{keymaeraGuide}.}
 	\label{fig:watertank_hp}
 \end{figure}
 
@@ -53,7 +53,7 @@ In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\textwidth]{images/watertank_hp_ref}
-	\caption{The watertank cps after remodelling to account for hook.}
+	\caption{The Watertank CPS after remodelling to account for hook.}
 	\label{fig:watertank_hp_ref}
 \end{figure}
 
@@ -76,7 +76,23 @@ The next step we attempted was finding the correct postcondition for the program
 \end{equation}
 
 When trying to verify the entire hybrid program (see comment in line 5 of the problem in fig.~\ref{fig:watertank_hp_ref}), this postcondition did not work. This means, that even in such a simple CPS as this watertank control system, finding the hook postcondition was non-trivial and only with the help of \keym's counterexamples did we manage to find the correct postcondition (See eq.~\ref{eq:postCondOrigCorrect}). 
-As can be seen in sec.~\ref{sec:Watertank:Glue}, this postcondition later on changed, as the glue proof part would not work with the original postcondition we came up with.
+
+\begin{equation}
+	\centering
+	\begin{split}
+		\psi \equiv (?(y + 2 * valve + tick * new >= 1~\& \\ y + 2 * valve + tick * new <= 12~\& \\(new = 1 | new = -2))
+	\end{split}
+	\label{eq:postCondOrigCorrect}
+\end{equation}
+
+\keym~ verified our new hybrid program fully automatically (See fig.~\ref{fig:KeymaeraVerWatertank}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/watertank_keym_ver}
+	\caption{The result of automatic verification by \keym~ of the watertank hybrid program that includes our hook (See fig~\ref{fig:watertank_hp_ref}).}
+	\label{fig:KeymaeraVerWatertank}
+\end{figure}
 
 \section{The (simple) Java Control Program}
 \label{sec:Watertank:Java}

@@ -12,18 +12,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite {keymaeraGuide}.}}{4}{figure.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces The watertank CPS expressed as a hyrbrid automata~\cite {keymaeraGuide}.}}{4}{figure.2.2}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces The Watertank CPS expressed as a hybrid automata~\cite {keymaeraGuide}.}}{4}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces The watertank CPS expressed as a hybrid program~\cite {keymaeraGuide}.}}{5}{figure.2.3}
+\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces The Watertank CPS expressed as a hybrid program~\cite {keymaeraGuide}.}}{5}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces The watertank cps after remodelling to account for hook.}}{5}{figure.2.4}
+\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces The Watertank CPS after remodelling to account for hook.}}{5}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces The result of automatic verification by Ke\kern -.2emYmaera~ of the watertank hybrid program that includes our hook (See fig~\ref {fig:watertank_hp_ref}).}}{6}{figure.2.5}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{14}{figure.A.1}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{16}{figure.A.1}

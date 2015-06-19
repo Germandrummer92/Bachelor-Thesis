@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  19 JUN 2015 00:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  19 JUN 2015 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2049,42 +2049,47 @@ Underfull \vbox (badness 1303) has occurred while \output is active []
 ]
 [4 <./images/watertank.png> <./images/watertank_ha.png (PNG copy)>] [5 <./image
 s/watertank_hp.png> <./images/watertank_hp_ref.png>]
+<images/watertank_keym_ver.png, id=88, 208.52907pt x 124.96687pt>
+File: images/watertank_keym_ver.png Graphic file (type png)
 
-LaTeX Warning: Reference `eq:postCondOrigCorrect' on page 6 undefined on input 
-line 78.
+<use images/watertank_keym_ver.png>
+Package pdftex.def Info: images/watertank_keym_ver.png used on input line 92.
+(pdftex.def)             Requested size: 259.4918pt x 155.52747pt.
 
-[6]
+Underfull \vbox (badness 2012) has occurred while \output is active []
+
+ [6 <./images/watertank_keym_ver.png>] [7] [8
+
+
+]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
 
-LaTeX Warning: Reference `eq':Main_LogicRefinement' on page 7 undefined on inpu
-t line 106.
+LaTeX Warning: Reference `eq':Main_LogicRefinement' on page 9 undefined on inpu
+t line 122.
 
 
-LaTeX Warning: Citation 'keymaera' on page 7 undefined on input line 111.
+LaTeX Warning: Citation 'keymaera' on page 9 undefined on input line 127.
 
 
-LaTeX Warning: Citation 'platzer2010b' on page 7 undefined on input line 111.
+LaTeX Warning: Citation 'platzer2010b' on page 9 undefined on input line 127.
 
-) [7
-
-
-]
+) [9]
 Overfull \hbox (89.91956pt too wide) has occurred while \output is active
 []|\T1/LinuxLibertineT-TLF/m/it/12 3. Introduction of formalized process of usi
 ng Refinement to gain a concrete implementation from a hybrid model []
  []
 
-[8]
+[10]
 \openout2 = `sections/evaluation.aux'.
 
  (./sections/evaluation.tex
 Chapter 4.
-) [9
+) [11
 
 
 
@@ -2092,33 +2097,33 @@ Chapter 4.
 ]
 \openout2 = `sections/conclusion.aux'.
 
- (./sections/conclusion.tex [10
+ (./sections/conclusion.tex [12
 
 
 
 
 ]
 Chapter 5.
-) [11]
+) [13]
 
 LaTeX Warning: Empty bibliography on input line 137.
 
 \openout2 = `sections/appendix.aux'.
 
-(./sections/appendix.tex [12
+(./sections/appendix.tex [14
 
 
 
 
 ]
 Appendix A.
-<Images/ex_control.png, id=110, 179.16937pt x 186.6975pt>
+<Images/ex_control.png, id=117, 179.16937pt x 186.6975pt>
 File: Images/ex_control.png Graphic file (type png)
 
 <use Images/ex_control.png>
 Package pdftex.def Info: Images/ex_control.png used on input line 23.
 (pdftex.def)             Requested size: 432.51132pt x 455.0199pt.
-) [13] [14 <./Images/ex_control.png>]
+) [15] [16 <./Images/ex_control.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 146.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 146.
  (./thesis.aux
@@ -2133,6 +2138,9 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 146.
 LaTeX Warning: There were undefined references.
 
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                thesis
 (biblatex)                and rerun LaTeX afterwards.
@@ -2143,10 +2151,10 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 146.
  ) 
 Here is how much of TeX's memory you used:
- 29322 strings out of 493109
- 530447 string characters out of 6138587
- 1027073 words of memory out of 5000000
- 32148 multiletter control sequences out of 15000+600000
+ 29328 strings out of 493109
+ 530630 string characters out of 6138587
+ 1027310 words of memory out of 5000000
+ 32153 multiletter control sequences out of 15000+600000
  165155 words of font info for 140 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  80i,17n,82p,1012b,2798s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2164,10 +2172,10 @@ ve/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2014/texmf-d
 ist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2014/texmf-dist/fonts/type1
 /public/newtx/zxlr.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxl
 ri.pfb>
-Output written on thesis.pdf (28 pages, 446861 bytes).
+Output written on thesis.pdf (30 pages, 452141 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 163 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
