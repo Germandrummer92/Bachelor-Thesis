@@ -90,7 +90,7 @@ When trying to verify the entire hybrid program (see comment in line 5 of the pr
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/watertank_keym_ver}
-	\caption{The result of automatic verification by \keym~ of the Watertank hybrid program that includes our hook (See fig~\ref{fig:watertank_hp_ref}).}
+	\caption{The result of automatic verification by \keym~of the Watertank hybrid program that includes our hook (See fig~\ref{fig:watertank_hp_ref}).}
 	\label{fig:KeymaeraVerWatertank}
 \end{figure}
 
@@ -101,7 +101,7 @@ After completing verification of our hybrid model with \keym, we proceeded to im
 
 Using our understanding of a singular hook of the control system into the Watertank as well as the hook postcondition from the previous section as our specification for the actual control method, that would return the control value to the Watertank's valve, we then managed to implement a suitable discrete control method (See fig.~\ref{fig:source_controlMethod}).
 
-\lstset{language=Java}
+\lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{blue},commentstyle=\color{darkgreen},stringstyle=\color{red},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
 \begin{lstlisting}
 public int getControlValue (int y, int old) {
 		//Waterlevel in two time units
@@ -132,7 +132,6 @@ public int getControlValue (int y, int old) {
 		return 0;
 }
 }
-	%\label{lst:source_control_method}
 \end{lstlisting}
 
 \begin{figure}
@@ -141,8 +140,16 @@ public int getControlValue (int y, int old) {
 	\caption{The actual control method implemented.}
 	\label{fig:source_controlMethod}
 \end{figure}
-The control method consists only of simple if-else-statements and just assigns the best-case (keep raising level if we were raising, keep lowering if we are lowering as long as postcondition is still valid) value to the valve.
+The control method consists only of simple if-else-statements and just assigns the best-case (keep raising level if we were raising, keep lowering if we are lowering as long as postcondition is still valid) value to the valve. We translated the hook postcondition (See  eq.~\ref{eq:postCondOrig}) into, what we thought to be, a suitable JDL postcondition statement for verification with \key~(See list.~\ref{lst:JDL}). In the next section we will explain why this postcondition would not work for our complete proof.
+
 For testing purposes, we also implemented a complete simulator of the Watertank CPS (See app.~\ref{app:fig:source_sim}).
+
+\begin{lstlisting}[label=lst:JDL]
+	/*@ public normal_behavior //
+	  @ requires tick == 30 && y >= 10 && y <= 120 && y + 2 * old <= 120 && y + 2 * old >= 10 && (old == 10 || old == -20); //
+	  @ ensures \result * (tick / 10) + y + 2 * old  >= 12 & \result * (tick / 10) + y + 2 * old <= 116 && (\result == 10 || \result == -20); //
+	  @*/
+\end{lstlisting} 
 
 \section{Finding the glue between Java and the Hybrid Model of the system}
 \label{sec:Watertank:Glue}
@@ -171,11 +178,43 @@ Following this basic guideline, we were able to find a suitable glue relation (o
 	\label{eq:glueWatertank}
 \end{equation}
 
-Thinking back to our implementation explained int he previous section, we can see
+As can be seen, the \(\psi(x)\) that we found for the glue is not equal to the original trivial postcondition for our java program (See list.~\ref{lst:JDL}). This can be explained by the floor functions that has to be used for translation from the \(\mathbb{R}\) into \(\mathbb{Z}\) world. Due to the usage of the floor function, we only can approximate the original value in the discrete world, and therefore these approximation erorrs have to be accounted for in \(\psi\). Again the fact that we only found this error in our original postcondition devised for the java program, proves the non-triviality of the process even in seemingly simple examples as this watertank.
+
 \section{Verification based on \keym}
 \label{sec:Watertank:Verification}
 
+Verification of the glue proved difficult since \keym~ had problems with the floor function. Therefore we found an abstraction of the function using two inequalities to approximate it (See eq.~\ref{eq:approxF}).
 
+\begin{equation}
+	\centering
+		f(x) = y \implies x-1 < y \wedge y <= x
+	\label{eq:approxF}
+\end{equation}
+
+Unfortunately, this still lead to problems when using the automatic proof-mechanism, so we had to add a full new rule fdef to the definition file to be able to use the automatic proover (See list.~\ref{lst:ruleF}).
+
+\begin{lstlisting}[label=lst:ruleF]
+	\rules {
+ 	 fdef {
+	\schemaVar \term R x;
+	\schemaVar \skolemTerm R c;
+    	\find(f(x))
+	\sameUpdateLevel
+	\varcond ( \new(c, \dependingOn(x)) )
+	\replacewith(c)
+	\add(x-1 < c & c <= x & (x >= 0 -> c >= 0) & (x < 0 -> c < 0) ==> )
+	};
+	}	
+\end{lstlisting}
+
+Applying the rule manually to the floor function and changing the first-order-strategy (so the time at which quantifier elimination using mathematica is tried) from lazy (extending every possible leave with case differentiation) to eager (quantifier elimination as soon as possible), the proof runs automatically aside from the application of our own defined rule (See fig.~\ref{fig:GlueProof}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/glue_proof}
+	\caption{Successful proof of our glue with \keym.}
+	\label{fig:GlueProof}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %--PROCESS--%
