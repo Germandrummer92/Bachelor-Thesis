@@ -20,16 +20,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces The result of automatic verification by Ke\kern -.2emYmaera~of the Watertank hybrid program that includes our hook (See fig~\ref {fig:watertank_hp_ref}).}}{6}{figure.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces The actual control method implemented.}}{7}{figure.2.6}
+\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Automatic proof result with tick== 30.}}{8}{figure.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Successful proof of our glue with Ke\kern -.2emYmaera.}}{9}{figure.2.7}
+\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Automatic proof result with tick== 31.}}{8}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 2.8}{\ignorespaces Successful proof of our glue with Ke\kern -.2emYmaera.}}{11}{figure.2.8}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{18}{figure.A.1}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{22}{figure.A.1}

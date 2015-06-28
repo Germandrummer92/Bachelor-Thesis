@@ -2,9 +2,9 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abstract}{i}{chapter*.2}
+\contentsline {chapter}{Abstract}{i}{chapter*.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Zusammenfassung}{iii}{chapter*.3}
+\contentsline {chapter}{Zusammenfassung}{iii}{chapter*.2}
 \defcounter {refsection}{0}\relax 
 \select@language {ngerman}
 \defcounter {refsection}{0}\relax 
@@ -18,38 +18,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Finding the concrete Control Value Assisgnment}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Refining the original Hybrid Automata}{6}{section.2.2}
+\contentsline {section}{\numberline {2.2}Finding the correct Program Safety Condition}{6}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Finding the correct Program Safety Condition}{6}{section.2.3}
+\contentsline {section}{\numberline {2.3}The (simple) Java Control Program}{6}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}The (simple) Java Control Program}{6}{section.2.4}
+\contentsline {section}{\numberline {2.4}Finding the glue between Java and the Hybrid Model of the system}{9}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Finding the glue between Java and the Hybrid Model of the system}{7}{section.2.5}
+\contentsline {section}{\numberline {2.5}Verification based on Ke\kern -.2emYmaera}{10}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Verification based on Ke\kern -.2emYmaera}{8}{section.2.6}
+\contentsline {chapter}{\numberline {3}Introduction of formalized process of using Refinement to gain a concrete implementation from a hybrid model}{13}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Introduction of formalized process of using Refinement to gain a concrete implementation from a hybrid model}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Modelling CPS as Hybrid System that includes concrete Hook}{13}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Abstracting original hybrid model to better split actual control system ``hook'' and physical evolutions}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Finding the necessary safety condition of the control value for verification with Ke\kern -.2emYmaera}{14}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Finding the necessary safety condition of the control value for verification with Ke\kern -.2emYmaera}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}Implementing control program according to safety condition as its specification and Verification by Ke\kern -.2emY.}{14}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Implementing control program according to safety condition as its specification and Verification by Ke\kern -.2emY.}{12}{section.3.3}
+\contentsline {section}{\numberline {3.4}Finding the correct glue between hybrid model and control program and verifying it with Ke\kern -.2emYmaera.}{14}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Finding the correct glue between hybrid model and control program and verifying it with Ke\kern -.2emYmaera}{12}{section.3.4}
+\contentsline {section}{\numberline {3.5}Validating glue results against implementation}{15}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Evaluating results}{12}{section.3.5}
+\contentsline {chapter}{\numberline {4}Evaluation}{17}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Evaluation}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}First Section}{17}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}First Section}{13}{section.4.1}
+\contentsline {section}{\numberline {4.2}Second Section}{17}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Second Section}{13}{section.4.2}
+\contentsline {section}{\numberline {4.3}Third Section}{17}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Third Section}{13}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{19}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusion}{15}{chapter.5}
+\contentsline {chapter}{\numberline {A}Appendix}{21}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{17}{appendix.A}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Images}{17}{section.A.1}
+\contentsline {section}{\numberline {A.1}Images}{21}{section.A.1}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  23 JUN 2015 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  28 JUN 2015 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1358,7 +1358,6 @@ Now handling font encoding PD1 ...
 (c:/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `draft' set `true' on input line 4319.
 Package hyperref Info: Option `breaklinks' set `true' on input line 4319.
 Package hyperref Info: Option `colorlinks' set `false' on input line 4319.
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -1729,13 +1728,21 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 \c@mv@tabular=\count325
 \c@mv@boldtabular=\count326
 LaTeX Info: Redefining \microtypecontext on input line 83.
-
-
-Package microtype Warning: `draft' option active.
-(microtype)                Disabling all micro-typographic extensions.
-(microtype)                This might lead to different line and page breaks.
-
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `LinuxLibertineT-TLF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 \AtBeginShipoutBox=\box47
+
 (c:/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count327
@@ -1765,10 +1772,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-
-Package hyperref Warning: Draft mode on.
-
 Package hyperref Info: Link coloring OFF on input line 83.
+
 (c:/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1780,6 +1785,11 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 83.
 LaTeX Info: Redefining \pageref on input line 83.
 LaTeX Info: Redefining \nameref on input line 83.
+
+(./thesis.out) (./thesis.out)
+\@outlinefile=\write5
+\openout5 = `thesis.out'.
+
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1792,7 +1802,7 @@ No file thesis.bbl.
 Package biblatex Info: Reference section=0 on input line 83.
 Package biblatex Info: Reference segment=0 on input line 83.
 \c@lstlisting=\count334
-<logos/kitlogo_en_cmyk.pdf, id=4, 198.7425pt x 92.345pt>
+<logos/kitlogo_en_cmyk.pdf, id=99, 198.7425pt x 92.345pt>
 File: logos/kitlogo_en_cmyk.pdf Graphic file (type pdf)
 
 <use logos/kitlogo_en_cmyk.pdf>
@@ -1809,6 +1819,10 @@ eSansPro-LF.
 )
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
 (Font)              scaled to size 22.88956pt on input line 90.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `SourceSansPro-LF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
 (Font)              scaled to size 22.88956pt on input line 90.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
@@ -1848,7 +1862,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.9pt on input line 90.
 
-<title-background.pdf, id=5, 597.50786pt x 845.04686pt>
+<title-background.pdf, id=100, 597.50786pt x 845.04686pt>
 File: title-background.pdf Graphic file (type pdf)
 
 <use title-background.pdf>
@@ -1868,8 +1882,6 @@ und.pdf> <./logos/kitlogo_en_cmyk.pdf>] [2
 (./sections/declaration.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 28.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 29.
  [1
 
 
@@ -1885,7 +1897,12 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
 (Font)              scaled to size 11.03998pt on input line 14.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
 (Font)              scaled to size 11.03998pt on input line 14.
-) [1
+)pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.111 \includeabstract
+                       [1
 
 
 
@@ -1893,8 +1910,7 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
 ]
 \openout2 = `sections/abstract_de.aux'.
 
-
-(./sections/abstract_de.tex
+ (./sections/abstract_de.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 14.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1903,12 +1919,22 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 14.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 14.
- [2
+pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.14 D
+      eutsche Zusammenfassung [2
 
 
 
 
-])
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 14.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 14.
+)
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 111.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1930,8 +1956,8 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.6pt on input line 15.
 )
-\tf@toc=\write5
-\openout5 = `thesis.toc'.
+\tf@toc=\write6
+\openout6 = `thesis.toc'.
 
  [5] [6
 
@@ -1940,20 +1966,20 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 Package tocbasic Info: character protrusion at lof deactivated on input line 11
 8.
  (./thesis.lof
-Overfull \hbox (8.3816pt too wide) in paragraph at lines 13--13
- [][] []\T1/LinuxLibertineT-TLF/m/n/12 Picture of pos-si-ble Wa-ter-tank con-fi
-g-u-ra-tion: Wa-ter-tank that can get drained 
+Overfull \hbox (1.4411pt too wide) in paragraph at lines 13--13
+ [][] [][]\T1/LinuxLibertineT-TLF/m/n/12 (-20) Picture of pos-si-ble Wa-ter-tan
+k con-fig-u-ra-tion: Wa-ter-tank that can get drained 
  []
 
 
-Overfull \hbox (16.4066pt too wide) in paragraph at lines 13--13
- \T1/LinuxLibertineT-TLF/m/n/12 at all times and has a valve con-trolled by a c
-on-trol pro-gram [[] 
+Overfull \hbox (11.15234pt too wide) in paragraph at lines 13--13
+ \T1/LinuxLibertineT-TLF/m/n/12 (-20) at all times and has a valve con-trolled 
+by a con-trol pro-gram [[] 
  []
 
 )
-\tf@lof=\write6
-\openout6 = `thesis.lof'.
+\tf@lof=\write7
+\openout7 = `thesis.lof'.
 
  [7] [8
 
@@ -1962,8 +1988,8 @@ on-trol pro-gram [[]
 Package tocbasic Info: character protrusion at lot deactivated on input line 11
 9.
  (./thesis.lot)
-\tf@lot=\write7
-\openout7 = `thesis.lot'.
+\tf@lot=\write8
+\openout8 = `thesis.lot'.
 
  [9] [10
 
@@ -1994,9 +2020,9 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 LaTeX Warning: Citation 'platzer2010b' on page 1 undefined on input line 18.
 
 
-Overfull \hbox (24.67259pt too wide) in paragraph at lines 18--19
-[]\T1/LinuxLibertineT-TLF/m/n/12 CPS are gen-er-ally mod-elled as ei-ther Hy-br
-id Au-tomata or - Pro-grams.(See ref. [[]
+Overfull \hbox (17.61256pt too wide) in paragraph at lines 18--19
+[]\T1/LinuxLibertineT-TLF/m/n/12 (-20) CPS are gen-er-ally mod-elled as ei-ther
+ Hy-brid Au-tomata or - Pro-grams.(See ref. [[]
  []
 
 
@@ -2004,6 +2030,12 @@ LaTeX Warning: Citation 'bla' on page 1 undefined on input line 35.
 
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
 (Font)              scaled to size 15.89755pt on input line 38.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.43  t
+       wo basic modelling approaches exist for hybrid systems: Hybrid Automa...
 [1
 
 
@@ -2015,7 +2047,12 @@ vailable
 nput line 127.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 12.0pt on input line 127.
- [2]
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.127 \include{sections/introduction}
+                                      [2]
 \openout2 = `sections/content.aux'.
 
  (./sections/content.tex
@@ -2025,54 +2062,60 @@ No file introduction.aux
 LABELS NOT IMPORTED.
  on input line 14.
 
+
+Package xr Warning: 
+No file appendix.aux
+LABELS NOT IMPORTED.
+ on input line 15.
+
 Chapter 2.
 
-LaTeX Warning: Citation 'keYmaera' on page 3 undefined on input line 22.
+LaTeX Warning: Citation 'keYmaera' on page 3 undefined on input line 23.
 
-<images/watertank.png, id=72, 198.7425pt x 150.5625pt>
+<images/watertank.png, id=240, 198.7425pt x 150.5625pt>
 File: images/watertank.png Graphic file (type png)
 
 <use images/watertank.png>
-Package pdftex.def Info: images/watertank.png used on input line 27.
+Package pdftex.def Info: images/watertank.png used on input line 28.
 (pdftex.def)             Requested size: 259.4918pt x 196.6065pt.
 
 
-LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 28.
+LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 29.
 
 
-LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 28.
+LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 29.
 
-<images/watertank_ha.png, id=74, 186.74568pt x 185.58936pt>
+<images/watertank_ha.png, id=244, 186.74568pt x 185.58936pt>
 File: images/watertank_ha.png Graphic file (type png)
 
 <use images/watertank_ha.png>
-Package pdftex.def Info: images/watertank_ha.png used on input line 36.
+Package pdftex.def Info: images/watertank_ha.png used on input line 37.
 (pdftex.def)             Requested size: 259.4918pt x 257.92029pt.
 
 
-LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 37.
+LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 38.
 
 
-LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 37.
+LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 38.
 
-<images/watertank_hp.png, id=75, 593.96906pt x 508.90125pt>
+<images/watertank_hp.png, id=245, 593.96906pt x 508.90125pt>
 File: images/watertank_hp.png Graphic file (type png)
 
 <use images/watertank_hp.png>
-Package pdftex.def Info: images/watertank_hp.png used on input line 43.
+Package pdftex.def Info: images/watertank_hp.png used on input line 44.
 (pdftex.def)             Requested size: 345.98688pt x 296.44418pt.
 
 
-LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 44.
+LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 45.
 
 
-LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 44.
+LaTeX Warning: Citation 'keymaeraGuide' on page 3 undefined on input line 45.
 
-<images/watertank_hp_ref.png, id=76, 980.91469pt x 536.75531pt>
+<images/watertank_hp_ref.png, id=249, 980.91469pt x 536.75531pt>
 File: images/watertank_hp_ref.png Graphic file (type png)
 
 <use images/watertank_hp_ref.png>
-Package pdftex.def Info: images/watertank_hp_ref.png used on input line 55.
+Package pdftex.def Info: images/watertank_hp_ref.png used on input line 56.
 (pdftex.def)             Requested size: 389.23111pt x 212.98656pt.
 
 Underfull \vbox (badness 1303) has occurred while \output is active []
@@ -2085,108 +2128,162 @@ Underfull \vbox (badness 1303) has occurred while \output is active []
 ]
 [4 <./images/watertank.png> <./images/watertank_ha.png (PNG copy)>] [5 <./image
 s/watertank_hp.png> <./images/watertank_hp_ref.png>]
-<images/watertank_keym_ver.png, id=88, 208.52907pt x 124.96687pt>
+<images/watertank_keym_ver.png, id=268, 208.52907pt x 124.96687pt>
 File: images/watertank_keym_ver.png Graphic file (type png)
 
 <use images/watertank_keym_ver.png>
-Package pdftex.def Info: images/watertank_keym_ver.png used on input line 92.
+Package pdftex.def Info: images/watertank_keym_ver.png used on input line 90.
 (pdftex.def)             Requested size: 259.4918pt x 155.52747pt.
  [6 <./images/watertank_keym_ver.png>]
 (c:/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 105.
+(Font)              scaled to size 10.0pt on input line 104.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 105.
+LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
+ input line 107.
 
-<images/source_control_method.png, id=92, 800.23969pt x 405.76593pt>
-File: images/source_control_method.png Graphic file (type png)
+(c:/texlive/2014/texmf-dist/tex/latex/libertine/ts1linuxlibertinet-tlf.fd
+File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
+LinuxLibertineT-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 107.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 7.3pt on input line 114.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 5.5pt on input line 114.
 
-<use images/source_control_method.png>
-Package pdftex.def Info: images/source_control_method.png used on input line 13
-9.
-(pdftex.def)             Requested size: 389.23111pt x 197.36584pt.
+<images/verKey1.png, id=282, 210.7875pt x 311.66437pt>
+File: images/verKey1.png Graphic file (type png)
+
+<use images/verKey1.png>
+Package pdftex.def Info: images/verKey1.png used on input line 140.
+(pdftex.def)             Requested size: 172.99013pt x 255.78519pt.
+
+<images/verKey2.png, id=283, 209.28188pt x 310.15875pt>
+File: images/verKey2.png Graphic file (type png)
+
+<use images/verKey2.png>
+Package pdftex.def Info: images/verKey2.png used on input line 147.
+(pdftex.def)             Requested size: 172.99013pt x 256.37158pt.
 
 
-LaTeX Warning: Reference `app:fig:source_sim' on page 7 undefined on input line
- 145.
+LaTeX Warning: Reference `app:Simulator' on page 7 undefined on input line 153.
 
-[7 <./images/source_control_method.png>]
-Overfull \hbox (17.44608pt too wide) in paragraph at lines 179--179
+
+[7] [8 <./images/verKey1.png> <./images/verKey2.png>]
+Overfull \hbox (17.44608pt too wide) in paragraph at lines 187--187
  [] 
  []
 
-[8] <images/glue_proof.png, id=100, 207.02344pt x 127.22531pt>
+[9]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -2.39996pt
+(hyperref)                removed on input line 191.
+
+<images/glue_proof.png, id=342, 207.02344pt x 127.22531pt>
 File: images/glue_proof.png Graphic file (type png)
 
 <use images/glue_proof.png>
-Package pdftex.def Info: images/glue_proof.png used on input line 214.
+Package pdftex.def Info: images/glue_proof.png used on input line 223.
 (pdftex.def)             Requested size: 259.4918pt x 159.48549pt.
- [9 <./images/glue_proof.png>] [10
+ [10] [11 <./images/glue_proof.png>] [12
 
 
 ]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
  []
 
 
-LaTeX Warning: Reference `eq':Main_LogicRefinement' on page 11 undefined on inp
-ut line 235.
+LaTeX Warning: Citation 'keymaera' on page 13 undefined on input line 249.
 
 
-LaTeX Warning: Citation 'keymaera' on page 11 undefined on input line 240.
+LaTeX Warning: Citation 'platzer2010b' on page 13 undefined on input line 249.
 
 
-LaTeX Warning: Citation 'platzer2010b' on page 11 undefined on input line 240.
+LaTeX Warning: Citation 'platzer2010b' on page 13 undefined on input line 251.
 
-) [11]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -2.39996pt
+(hyperref)                removed on input line 253.
+
+
+LaTeX Warning: Reference `ch:Watertank:SafetyCond' on page 13 undefined on inpu
+t line 256.
+
+[13]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -2.39996pt
+(hyperref)                removed on input line 259.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -2.39996pt
+(hyperref)                removed on input line 266.
+
+
+LaTeX Warning: Reference `app:glueQuant' on page 14 undefined on input line 279
+.
+
+
 Overfull \hbox (89.91956pt too wide) has occurred while \output is active
 []|\T1/LinuxLibertineT-TLF/m/it/12 3. Introduction of formalized process of usi
 ng Refinement to gain a concrete implementation from a hybrid model []
  []
 
-[12]
+[14]) [15]
 \openout2 = `sections/evaluation.aux'.
 
- (./sections/evaluation.tex
-Chapter 4.
-) [13
+ (./sections/evaluation.tex [16
 
 
 
 
 ]
+Chapter 4.
+) [17]
 \openout2 = `sections/conclusion.aux'.
 
- (./sections/conclusion.tex [14
+ (./sections/conclusion.tex [18
 
 
 
 
 ]
 Chapter 5.
-) [15]
+) [19]
 
 LaTeX Warning: Empty bibliography on input line 138.
 
 \openout2 = `sections/appendix.aux'.
 
-(./sections/appendix.tex [16
+(./sections/appendix.tex [20
 
 
 
 
 ]
 Appendix A.
-<Images/ex_control.png, id=126, 179.16937pt x 186.6975pt>
+<Images/ex_control.png, id=418, 179.16937pt x 186.6975pt>
 File: Images/ex_control.png Graphic file (type png)
 
 <use Images/ex_control.png>
 Package pdftex.def Info: Images/ex_control.png used on input line 23.
 (pdftex.def)             Requested size: 432.51132pt x 455.0199pt.
-) [17] [18 <./Images/ex_control.png>]
+) [21] [22 <./Images/ex_control.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
  (./thesis.aux
@@ -2195,7 +2292,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
 (./sections/content.aux) (./sections/evaluation.aux) (./sections/conclusion.aux
 ) (./sections/appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 147.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: ED3635FCA1661478F9FEAD3E1E89D958;1894.
 
 
 LaTeX Warning: There were undefined references.
@@ -2211,31 +2310,32 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
  ) 
 Here is how much of TeX's memory you used:
- 31069 strings out of 493109
- 553647 string characters out of 6138587
- 1048618 words of memory out of 5000000
- 33870 multiletter control sequences out of 15000+600000
- 171485 words of font info for 147 fonts, out of 8000000 for 9000
+ 31526 strings out of 493109
+ 562193 string characters out of 6138587
+ 1108223 words of memory out of 5000000
+ 34025 multiletter control sequences out of 15000+600000
+ 213447 words of font info for 271 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 80i,17n,82p,1012b,2798s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2014/texm
-f-dist/fonts/enc/dvips/newtx/libertinealt.enc}{c:/texlive/2014/texmf-dist/fonts
-/enc/dvips/libertine/lbtn_7grukw.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvip
-s/libertine/lbtn_nh77jq.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/liberti
-ne/lbtn_76gpa5.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/sourcesanspro/a_
-ggs4wk.enc}<c:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertin
-eT.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.
-pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb
-><c:/texlive/2014/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold
-.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texli
-ve/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2014/texmf-d
-ist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2014/texmf-dist/fonts/type1
-/public/txfonts/txsyb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/
-zxlr.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
-Output written on thesis.pdf (32 pages, 483547 bytes).
+ 80i,17n,74p,1012b,3093s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{c:/tex
+live/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2014/texmf-dist/fo
+nts/enc/dvips/newtx/libertinealt.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvip
+s/libertine/lbtn_7grukw.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/liberti
+ne/lbtn_nh77jq.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_7
+6gpa5.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvips/sourcesanspro/a_ggs4wk.en
+c}<c:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb><c
+:/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb><c:/t
+exlive/2014/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb><c:/texl
+ive/2014/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.pfb><c:/
+texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2014/t
+exmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2014/texmf-dist/fonts
+/type1/public/txfonts/txsy.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/t
+xfonts/txsyb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxlr.pfb>
+<c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
+Output written on thesis.pdf (36 pages, 504091 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
- 0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 433 compressed objects within 5 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 29436 words of extra memory for PDF output out of 29859 (max. 10000000)
 
