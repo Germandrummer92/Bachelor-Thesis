@@ -2,16 +2,16 @@
 \BOOKMARK [0][-]{chapter*.2}{Zusammenfassung}{}% 2
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 3
 \BOOKMARK [1][-]{section.1.1}{Introducing Cyber-Physical-Systems}{chapter.1}% 4
-\BOOKMARK [0][-]{chapter.2}{Example-based Refinement on CPS Watertank}{}% 5
+\BOOKMARK [0][-]{chapter.2}{Example-based refinement on CPS Watertank}{}% 5
 \BOOKMARK [1][-]{section.2.1}{Finding the concrete Control Value Assisgnment}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.2}{Finding the correct Program Safety Condition}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.3}{The \(simple\) Java Control Program}{chapter.2}% 8
 \BOOKMARK [1][-]{section.2.4}{Finding the glue between Java and the Hybrid Model of the system}{chapter.2}% 9
 \BOOKMARK [1][-]{section.2.5}{Verification based on KeYmaera}{chapter.2}% 10
-\BOOKMARK [0][-]{chapter.3}{Introduction of formalized process of using Refinement to gain a concrete implementation from a hybrid model}{}% 11
+\BOOKMARK [0][-]{chapter.3}{Introduction of formalized approach of using refinement to gain a concrete implementation for a CPS}{}% 11
 \BOOKMARK [1][-]{section.3.1}{Modelling CPS as Hybrid System that includes concrete Hook}{chapter.3}% 12
 \BOOKMARK [1][-]{section.3.2}{Finding the necessary safety condition of the control value for verification with KeYmaera}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.3}{Implementing control program according to safety condition as its specification and Verification by KeY.}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.3}{Implementing control program according to safety condition as its specification and verification by KeY.}{chapter.3}% 14
 \BOOKMARK [1][-]{section.3.4}{Finding the correct glue between hybrid model and control program and verifying it with KeYmaera.}{chapter.3}% 15
 \BOOKMARK [1][-]{section.3.5}{Validating glue results against implementation}{chapter.3}% 16
 \BOOKMARK [0][-]{chapter.4}{Evaluation}{}% 17
