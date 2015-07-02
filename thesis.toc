@@ -12,42 +12,52 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Introducing Cyber-Physical-Systems}{1}{section.1.1}
+\contentsline {section}{\numberline {1.1}Related Work}{2}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Example-based refinement on CPS Watertank}{3}{chapter.2}
+\contentsline {section}{\numberline {1.2}Outline}{2}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Finding the concrete Control Value Assisgnment}{6}{section.2.1}
+\contentsline {chapter}{\numberline {2}Preliminary Definitions}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Finding the correct Program Safety Condition}{6}{section.2.2}
+\contentsline {section}{\numberline {2.1}Introducing Cyber-Physical-Systems}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}The (simple) Java Control Program}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.1.1}Modelling CPS as Hybrid Automata}{3}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Finding the glue between Java and the Hybrid Model of the system}{8}{section.2.4}
+\contentsline {subsection}{\numberline {2.1.2}Modelling CPS as Hybrid Programs}{4}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Verification based on Ke\kern -.2emYmaera}{9}{section.2.5}
+\contentsline {chapter}{\numberline {3}Refinement of a concrete case study: CPS ``Watertank''}{7}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Introduction of formalized approach of using refinement to gain a concrete implementation for a CPS}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Finding the concrete Control Value Assisgnment}{10}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Modelling CPS as Hybrid System that includes concrete Hook}{16}{section.3.1}
+\contentsline {section}{\numberline {3.2}Finding the correct Program Safety Condition}{12}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Finding the necessary safety condition of the control value for verification with Ke\kern -.2emYmaera}{16}{section.3.2}
+\contentsline {section}{\numberline {3.3}The (simple) Java Control Program}{12}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Implementing control program according to safety condition as its specification and verification by Ke\kern -.2emY.}{16}{section.3.3}
+\contentsline {section}{\numberline {3.4}Finding the glue between Java and the Hybrid Model of the system}{15}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Finding the correct glue between hybrid model and control program and verifying it with Ke\kern -.2emYmaera.}{17}{section.3.4}
+\contentsline {section}{\numberline {3.5}Verification based on Ke\kern -.2emYmaera}{16}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Validating glue results against implementation}{17}{section.3.5}
+\contentsline {chapter}{\numberline {4}Introduction of formalized approach of using refinement to gain a concrete implementation for a CPS}{19}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Evaluation}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Modelling CPS as Hybrid System that includes concrete Hook}{20}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}First Section}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Finding the necessary safety condition of the control value for verification with Ke\kern -.2emYmaera}{20}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Second Section}{19}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implementing control program according to safety condition as its specification and verification by Ke\kern -.2emY.}{20}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Third Section}{19}{section.4.3}
+\contentsline {section}{\numberline {4.4}Finding the correct glue between hybrid model and control program and verifying it with Ke\kern -.2emYmaera.}{21}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusion}{21}{chapter.5}
+\contentsline {section}{\numberline {4.5}Validating glue results against implementation}{21}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{23}{appendix.A}
+\contentsline {chapter}{\numberline {5}Evaluation}{23}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Images}{23}{section.A.1}
+\contentsline {section}{\numberline {5.1}First Section}{23}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Second Section}{23}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Third Section}{23}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Conclusion}{25}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Appendix}{27}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Images}{27}{section.A.1}

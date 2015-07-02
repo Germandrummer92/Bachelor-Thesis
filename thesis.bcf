@@ -1968,16 +1968,25 @@
     <bcf:datasource type="file" datatype="bibtex">thesis.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="3">platzer2010b</bcf:citekey>
-    <bcf:citekey order="4">bla</bcf:citekey>
-    <bcf:citekey order="5">keYmaera</bcf:citekey>
-    <bcf:citekey order="6">keymaeraGuide</bcf:citekey>
+    <bcf:citekey order="6">platzer2010b</bcf:citekey>
     <bcf:citekey order="7">keymaeraGuide</bcf:citekey>
-    <bcf:citekey order="8">keymaeraGuide</bcf:citekey>
-    <bcf:citekey order="9">keymaeraGuide</bcf:citekey>
-    <bcf:citekey order="10">keymaera</bcf:citekey>
-    <bcf:citekey order="11">platzer2010b</bcf:citekey>
+    <bcf:citekey order="8">bla</bcf:citekey>
+    <bcf:citekey order="9">Heinzinger2000b</bcf:citekey>
+    <bcf:citekey order="10">platze2010b</bcf:citekey>
+    <bcf:citekey order="11">platze2010b</bcf:citekey>
     <bcf:citekey order="12">platzer2010b</bcf:citekey>
+    <bcf:citekey order="13">platzer2010b</bcf:citekey>
+    <bcf:citekey order="14">platzer2010b</bcf:citekey>
+    <bcf:citekey order="15">platzer2010b</bcf:citekey>
+    <bcf:citekey order="16">platzer2010b</bcf:citekey>
+    <bcf:citekey order="17">keYmaera</bcf:citekey>
+    <bcf:citekey order="18">keymaeraGuide</bcf:citekey>
+    <bcf:citekey order="19">keymaeraGuide</bcf:citekey>
+    <bcf:citekey order="20">keymaeraGuide</bcf:citekey>
+    <bcf:citekey order="21">keymaeraGuide</bcf:citekey>
+    <bcf:citekey order="22">keymaera</bcf:citekey>
+    <bcf:citekey order="23">platzer2010b</bcf:citekey>
+    <bcf:citekey order="24">platzer2010b</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>

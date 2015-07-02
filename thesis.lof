@@ -10,19 +10,23 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite {keymaeraGuide}.}}{4}{figure.2.1}
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces A simple Hybrid Automata~\cite {platze2010b}.}}{4}{figure.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces The Watertank CPS expressed as a hybrid automata~\cite {keymaeraGuide}.}}{4}{figure.2.2}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces The simplified ETCS version as a Hybrid Program~\cite {platzer2010b}.}}{4}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces The Watertank HP after remodelling to account for hook.}}{11}{figure.2.3}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces The result of automatic verification by Ke\kern -.2emYmaera~of the Watertank hybrid program that includes our hook (See fig~\ref {fig:watertank_hp_ref}).}}{12}{figure.2.4}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite {keymaeraGuide}.}}{8}{figure.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces Automatic proof result with tick== 30.}}{12}{figure.2.5}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces The Watertank CPS expressed as a hybrid automata~\cite {keymaeraGuide}.}}{8}{figure.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.6}{\ignorespaces Automatic proof result with tick== 31.}}{13}{figure.2.6}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces The result of automatic verification by Ke\kern -.2emYmaera~of the Watertank hybrid program that includes our hook (See fig~\ref {fig:watertank_hp_ref}).}}{13}{figure.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2.7}{\ignorespaces Successful proof of our glue with Ke\kern -.2emYmaera.}}{13}{figure.2.7}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Automatic proof result with tick== 30.}}{14}{figure.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Automatic proof result with tick== 31.}}{15}{figure.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Successful proof of our glue with Ke\kern -.2emYmaera.}}{17}{figure.3.6}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -32,4 +36,4 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{24}{figure.A.1}
+\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{28}{figure.A.1}
