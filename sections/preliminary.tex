@@ -14,7 +14,8 @@
 \chapter{Preliminary Definitions}
 \label{ch:Preliminary}
 
-In the following chapter we want to give the definitions of some of the 
+In the following chapter we want to define and explain some of the terms, models and some of the logic used throughout this thesis. 
+
 \section{Introducing Cyber-Physical-Systems}
 \label{sec:pre:cps}
 
@@ -35,7 +36,9 @@ Two different modelling approaches exist for CPS, the first one we now explain a
 		\end{description}
 \end{quote} 
 
-Based on non-deterministic finite automata (NFA), they are easy to understand for humans and serve well to model the abstract behavior of hybrid systems. A possible hybrid automata could look like in Fig.~\ref{fig:automata}.
+Based on non-deterministic finite automata (NFA), they are easy to understand for humans and serve well to model the abstract behavior of hybrid systems. A possible hybrid automata could look like in Fig.~\ref{fig:automata}. It) describes the behavior of a controller controlling the train on a rail section. A train is therefore always either traveling freely (accelerating)  or being slowed. The biggest difference to NFAs is apparent when looking at the value assignment inside both states: They are continuous, so there is no single value assigned to the train's acceleration but rather a series of values one after each other. This means, that the single state "accelerate" can also be seen as a (possibly infinite) series of states with each one assigning a discrete value to the acceleration~\cite{platzerb2010}.
+
+The system still obviously exhibits its continuous behavior, as any change to the acceleration also brings the change of speed and location. As the train comes passes arbitrary  point \emph{SB}, the controller automatically assigns a discrete negative value to the train's acceleration, decelerating it, so it slows down. In the brake state the train again follows the equations of linear motion with continuous assignment, only that the guard \(v \geq 0\) makes sure the train never travels backwards (with a negative velocity), but rather at some point starts accelerating again according to the discrete assignment in the state change between brake and accelerate.
 
 \begin{figure}[ht!]
 	\centering
@@ -48,7 +51,7 @@ Based on non-deterministic finite automata (NFA), they are easy to understand fo
 
 As we are using \keym~for verification, which uses Hybrid Programs, we also have to introduce the syntax of hybrid programs. They follow the syntax depicted in table~\ref{tab:hp}, whereby \(\theta_i\) are terms, \(x_i \in \Sigma\) are state variables and \(\chi\) is a formula of first-order logic~\cite{platzer2010b}.
 
-As an example we take a look at the hybrid program notation of the ETCS example (See Fig.~\ref{fig:etcs_hp}). As can be seen, the state variable \(x\) is first assigned the state accelerate, this corresponds to the hybrid automaton's (See Fig.~\ref{fig:automata}) starting state of the system. In line 3 we can see the hybrid program syntax being an extension of first-order logic: Only if \(q=accel\) \textbf{and} \(z \geq SB\) are true can this case be enacted (corresponding to the state change from accel. to brake in the automaton).
+As an example we take a look at the hybrid program notation of a train control sustem (See Fig.~\ref{fig:etcs_hp}). As can be seen, the state variable \(x\) is first assigned the state accelerate, this corresponds to the hybrid automaton's (See Fig.~\ref{fig:automata}) starting state of the system. In line 3 we can see the hybrid program syntax being an extension of first-order logic: Only if \(q=accel\) \textbf{and} \(z \geq SB\) are true can this case be enacted (corresponding to the state change from accel. to brake in the automaton).
 
 \begin{table}
 	\begin{tabular}{p{5cm} | p{4cm} | p{6cm} }
@@ -74,9 +77,30 @@ As an example we take a look at the hybrid program notation of the ETCS example 
 	\(\cup~(?q = accel \wedge z \geq SB; a := -b, q:= brake; ?v \geq 0)\) \newline
 	\(\cup~(?q = brake; z^{\prime}=v, v^{\prime}= -b \wedge v \geq 0)\) \newline
 	\(\cup~(?q = brake \wedge v \leq 1; a := a+5; q := accel))^\ast\)
-	\caption{The simplified ETCS version as a Hybrid Program~\cite{platzer2010b}.}
+	\caption{A simplified train control system as a Hybrid Program~\cite{platzer2010b}.}
 	\label{fig:etcs_hp}
 \end{figure}
 
 \section{Dynamic Logic}
 \label{sec:pre:DL}
+
+Dynamic logic is an extension of modal logic and has two basic concepts (one of which is relevant to this thesis): we either have a \textit{safety} property we want to prove for all exit states of a program (what we work with in this thesis) or a \textit{liveness} property which means a possible execution for the program exists which terminates in the state the property describes. They can be expressed as in Eq.~\ref{eq:ddl}, whereby \(\alpha\) denotes the (hybrid) program that is enacted, and \(\phi\) is the postcondition.
+
+\begin{equation}
+	\label{eq:ddl}
+	\begin{split}
+		Safety: [\alpha]\phi \\
+		Liveliness: \langle\alpha\rangle\phi \\
+	\end{split}
+\end{equation}
+
+\subsection{Differential Dynamic Logic as our Verification Logic}
+\label{subsec:DDL}
+
+While dynamic logic in itself is not bound to only be applicable to hybrid programs, this means we need a way to express differential equations, as most continuous movement or behavior is expressed by differential equations. DDL, the language also in use by our verification tool \keym, has ways to express differential equations as can be seen in Table~\ref{tab:hp}.
+
+\subsection{JML: Verification of Java Programs using \key}
+\label{subsec:jml}
+
+
+
