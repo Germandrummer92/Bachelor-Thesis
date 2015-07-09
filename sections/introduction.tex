@@ -21,20 +21,20 @@ CPS are generally modelled as either Hybrid Automata or - Programs.(See ref.~\ci
 
 To be able to verifiy the entire implementation against the cps-safety-constraint, we define a ``glue'', which refers to a relation that translates real values into discrete values and vice-versa. In certain cases (See sect.~\ref{sec:Watertank:Glue}), glue will be a concrete function and not only a relation, but not in general.
 
-If we summarize the goal of this thesis we get ~\ref{eq:Main_LogicRefinement}. Here, glue is the aforementioned relation to be able to translate from the real into the discrete world.
+If we summarize the goal of this thesis we get~\ref{eq:Main_LogicRefinement}. Here, glue is the aforementioned relation to be able to translate from the real into the discrete world.
 
 
-\begin{table}[]
-\centering
-\caption{This thesis' main goal}\label{eq:Main_LogicRefinement}
-\begin{tabular}{l}
-\begin{tabular}[c]{@{}l@{}}1. Verification of hybrid model against safety property \(\alpha\) using \keym. \\
-2. Verification of implementation using \key. \\
-3. Verification of glue using \keym.
-\end{tabular} \\ \hline
-\(\implies\) Hybrid model with concrete implementation inserted at hook fullfills safety property \(\alpha\).
+
+\begin{center}
+\begin{tabular}{p{.5cm}|c}1. &  \ltab Verification of hybrid model against safety property \(\alpha\) using \keym. \\
+2. & \ltab Verification of implementation using \key. \\
+3. & \ltab Verification of glue using \keym.
+\\ \hline 
+\(\implies\) & \ltab Hybrid model with concrete implementation inserted at hook fullfills safety property \(\alpha\).
+\label{eq:Main_LogicRefinement}
 \end{tabular}
-\end{table}
+\end{center}
+
 
 This means: if we have a certain hybrid program with an explicit hook that models a CPS and fullfills safety condition \(\alpha\) (meaning the CPS always terminates and is always in a state which fullfills \(\alpha\)), an implementation that is correct and have found a valid, verified glue relation between the different values of the physical and discrete system-parts, then the hybrid program using the concrete implementation in place of the hook also fullfills safety condition \(\alpha\).
 
@@ -51,6 +51,6 @@ In this thesis we take a look at the following:
 
 \item Preliminary Definitions.
 \item Motivating Example: Refining a concrete case study: CPS ``Watertank'' (Example taken from~\cite{keymaeraGuide}).
-\item Introduction of approach to using Refinement to gain a concrete implementation from a hybrid model.
+\item Introduction of approach to using Refinement to gain an implementation from a hybrid model.
 \item Application of newly found approach: another case study: CPS ``Traffic Control'' (See ref.~\cite{bla}).
 \end{enumerate}

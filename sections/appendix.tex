@@ -18,6 +18,8 @@
 
 
 \section{Images}
+\label{app:sec:images}
+
 	\begin{figure}
 		\centering
 		\includegraphics[height=0.7\textheight,width=1.0\textwidth]{Images/ex_control}
@@ -27,6 +29,7 @@
 
 
 \section{Listings}
+\label{app:sec:listings}
 
 \lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{black},commentstyle=\color{black},stringstyle=\color{black},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
 \begin{lstlisting}[label=app:lst:ruleF]
@@ -39,8 +42,17 @@
 			\varcond ( \new(c, \dependingOn(x)) )
 			\replacewith(c)
 			\add(x-1 < c & c <= x & (x >= 0 -> c >= 0) & (x < 0 -> c < 0) ==> )
+			\heuristics(simplify)
 		};
 	}	
 \end{lstlisting}
 
-\section{Waterank simulator}
+\section{Watertank simulator}
+\label{app:sec:simulator}
+
+\section{Complete Hybrid Programs in correct notation}
+\label{app:sec:pdfs}
+
+\includepdf[pages=1,scale=0.8]{images/watertank_hp.pdf}
+
+\includepdf[pages=1,scale=0.8]{images/Watertank.pdf}

@@ -65,13 +65,14 @@
 %% --------------------------------
 
 %% Use biber instead of BibTeX, see README
-\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
+%\usepackage[citestyle=numeric,style=numeric,backend=biber]{biblatex}
 \usepackage{xr}
 \usepackage{listings}
 \usepackage{pdfpages}
-\addbibresource{thesis.bib}
-\newcommand{\keym}{Ke\kern-.2emYmaera}
-\newcommand{\key}{Ke\kern-.2emY}
+%\addbibresource{thesis.bib}
+\newcommand{\keym}{Ke\kern-.1emYmaera}
+\newcommand{\key}{Ke\kern-.1emY}
+\newcommand{\ltab}{\raggedright\arraybackslash}
 
 
 %% ====================================
@@ -137,7 +138,9 @@
 %% --------------------
 
 %% Add entry to the table of contents for the bibliography
-\printbibliography[heading=bibintoc]
+\bibliography{thesis}
+\bibliographystyle{alpha}
+%\printbibliography[heading=bibintoc]
 
 
 %% ----------------

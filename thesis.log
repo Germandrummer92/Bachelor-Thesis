@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  6 JUL 2015 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  9 JUL 2015 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1401,237 +1401,27 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip70
 ))
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2014/06/25 v2.9a programmable bibliographies (PK/JW/AB)
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/biblatex2.sty
-Package: biblatex2 2014/06/25 v2.9a programmable bibliographies (biber) (PK/JW/
-AB)
-
-(c:/texlive/2014/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
-
-(c:/texlive/2014/texmf-dist/tex/latex/etex-pkg/etex.sty
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count153
-)
-\etb@tempcnta=\count154
-)
-(c:/texlive/2014/texmf-dist/tex/latex/logreq/logreq.sty
-Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count155
-
-(c:/texlive/2014/texmf-dist/tex/latex/logreq/logreq.def
-File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-\c@tabx@nest=\count156
-\c@listtotal=\count157
-\c@listcount=\count158
-\c@liststart=\count159
-\c@liststop=\count160
-\c@citecount=\count161
-\c@citetotal=\count162
-\c@multicitecount=\count163
-\c@multicitetotal=\count164
-\c@instcount=\count165
-\c@maxnames=\count166
-\c@minnames=\count167
-\c@maxitems=\count168
-\c@minitems=\count169
-\c@citecounter=\count170
-\c@savedcitecounter=\count171
-\c@uniquelist=\count172
-\c@uniquename=\count173
-\c@refsection=\count174
-\c@refsegment=\count175
-\c@maxextratitle=\count176
-\c@maxextratitleyear=\count177
-\c@maxextrayear=\count178
-\c@maxextraalpha=\count179
-\c@abbrvpenalty=\count180
-\c@highnamepenalty=\count181
-\c@lownamepenalty=\count182
-\c@maxparens=\count183
-\c@parenlevel=\count184
-\blx@tempcnta=\count185
-\blx@tempcntb=\count186
-\blx@tempcntc=\count187
-\blx@maxsection=\count188
-\blx@maxsegment@0=\count189
-\blx@notetype=\count190
-\blx@parenlevel@text=\count191
-\blx@parenlevel@foot=\count192
-\blx@sectionciteorder@0=\count193
-\labelnumberwidth=\skip71
-\labelalphawidth=\skip72
-\biblabelsep=\skip73
-\bibitemsep=\skip74
-\bibnamesep=\skip75
-\bibinitsep=\skip76
-\bibparsep=\skip77
-\bibhang=\skip78
-\blx@bcfin=\read2
-\blx@bcfout=\write4
-\c@mincomprange=\count194
-\c@maxcomprange=\count195
-\c@mincompwidth=\count196
-Package biblatex Info: Trying to load biblatex default data model...
-Package biblatex Info: ... file 'blx-dm.def' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/blx-dm.def)
-Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'numeric.dbx' not found.
-Package biblatex Info: Trying to load biblatex custom data model...
-Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count197
-\c@savedafterword=\count198
-\c@annotator=\count199
-\c@savedannotator=\count200
-\c@author=\count201
-\c@savedauthor=\count202
-\c@bookauthor=\count203
-\c@savedbookauthor=\count204
-\c@commentator=\count205
-\c@savedcommentator=\count206
-\c@editor=\count207
-\c@savededitor=\count208
-\c@editora=\count209
-\c@savededitora=\count210
-\c@editorb=\count211
-\c@savededitorb=\count212
-\c@editorc=\count213
-\c@savededitorc=\count214
-\c@foreword=\count215
-\c@savedforeword=\count216
-\c@holder=\count217
-\c@savedholder=\count218
-\c@introduction=\count219
-\c@savedintroduction=\count220
-\c@namea=\count221
-\c@savednamea=\count222
-\c@nameb=\count223
-\c@savednameb=\count224
-\c@namec=\count225
-\c@savednamec=\count226
-\c@translator=\count227
-\c@savedtranslator=\count228
-\c@shortauthor=\count229
-\c@savedshortauthor=\count230
-\c@shorteditor=\count231
-\c@savedshorteditor=\count232
-\c@labelname=\count233
-Normal \count register pool exhausted, switching to extended pool.
-\c@savedlabelname=\count277
-\c@institution=\count278
-\c@savedinstitution=\count279
-\c@lista=\count280
-\c@savedlista=\count281
-\c@listb=\count282
-\c@savedlistb=\count283
-\c@listc=\count284
-\c@savedlistc=\count285
-\c@listd=\count286
-\c@savedlistd=\count287
-\c@liste=\count288
-\c@savedliste=\count289
-\c@listf=\count290
-\c@savedlistf=\count291
-\c@location=\count292
-\c@savedlocation=\count293
-\c@organization=\count294
-\c@savedorganization=\count295
-\c@origlocation=\count296
-\c@savedoriglocation=\count297
-\c@origpublisher=\count298
-\c@savedorigpublisher=\count299
-\c@publisher=\count300
-\c@savedpublisher=\count301
-\c@language=\count302
-\c@savedlanguage=\count303
-\c@pageref=\count304
-\c@savedpageref=\count305
-\shorthandwidth=\skip79
-\shortjournalwidth=\skip80
-\shortserieswidth=\skip81
-\shorttitlewidth=\skip82
-\shortauthorwidth=\skip83
-\shorteditorwidth=\skip84
-Package biblatex Info: Trying to load compatibility code...
-Package biblatex Info: ... file 'blx-compat.def' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2014/06/25 v2.9a biblatex compatibility (PK/JW/AB)
-)
-Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex.def' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 
-\c@textcitecount=\count306
-\c@textcitetotal=\count307
-\c@textcitemaxnames=\count308
-\c@biburlnumpenalty=\count309
-\c@biburlucpenalty=\count310
-\c@biburllcpenalty=\count311
-\c@smartand=\count312
-)
-Package biblatex Info: Trying to load bibliography style 'numeric'...
-Package biblatex Info: ... file 'numeric.bbx' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
-File: numeric.bbx 2014/06/25 v2.9a biblatex bibliography style (PK/JW/AB)
-Package biblatex Info: Trying to load bibliography style 'standard'...
-Package biblatex Info: ... file 'standard.bbx' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2014/06/25 v2.9a biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count313
-\c@bbx:relatedtotal=\count314
-))
-Package biblatex Info: Trying to load citation style 'numeric'...
-Package biblatex Info: ... file 'numeric.cbx' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
-File: numeric.cbx 2014/06/25 v2.9a biblatex citation style (PK/JW/AB)
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\supercite'.
-Package biblatex Info: Redefining '\textcite'.
-Package biblatex Info: Redefining '\textcites'.
-Package biblatex Info: Redefining '\cites'.
-Package biblatex Info: Redefining '\parencites'.
-Package biblatex Info: Redefining '\smartcites'.
-)
-Package biblatex Info: Trying to load configuration file...
-Package biblatex Info: ... file 'biblatex.cfg' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/biblatex.cfg
-File: biblatex.cfg 
-)))
 (c:/texlive/2014/texmf-dist/tex/latex/tools/xr.sty
 Package: xr 1994/05/28 v5.02 eXternal References (DPC)
 )
 (c:/texlive/2014/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count315
+\lst@mode=\count153
 \lst@gtempboxa=\box45
 \lst@token=\toks40
-\lst@length=\count316
+\lst@length=\count154
 \lst@currlwidth=\dimen185
-\lst@column=\count317
-\lst@pos=\count318
+\lst@column=\count155
+\lst@pos=\count156
 \lst@lostspace=\dimen186
 \lst@width=\dimen187
-\lst@newlines=\count319
-\lst@lineno=\count320
+\lst@newlines=\count157
+\lst@lineno=\count158
 \lst@maxwidth=\dimen188
 
 (c:/texlive/2014/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
-\c@lstnumber=\count321
-\lst@skipnumbers=\count322
+\c@lstnumber=\count159
+\lst@skipnumbers=\count160
 \lst@framebox=\box46
 )
 (c:/texlive/2014/texmf-dist/tex/latex/listings/listings.cfg
@@ -1647,99 +1437,76 @@ File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box47
 \AM@toc@title=\toks41
-\c@AM@survey=\count323
+\c@AM@survey=\count161
 \AM@templatesizebox=\box48
-)
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-File: english.lbx 2014/06/25 v2.9a biblatex localization (PK/JW/AB)
-)
-
-Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
-(biblatex)                Loading 'csquotes' recommended.
-
-\@quotelevel=\count324
-\@quotereset=\count325
-(./thesis.aux (./sections/declaration.aux) (./sections/abstract_en.aux)
-(./sections/abstract_de.aux)
-Package biblatex Info: Trying to load language 'ngerman'...
-Package biblatex Info: ... file 'ngerman.lbx' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
-File: ngerman.lbx 2014/06/25 v2.9a biblatex localization (PK/JW/AB)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
-
-(c:/texlive/2014/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2014/06/25 v2.9a biblatex localization (PK/JW/AB)
-))
-(./sections/introduction.aux) (./sections/preliminary.aux)
-(./sections/content.aux) (./sections/evaluation.aux) (./sections/conclusion.aux
-) (./sections/appendix.aux))
+) (./thesis.aux
+(./sections/declaration.aux) (./sections/abstract_en.aux)
+(./sections/abstract_de.aux) (./sections/introduction.aux)
+(./sections/preliminary.aux) (./sections/content.aux)
+(./sections/evaluation.aux) (./sections/conclusion.aux)
+(./sections/appendix.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 84.
-LaTeX Font Info:    Try loading font information for OML+nxlmi on input line 84
+LaTeX Font Info:    Checking defaults for OML/nxlmi/m/it on input line 85.
+LaTeX Font Info:    Try loading font information for OML+nxlmi on input line 85
 .
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/omlnxlmi.fd
 File: omlnxlmi.fd 2013/11/19 Fontinst v1.933 font definitions for OML/nxlmi.
 )
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMS/ntxsy/m/n on input line 84.
-LaTeX Font Info:    Try loading font information for OMS+ntxsy on input line 84
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/ntxsy/m/n on input line 85.
+LaTeX Font Info:    Try loading font information for OMS+ntxsy on input line 85
 .
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/omsntxsy.fd
 File: omsntxsy.fd 2012/11/14 Fontinst v1.933 font definitions for OMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 84.
-LaTeX Font Info:    Try loading font information for U+ntxexa on input line 84.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 85.
+LaTeX Font Info:    Try loading font information for U+ntxexa on input line 85.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 84.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 85.
 
 (c:/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 84.
-LaTeX Font Info:    Try loading font information for LY1+ptm on input line 84.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 85.
+LaTeX Font Info:    Try loading font information for LY1+ptm on input line 85.
 
 (c:/texlive/2014/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
 LaTeX Font Info:    Try loading font information for T1+LinuxLibertineT-TLF on 
-input line 84.
+input line 85.
 
 (c:/texlive/2014/texmf-dist/tex/latex/libertine/t1linuxlibertinet-tlf.fd
 File: T1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for T1/Li
 nuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 84.
-\c@mv@tabular=\count326
-\c@mv@boldtabular=\count327
-LaTeX Info: Redefining \microtypecontext on input line 84.
+(Font)              scaled to size 12.0pt on input line 85.
+\c@mv@tabular=\count162
+\c@mv@boldtabular=\count163
+LaTeX Info: Redefining \microtypecontext on input line 85.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1757,16 +1524,16 @@ Package microtype Info: Loading generic settings for font family
 
 (c:/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count328
+\scratchcounter=\count164
 \scratchdimen=\dimen189
 \scratchbox=\box50
-\nofMPsegments=\count329
-\nofMParguments=\count330
+\nofMPsegments=\count165
+\nofMParguments=\count166
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count331
+\MPscratchCnt=\count167
 \MPscratchDim=\dimen190
-\MPnumerator=\count332
-\makeMPintoPDFobject=\count333
+\MPnumerator=\count168
+\makeMPintoPDFobject=\count169
 \everyMPtoPDFconversion=\toks43
 ) (c:/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1784,7 +1551,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-Package hyperref Info: Link coloring OFF on input line 84.
+Package hyperref Info: Link coloring OFF on input line 85.
 
 (c:/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1792,93 +1559,83 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (c:/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count334
+\c@section@level=\count170
 )
-LaTeX Info: Redefining \ref on input line 84.
-LaTeX Info: Redefining \pageref on input line 84.
-LaTeX Info: Redefining \nameref on input line 84.
+LaTeX Info: Redefining \ref on input line 85.
+LaTeX Info: Redefining \pageref on input line 85.
+LaTeX Info: Redefining \nameref on input line 85.
 
 (./thesis.out) (./thesis.out)
-\@outlinefile=\write5
-\openout5 = `thesis.out'.
+\@outlinefile=\write4
+\openout4 = `thesis.out'.
 
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Automatic encoding selection.
-(biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `thesis.bcf'.
+\c@lstlisting=\count171
 
-Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'thesis.bbl' found.
- (./thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 84.
-Package biblatex Info: Reference segment=0 on input line 84.
-\c@lstlisting=\count335
-
-<logos/kitlogo_en_cmyk.pdf, id=135, 198.7425pt x 92.345pt>
+<logos/kitlogo_en_cmyk.pdf, id=151, 198.7425pt x 92.345pt>
 File: logos/kitlogo_en_cmyk.pdf Graphic file (type pdf)
 
 <use logos/kitlogo_en_cmyk.pdf>
-Package pdftex.def Info: logos/kitlogo_en_cmyk.pdf used on input line 91.
+Package pdftex.def Info: logos/kitlogo_en_cmyk.pdf used on input line 92.
 (pdftex.def)             Requested size: 110.22453pt x 51.21504pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 91.
+(Font)              scaled to size 24.88pt on input line 92.
 LaTeX Font Info:    Try loading font information for T1+SourceSansPro-LF on inp
-ut line 91.
+ut line 92.
 
 (c:/texlive/2014/texmf-dist/tex/latex/sourcesanspro/t1sourcesanspro-lf.fd
 File: T1SourceSansPro-LF.fd 2014/07/28 (autoinst) Font definitions for T1/Sourc
 eSansPro-LF.
 )
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
-(Font)              scaled to size 22.88956pt on input line 91.
+(Font)              scaled to size 22.88956pt on input line 92.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `SourceSansPro-LF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 22.88956pt on input line 91.
+(Font)              scaled to size 22.88956pt on input line 92.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 91.
+(Font)              scaled to size 14.4pt on input line 92.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 91.
+(Font)              scaled to size 17.28pt on input line 92.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.5pt on input line 91.
+(Font)              scaled to size 12.5pt on input line 92.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.4pt on input line 91.
-LaTeX Font Info:    Try loading font information for U+ntxmia on input line 91.
+(Font)              scaled to size 9.4pt on input line 92.
+LaTeX Font Info:    Try loading font information for U+ntxmia on input line 92.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsya on input line 91.
+LaTeX Font Info:    Try loading font information for U+ntxsya on input line 92.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxsya.fd
 File: untxsya.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsya.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyb on input line 91.
+LaTeX Font Info:    Try loading font information for U+ntxsyb on input line 92.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxsyb.fd
 File: untxsyb.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyb.
 )
-LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 91.
+LaTeX Font Info:    Try loading font information for U+ntxsyc on input line 92.
 
 
 (c:/texlive/2014/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.5pt on input line 91.
+(Font)              scaled to size 10.5pt on input line 92.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.9pt on input line 91.
+(Font)              scaled to size 7.9pt on input line 92.
 
-<title-background.pdf, id=136, 597.50786pt x 845.04686pt>
+<title-background.pdf, id=152, 597.50786pt x 845.04686pt>
 File: title-background.pdf Graphic file (type pdf)
 
 <use title-background.pdf>
-Package pdftex.def Info: title-background.pdf used on input line 91.
+Package pdftex.def Info: title-background.pdf used on input line 92.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
  [1
 
@@ -1913,7 +1670,7 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.112 \includeabstract
+l.113 \includeabstract
                        [1
 
 
@@ -1948,53 +1705,51 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 14.
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 112.
+(babel)             in language  on input line 113.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 112.
+(babel)             in language  on input line 113.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 112.
+(babel)             in language  on input line 113.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 112.
+(babel)             in language  on input line 113.
  [3] [4
 
 
 
 ]
 Package tocbasic Info: character protrusion at toc deactivated on input line 11
-7.
+8.
  (./thesis.toc
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.8pt on input line 15.
+(Font)              scaled to size 8.8pt on input line 7.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.6pt on input line 15.
+(Font)              scaled to size 6.6pt on input line 7.
  [5])
-\tf@toc=\write6
-\openout6 = `thesis.toc'.
+\tf@toc=\write5
+\openout5 = `thesis.toc'.
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sl' in size <12> not a
 vailable
 (Font)              Font shape `T1/LinuxLibertineT-TLF/m/it' tried instead on i
-nput line 119.
+nput line 120.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 119.
+(Font)              scaled to size 12.0pt on input line 120.
  [6]
-Package tocbasic Info: character protrusion at lof deactivated on input line 11
-9.
+Package tocbasic Info: character protrusion at lof deactivated on input line 12
+0.
  (./thesis.lof
-Overfull \hbox (1.4411pt too wide) in paragraph at lines 19--19
+
+LaTeX Warning: Citation `platze2010b' on page vii undefined on input line 6.
+
+
+Overfull \hbox (1.4411pt too wide) in paragraph at lines 9--9
  [][] [][]\T1/LinuxLibertineT-TLF/m/n/12 (-20) Picture of pos-si-ble Wa-ter-tan
 k con-fig-u-ra-tion: Wa-ter-tank that can get drained 
  []
 
-
-Overfull \hbox (11.15234pt too wide) in paragraph at lines 19--19
- \T1/LinuxLibertineT-TLF/m/n/12 (-20) at all times and has a valve con-trolled 
-by a con-trol pro-gram [[] 
- []
-
 )
-\tf@lof=\write7
-\openout7 = `thesis.lof'.
+\tf@lof=\write6
+\openout6 = `thesis.lof'.
 
  [7
 
@@ -2004,10 +1759,10 @@ by a con-trol pro-gram [[]
 
 ]
 Package tocbasic Info: character protrusion at lot deactivated on input line 12
-0.
+1.
  (./thesis.lot)
-\tf@lot=\write8
-\openout8 = `thesis.lot'.
+\tf@lot=\write7
+\openout7 = `thesis.lot'.
 
  [9] [10
 
@@ -2033,28 +1788,17 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              deprecated \float@addtolist interface .
 
 
-LaTeX Warning: Citation 'platzer2010b' on page 1 undefined on input line 20.
-
-
-Overfull \hbox (17.61256pt too wide) in paragraph at lines 20--21
-[]\T1/LinuxLibertineT-TLF/m/n/12 (-20) CPS are gen-er-ally mod-elled as ei-ther
- Hy-brid Au-tomata or - Pro-grams.(See ref. [[]
+Overfull \hbox (6.64026pt too wide) in paragraph at lines 33--33
+[]|$ \U/ntxmia/m/it/12 =[]\OMS/ntxsy/m/n/12 )
  []
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 27.
-
-
-Overfull \hbox (36.02945pt too wide) in paragraph at lines 30--37
- [][] 
+Overfull \hbox (38.95628pt too wide) in paragraph at lines 29--36
+ [] 
  []
 
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
 (Font)              scaled to size 15.89755pt on input line 42.
-
-Underfull \vbox (badness 4156) has occurred while \output is active []
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -2066,16 +1810,13 @@ l.52 \item P
 
 ]
 
-LaTeX Warning: Citation 'keymaeraGuide' on page 2 undefined on input line 53.
-
-
-LaTeX Warning: Citation 'bla' on page 2 undefined on input line 55.
+LaTeX Warning: Citation `bla' on page 2 undefined on input line 55.
 
 )pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.128 \include{sections/introduction}
+l.129 \include{sections/introduction}
                                       [2]
 \openout2 = `sections/preliminary.aux'.
 
@@ -2085,27 +1826,17 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
 (Font)              scaled to size 13.24796pt on input line 26.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
 (Font)              scaled to size 13.24796pt on input line 26.
-
-LaTeX Warning: Citation 'Heinzinger2000b' on page 3 undefined on input line 28.
-
-
-
-Overfull \hbox (19.00197pt too wide) in paragraph at lines 28--29
-\T1/LinuxLibertineT-TLF/m/n/12 (-20) au-tomata. For-mally they are de-fined to 
-have the fol-low-ing com-po-nents (cf.  [[]
- []
-
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/it' will be
 (Font)              scaled to size 11.03998pt on input line 31.
 
-LaTeX Warning: Citation 'platzerb2010' on page 3 undefined on input line 39.
+LaTeX Warning: Citation `platzerb2010' on page 3 undefined on input line 39.
 
 [3
 
 
 
 
-] <images/automata.png, id=285, 442.2924pt x 251.0178pt>
+] <images/automata.png, id=311, 442.2924pt x 251.0178pt>
 File: images/automata.png Graphic file (type png)
 
 <use images/automata.png>
@@ -2113,67 +1844,23 @@ Package pdftex.def Info: images/automata.png used on input line 45.
 (pdftex.def)             Requested size: 432.48195pt x 245.45187pt.
 
 
-LaTeX Warning: Citation 'platze2010b' on page 4 undefined on input line 46.
+LaTeX Warning: Citation `platze2010b' on page 4 undefined on input line 46.
 
 
-LaTeX Warning: Citation 'platze2010b' on page 4 undefined on input line 46.
-
-
-LaTeX Warning: Citation 'platzer2010b' on page 4 undefined on input line 52.
-
-
-Class scrbook Warning: Usage of deprecated font command `\it'!
-(scrbook)              You should note, that in 1994 font command `\it' has
-(scrbook)              been defined for compatiblitiy to Script 2.0 only.
-(scrbook)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrbook)              shouldn't use such commands any longer and within
-(scrbook)              KOMA-Script usage of `\it' is definitely deprecated.
-(scrbook)              See `fntguide.pdf' for more information about
-(scrbook)              recommended font commands.
-(scrbook)              Note also, that KOMA-Script will remove the definition
-(scrbook)              of `\it' anytime until release of about version 3.20.
-(scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 68.
-
-
-Class scrbook Warning: Usage of deprecated font command `\it'!
-(scrbook)              You should note, that in 1994 font command `\it' has
-(scrbook)              been defined for compatiblitiy to Script 2.0 only.
-(scrbook)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrbook)              shouldn't use such commands any longer and within
-(scrbook)              KOMA-Script usage of `\it' is definitely deprecated.
-(scrbook)              See `fntguide.pdf' for more information about
-(scrbook)              recommended font commands.
-(scrbook)              Note also, that KOMA-Script will remove the definition
-(scrbook)              of `\it' anytime until release of about version 3.20.
-(scrbook)              But for now, KOMA-Script will replace deprecated `\it'
-(scrbook)              by `\normalfont \itshape ' on input line 68.
+LaTeX Warning: Citation `platze2010b' on page 4 undefined on input line 46.
 
 
 Overfull \hbox (31.10936pt too wide) in paragraph at lines 57--70
 [][] 
  []
 
-
-LaTeX Warning: Citation 'platzer2010b' on page 4 undefined on input line 70.
-
-
-LaTeX Warning: Citation 'platzer2010b' on page 4 undefined on input line 70.
-
 [4 <./images/automata.png>]
 
-LaTeX Warning: Citation 'platzer2010b' on page 5 undefined on input line 80.
-
-
-LaTeX Warning: Citation 'platzer2010b' on page 5 undefined on input line 80.
-
-[5]
-
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern -2.39996pt
+(hyperref)                \kern -1.20007pt
 (hyperref)                removed on input line 102.
 
-) [6]
+[5]) [6]
 \openout2 = `sections/content.aux'.
 
  (./sections/content.tex
@@ -2190,318 +1877,286 @@ LABELS NOT IMPORTED.
  on input line 15.
 
 Chapter 3.
-
-LaTeX Warning: Citation 'keYmaera' on page 7 undefined on input line 23.
-
-<images/watertank.png, id=310, 198.7425pt x 150.5625pt>
+<images/watertank.png, id=341, 198.7425pt x 150.5625pt>
 File: images/watertank.png Graphic file (type png)
 
 <use images/watertank.png>
 Package pdftex.def Info: images/watertank.png used on input line 28.
 (pdftex.def)             Requested size: 259.4918pt x 196.6065pt.
 
-
-LaTeX Warning: Citation 'keymaeraGuide' on page 7 undefined on input line 29.
-
-
-LaTeX Warning: Citation 'keymaeraGuide' on page 7 undefined on input line 29.
-
-<images/watertank_ha.png, id=314, 186.74568pt x 185.58936pt>
+<images/watertank_ha.png, id=347, 186.74568pt x 185.58936pt>
 File: images/watertank_ha.png Graphic file (type png)
 
 <use images/watertank_ha.png>
-Package pdftex.def Info: images/watertank_ha.png used on input line 37.
+Package pdftex.def Info: images/watertank_ha.png used on input line 36.
 (pdftex.def)             Requested size: 259.4918pt x 257.92029pt.
-
-
-LaTeX Warning: Citation 'keymaeraGuide' on page 7 undefined on input line 38.
-
-
-LaTeX Warning: Citation 'keymaeraGuide' on page 7 undefined on input line 38.
-
-[7
+ [7
 
 
 
 
  <./images/watertank.png>]
 
-pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
-ound PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank_hp.pdf, id=321, 614.295pt x 794.97pt>
-File: images/watertank_hp.pdf Graphic file (type pdf)
-
-<use images/watertank_hp.pdf>
-Package pdftex.def Info: images/watertank_hp.pdf used on input line 44.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 40.
 
 
-pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
-ound PDF version <1.7>, but at most version <1.5> allowed
-File: images/watertank_hp.pdf Graphic file (type pdf)
-<use images/watertank_hp.pdf>
-Package pdftex.def Info: images/watertank_hp.pdf used on input line 44.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [8 <./images/watertank_ha.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
-ound PDF version <1.7>, but at most version <1.5> allowed
-[8 <./images/watertank_ha.png (PNG copy)>]
-
-pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
-ound PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank_hp.pdf, id=328, page=1, 614.295pt x 794.97pt>
-File: images/watertank_hp.pdf Graphic file (type pdf)
-
-<use images/watertank_hp.pdf, page 1>
-Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 44.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: images/watertank_hp.pdf Graphic file (type pdf)
- <use images/watertank_hp.pdf, page 1>
-Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 44.
-(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
-File: images/watertank_hp.pdf Graphic file (type pdf)
-
-<use images/watertank_hp.pdf, page 1>
-Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 44.
-(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
-File: images/watertank_hp.pdf Graphic file (type pdf)
- <use images/watertank_hp.pdf, page 1>
-Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 44.
-(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
-File: images/watertank_hp.pdf Graphic file (type pdf)
-
-<use images/watertank_hp.pdf, page 1>
-Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 44.
-(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
- [9 <./images/watertank_hp.pdf>]
-
-pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-<images/Watertank.pdf, id=364, 614.295pt x 794.97pt>
-File: images/Watertank.pdf Graphic file (type pdf)
-
-<use images/Watertank.pdf>
-Package pdftex.def Info: images/Watertank.pdf used on input line 53.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-File: images/Watertank.pdf Graphic file (type pdf)
-<use images/Watertank.pdf>
-Package pdftex.def Info: images/Watertank.pdf used on input line 53.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-[10]
-
-pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
-d PDF version <1.7>, but at most version <1.5> allowed
-<images/Watertank.pdf, id=372, page=1, 614.295pt x 794.97pt>
-File: images/Watertank.pdf Graphic file (type pdf)
-
-<use images/Watertank.pdf, page 1>
-Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 53.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-File: images/Watertank.pdf Graphic file (type pdf)
- <use images/Watertank.pdf, page 1>
-Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 53.
-(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
-File: images/Watertank.pdf Graphic file (type pdf)
-
-<use images/Watertank.pdf, page 1>
-Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 53.
-(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
-File: images/Watertank.pdf Graphic file (type pdf)
- <use images/Watertank.pdf, page 1>
-Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 53.
-(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
-File: images/Watertank.pdf Graphic file (type pdf)
-
-<use images/Watertank.pdf, page 1>
-Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 53.
-(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
- [11 <./images/Watertank.pdf>]
-(c:/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
+ [9]
+[10] (c:/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
-) [12]
+)
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 91.
+(Font)              scaled to size 10.0pt on input line 121.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 92.
+(Font)              scaled to size 6.0pt on input line 122.
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 94.
+ input line 124.
 
 (c:/texlive/2014/texmf-dist/tex/latex/libertine/ts1linuxlibertinet-tlf.fd
 File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 94.
+(Font)              scaled to size 10.0pt on input line 124.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 101.
+(Font)              scaled to size 7.3pt on input line 131.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 101.
+(Font)              scaled to size 5.5pt on input line 131.
 
+[11]
 
-LaTeX Warning: Reference `app:Simulator' on page 13 undefined on input line 125
+LaTeX Warning: Reference `app:Simulator' on page 12 undefined on input line 155
 .
 
-[13]
+
+Overfull \hbox (3.35027pt too wide) in paragraph at lines 190--190
+[] 
+ []
+
+[12]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern -2.39996pt
-(hyperref)                removed on input line 164.
+(hyperref)                \kern -1.20007pt
+(hyperref)                removed on input line 211.
 
 
-LaTeX Warning: Reference `eq:approxF' on page 14 undefined on input line 167.
+LaTeX Warning: Reference `eq:approxF' on page 13 undefined on input line 214.
 
-[14] [15] [16
+[13] [14
 
 
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
 
  []
 
+[15]
 
-LaTeX Warning: Citation 'keymaera' on page 17 undefined on input line 210.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -1.20007pt
+(hyperref)                removed on input line 261.
 
 
-LaTeX Warning: Citation 'platzer2010b' on page 17 undefined on input line 210.
-
-[17]
-
-LaTeX Warning: Citation 'platzer2010b' on page 18 undefined on input line 212.
+LaTeX Warning: Reference `ch:Watertank:SafetyCond' on page 16 undefined on inpu
+t line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern -2.39996pt
-(hyperref)                removed on input line 214.
+(hyperref)                \kern -1.20007pt
+(hyperref)                removed on input line 270.
 
-
-LaTeX Warning: Reference `ch:Watertank:SafetyCond' on page 18 undefined on inpu
-t line 217.
-
+[16]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern -2.39996pt
-(hyperref)                removed on input line 223.
+(hyperref)                \kern -1.20007pt
+(hyperref)                removed on input line 277.
 
 
-Overfull \hbox (45.18721pt too wide) has occurred while \output is active
-[]|\T1/LinuxLibertineT-TLF/m/it/12 4. Introduction of formalized approach of us
-ing refinement to gain a concrete implementation for a CPS []
- []
-
-[18]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern -2.39996pt
-(hyperref)                removed on input line 230.
-
-
-LaTeX Warning: Reference `app:glueQuant' on page 19 undefined on input line 245
+LaTeX Warning: Reference `app:glueQuant' on page 17 undefined on input line 292
 .
 
 )
-Overfull \hbox (48.05531pt too wide) has occurred while \output is active
+Overfull \hbox (49.2552pt too wide) has occurred while \output is active
 [] |\T1/LinuxLibertineT-TLF/m/it/12 4.4. Finding the correct glue between hybri
 d model and control program and verifying it with KeYmaera.[]
  []
 
-[19]
+[17]
 \openout2 = `sections/evaluation.aux'.
 
- (./sections/evaluation.tex [20
+ (./sections/evaluation.tex [18
 
 
 
 
 ]
 Chapter 5.
-) [21]
+) [19]
 \openout2 = `sections/conclusion.aux'.
 
- (./sections/conclusion.tex [22
+ (./sections/conclusion.tex [20
 
 
 
 
 ]
 Chapter 6.
-) [23]
+) [21] (./thesis.bbl [22
 
-LaTeX Warning: Empty bibliography on input line 140.
 
+
+]) [23]
 \openout2 = `sections/appendix.aux'.
 
-(./sections/appendix.tex [24
-
+ (./sections/appendix.tex [24
 
 
 
 ]
 Appendix A.
-<Images/ex_control.png, id=530, 179.16937pt x 186.6975pt>
+<Images/ex_control.png, id=509, 179.16937pt x 186.6975pt>
 File: Images/ex_control.png Graphic file (type png)
 
 <use Images/ex_control.png>
-Package pdftex.def Info: Images/ex_control.png used on input line 23.
+Package pdftex.def Info: Images/ex_control.png used on input line 25.
 (pdftex.def)             Requested size: 432.51132pt x 455.0199pt.
-) [25] [26 <./Images/ex_control.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
- (./thesis.aux
-(./sections/declaration.aux) (./sections/abstract_en.aux)
+
+
+pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+<images/watertank_hp.pdf, id=510, 614.295pt x 794.97pt>
+File: images/watertank_hp.pdf Graphic file (type pdf)
+
+<use images/watertank_hp.pdf>
+Package pdftex.def Info: images/watertank_hp.pdf used on input line 56.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+File: images/watertank_hp.pdf Graphic file (type pdf)
+<use images/watertank_hp.pdf>
+Package pdftex.def Info: images/watertank_hp.pdf used on input line 56.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+[25] [26 <./Images/ex_control.png>]
+
+pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+<images/watertank_hp.pdf, id=535, page=1, 614.295pt x 794.97pt>
+File: images/watertank_hp.pdf Graphic file (type pdf)
+
+<use images/watertank_hp.pdf, page 1>
+Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: images/watertank_hp.pdf Graphic file (type pdf)
+ <use images/watertank_hp.pdf, page 1>
+Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
+File: images/watertank_hp.pdf Graphic file (type pdf)
+
+<use images/watertank_hp.pdf, page 1>
+Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
+File: images/watertank_hp.pdf Graphic file (type pdf)
+ <use images/watertank_hp.pdf, page 1>
+Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
+File: images/watertank_hp.pdf Graphic file (type pdf)
+
+<use images/watertank_hp.pdf, page 1>
+Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 56.
+(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
+ [27 <./images/watertank_hp.pdf>]
+
+pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+<images/Watertank.pdf, id=568, 614.295pt x 794.97pt>
+File: images/Watertank.pdf Graphic file (type pdf)
+
+<use images/Watertank.pdf>
+Package pdftex.def Info: images/Watertank.pdf used on input line 58.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+File: images/Watertank.pdf Graphic file (type pdf)
+<use images/Watertank.pdf>
+Package pdftex.def Info: images/Watertank.pdf used on input line 58.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
+d PDF version <1.7>, but at most version <1.5> allowed
+<images/Watertank.pdf, id=571, page=1, 614.295pt x 794.97pt>
+File: images/Watertank.pdf Graphic file (type pdf)
+
+<use images/Watertank.pdf, page 1>
+Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 58.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: images/Watertank.pdf Graphic file (type pdf)
+ <use images/Watertank.pdf, page 1>
+Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 58.
+(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
+File: images/Watertank.pdf Graphic file (type pdf)
+
+<use images/Watertank.pdf, page 1>
+Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 58.
+(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
+File: images/Watertank.pdf Graphic file (type pdf)
+ <use images/Watertank.pdf, page 1>
+Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 58.
+(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
+File: images/Watertank.pdf Graphic file (type pdf)
+
+<use images/Watertank.pdf, page 1>
+Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 58.
+(pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
+ [28 <./images/Watertank.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
+ (./thesis.aux (./sections/declaration.aux) (./sections/abstract_en.aux)
 (./sections/abstract_de.aux) (./sections/introduction.aux)
 (./sections/preliminary.aux) (./sections/content.aux)
 (./sections/evaluation.aux) (./sections/conclusion.aux)
 (./sections/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 27CCB7AEE151446E325CC71F1B8C9A2C;2856.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 77403A413052B487E1F7E3968E48C069;2527
-(rerunfilecheck)             After:  7953BFA90E2161174068F1952B413836;2625.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                thesis
-(biblatex)                and rerun LaTeX afterwards.
-
-Package logreq Info: Writing requests to 'thesis.run.xml'.
-\openout1 = `thesis.run.xml'.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 152.
  ) 
 Here is how much of TeX's memory you used:
- 32091 strings out of 493109
- 571437 string characters out of 6138587
- 1161355 words of memory out of 5000000
- 34519 multiletter control sequences out of 15000+600000
- 232867 words of font info for 301 fonts, out of 8000000 for 9000
- 1145 hyphenation exceptions out of 8191
- 80i,19n,74p,1328b,2797s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 26842 strings out of 493109
+ 478485 string characters out of 6138587
+ 671027 words of memory out of 5000000
+ 29333 multiletter control sequences out of 15000+600000
+ 228364 words of font info for 288 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 80i,19n,74p,1326b,1432s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{c:/tex
 live/2014/texmf-dist/fonts/enc/dvips/newtx/libertinealt.enc}{c:/texlive/2014/te
 xmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvip
@@ -2518,12 +2173,13 @@ xlive/2014/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Semibold.pf
 b><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/
 2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2014/texmf-dist
 /fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2014/texmf-dist/fonts/type1/pu
-blic/txfonts/txsyb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxl
-r.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
-Output written on thesis.pdf (40 pages, 665002 bytes).
+blic/txfonts/txsyb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/t
+xsyc.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxlr.pfb><c:/texl
+ive/2014/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
+Output written on thesis.pdf (42 pages, 669185 bytes).
 PDF statistics:
- 638 PDF objects out of 1000 (max. 8388607)
- 535 compressed objects within 6 object streams
- 148 named destinations out of 1000 (max. 500000)
- 30035 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 695 PDF objects out of 1000 (max. 8388607)
+ 585 compressed objects within 6 object streams
+ 159 named destinations out of 1000 (max. 500000)
+ 30067 words of extra memory for PDF output out of 35830 (max. 10000000)
 

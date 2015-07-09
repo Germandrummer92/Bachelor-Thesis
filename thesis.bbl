@@ -1,0 +1,29 @@
+\begin{thebibliography}{Pla15b}
+
+\bibitem[Hen00]{Heinzinger2000b}
+ThomasA. Henzinger.
+\newblock The theory of hybrid automata.
+\newblock In M.Kemal Inan and RobertP. Kurshan, editors, {\em Verification of
+  Digital and Hybrid Systems}, volume 170 of {\em NATO ASI Series}, pages
+  265--292. Springer Berlin Heidelberg, 2000.
+
+\bibitem[Pla10]{platzer2010b}
+Andr{\'e} Platzer.
+\newblock {\em {L}ogical {A}nalysis of {H}ybrid {S}ystems}.
+\newblock Springer, Pittsburgh, 2010.
+
+\bibitem[Pla15a]{keymaeraGuide}
+Andr{\'e} Platzer.
+\newblock {G}uide for {K}eymaera {H}ybrid {S}ystems {V}erification {T}ool,
+  2015.
+
+\bibitem[Pla15b]{keymaera}
+Andr{\'e} Platzer.
+\newblock {K}e{Y}maera: {A} {H}ybrid {T}heorem {P}rover for {H}ybrid {S}ystems,
+  2015.
+
+\bibitem[{Wol}]{mathematica}
+{Wolfram Research, Inc.}
+\newblock Mathematica.
+
+\end{thebibliography}

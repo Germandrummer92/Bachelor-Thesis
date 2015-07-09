@@ -1,31 +1,15 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\defcounter {refsection}{0}\relax 
 \select@language {english}
-\defcounter {refsection}{0}\relax 
 \select@language {ngerman}
-\defcounter {refsection}{0}\relax 
 \select@language {english}
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces A simple Hybrid Automata~\cite {platze2010b}.}}{4}{figure.2.1}
-\defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces A simplified train control system as a Hybrid Program~\cite {platzer2010b}.}}{5}{figure.2.2}
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite {keymaeraGuide}.}}{7}{figure.3.1}
-\defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces The Watertank CPS expressed as a hybrid automata~\cite {keymaeraGuide}.}}{8}{figure.3.2}
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{26}{figure.A.1}

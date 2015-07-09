@@ -20,7 +20,7 @@
 \chapter{Motivating Example: Refinement of CPS ``Watertank''}
 \label{ch:Watertank}
 
-To better understand the process of refinement of a CPS we take an example from the \keym~tutorial~\cite{keYmaera}, a watertank (See Fig.~\ref{fig:watertank}) whose water level is adjusted automatically to stay at a certain level, and refine its hybrid model to gain an implementation. Our goal therefore is finding a suitable and verified implementation from the hybrid model with all necessary proof steps. To accomplish this, we have to adjust and verify the hybrid model, code and verify a concrete implementation and finally verify the ``glue'' in between the discrete and continuous world we come up with as our last proof steep. 
+To better understand the process of refinement of a CPS we take an example from the \keym~tutorial~\cite{keymaera}, a watertank (See Fig.~\ref{fig:watertank}) whose water level is adjusted automatically to stay at a certain level, and refine its hybrid model to gain an implementation. Our goal therefore is finding a suitable and verified implementation from the hybrid model with all necessary proof steps. To accomplish this, we have to adjust and verify the hybrid model, code and verify a concrete implementation and finally verify the ``glue'' in between the discrete and continuous world we come up with as our last proof steep. 
 
 \begin{figure}[h!]
 	\setcounter{figure}{0}
@@ -30,27 +30,57 @@ To better understand the process of refinement of a CPS we take an example from 
 	\label{fig:watertank}
 \end{figure}
 
-The ``control'' part of this hybrid system is the valve, it can either drain the watertank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goal of the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. To be able to   we first took a look at the hybrid model of the watertank. It is provided both in the form of a hybrid automaton (See Fig.~\ref{fig:watertank_ha}) and a hybrid program (See sec.  \ref{pdf:watertank_hp}). In the hybrid automaton, the system starts in the ``fill'' state, where water is constantly flowing into the tank with the rate of \(y^{\prime} = 1\), while the clock is counting by \(x^{\prime}=1\) per tick. Once the water level reaches a certain level \(y=10\) the clock is reset to \(x:=0\) and the state changes from ``fill'' to ``stop'', where the water level is still raising for 2 ticks since the valve can not change in instant time. Once those 2 ticks pass \(x=2\) the watertank switches its state again to ``drain'' in which water flows out of the tank at the rate of 2 per clock tick, before it changes again to ``start'' the filling of the tank agan at the water level of \(y=5\).
-
+The ``control'' part of this hybrid system is the valve, it can either drain the watertank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goal of the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. To be able to  we first took a look at the hybrid model of the watertank. It is provided both in the form of a hybrid automaton (See Fig.~\ref{fig:watertank_ha}) and a hybrid program (See Sec.~\ref{pdf:watertank_hp}). In the hybrid automaton, the system starts in the ``fill'' state, where water is constantly flowing into the tank with the rate of \(y^{\prime} = 1\), while the clock is counting by \(x^{\prime}=1\) per tick. Once the water level reaches a certain level \(y=10\) the clock is reset to \(x:=0\) and the state changes from ``fill'' to ``stop'', where the water level is still raising for 2 ticks since the valve can not change in instant time. Once those 2 ticks pass \(x=2\) the watertank switches its state again to ``drain'' in which water flows out of the tank at the rate of 2 per clock tick, before it changes again to ``start'' the filling of the tank agan at the water level of \(y=5\).
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/watertank_ha}
 	\caption{The Watertank CPS expressed as a hybrid automata~\cite{keymaeraGuide}.}
 	\label{fig:watertank_ha}
 \end{figure}
-
-\phantomsection
+\subsection{The original Hybrid Program}
 \label{pdf:watertank_hp}
-\includepdf[pages=1,scale=0.8]{images/watertank_hp.pdf}
+
+The hybrid program (see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has three variables (water level y, time x and state st all as Real numbers) defined as:
+\(\mathbb{R} y, x, st;\) in the \(\\ProgramVariables\) section. Then the complete program notatio with a preceeding initialization of values and state.
+\begin{flalign*}
+		[ x:=0,y:=1, st:=0]& ((st = 0) \implies \\
+			\quad& [ (?(st=0); \\
+			\quad&\quad(?(y=10); x:=0; st:=1) \\
+			\quad&\quad\cup (?(y<10 \vee y >10); x^{\prime}=1 \wedge y^{\prime}=1 \wedge y\leq10)) \\
+			\quad&\cup (?(st=1); \\
+			\quad&\quad(?(x=2); st:=2) \\
+			\quad&\quad\cup(?(x<2\vee x>2);x^{\prime}=1, y^{\prime}=1 \wedge x\leq2)) \\
+			\quad&\cup(?(st=2); \\
+			\quad&\quad(?(y=5);x:=0;st:=3) \\
+			\quad&\quad\cup(y>5\vee y<5); x^{\prime}=1,y^{\prime}=-2 \wedge y\geq5)) \\
+			\quad&\cup(?(st=3); \\
+			\quad&\quad(?(x=2);st:=0) \\
+			\quad&\quad\cup[(?(x>2\vee x<2);x^{\prime}=1,y^{\prime}=-2 \wedge x\leq2)) \\
+			\quad&](y\geq1\wedge y\leq12))		
+\end{flalign*}
+
 
 \section{Finding the concrete Control Value Assisgnment}
 \label{sec:Watertank:ControlValue}
 
-In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment(s) the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automata describing the Watertank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-determnistic manner and would not fit in the model of the cps. Therefore, we remodelled the system to better serve our purpose, featuring a clear ticked hook that is called upon at deterministic times (See sec. \ref{pdf:watertank_hp_ref}).
+In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment(s) the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automata describing the Watertank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-determnistic manner and would not fit in the model of the cps. Therefore, we remodelled the system to better serve our purpose, featuring a clear ticked hook that is called upon at deterministic times (See sec~\ref{pdf:watertank_hp_ref}).
 
-\phantomsection
+\subsection{The Remodelled Hybrid Program}
 \label{pdf:watertank_hp_ref}
-\includepdf[pages=1,scale=0.8]{images/Watertank.pdf}
+The remodelled hybrid program(see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has 5 variables and a constant: tick defined in the \(\\functions\) clause as being \(\in \mathbb{R}\), and water level y, time x, new valve value new and valve value from a tick ago valve which are defined in the \(\\programVariables\) clause as being \(\in \mathbb{R}\).
+\begin{flalign*}
+		tick > 2 &\implies \\
+			&[ x:=tick,y:=1, valve:=1; \\
+			\quad& (?(x=tick); new:=*; x:=0); \\
+			\quad&(?(y+2*valve+tick*new\geq1\wedge y+2*valve+tick*new \leq 12 \wedge{} \\
+			\quad&(new=1\vee new=2)); \\ 
+			\quad&((?(new\neq valve); x^{\prime}=1, y^{\prime}=valve \wedge x \leq 2); \\
+			\quad&\quad(\textrm{if } (x=2) \\
+			\quad&\quad \textrm{then }valve:=new; x^{\prime}, y^{\prime} = valve \wedge x \leq tick~\textrm{fi}) \\
+			\quad&(?(\neg(new\neq valve)); x^{\prime}=1,y^{\prime}=valve\wedge x \leq tick)))] \\
+			&(y \geq 1 \wedge y \leq 12)	
+\end{flalign*}
+
 
 We kept the model mostly equivalent to the original, preserving the two clock ticks of time needed for the valve to change its state from drain to fill and vice-versa. This presented a challenge, when thinking of possible implementations, as the program hook could be called again before the valve would have actually changed its state. To simplify this problem,we only model cases in which the actual program tick (so the time between two hook calls)  is greater than two clock ticks (however long they may be).  This means, that the valve or control program does not have to have a (possibly infinite) list of the last control values assigned, which could be the case if the program was called more frequently than the valve is able to change states.
 
@@ -67,7 +97,7 @@ Next we devised a postcondition for the program hook, which would then serve as 
 \label{eq:postCondOrig}
 \end{equation}
 
-When trying to verify the entire hybrid program (see comment in line 5 of the problem in sec.~\ref{pdf:watertank_hp_ref}), this postcondition did not work. This means, that even in such a simple CPS as this watertank control system, finding the hook postcondition was non-trivial and only with the help of \keym's counterexamples did we manage to find the correct postcondition (See Eq.~\ref{eq:postCondOrigCorrect}). 
+During verification of the entire hybrid program, \keym would not verify the hybrid program with this postcondition. This means, that even in such a simple CPS as this watertank control system, finding the hook postcondition was non-trivial and only with the help of \keym's counterexamples did we manage to find the correct postcondition (See Eq.~\ref{eq:postCondOrigCorrect}). 
 
 \begin{equation}
 	\centering
@@ -150,13 +180,30 @@ As we went along, we figured out how a general glue proof should look (See Fig.~
 	\label{eq:glueGeneral}
 \end{equation}
 
-Following this basic guideline, we were able to find a suitable glue relation (or in our case a bijective function) for this cps (See Eq.~\ref{eq:glueWatertank}).
+Following this basic guideline, we were able to find a suitable glue relation (or in our case total relatin) for this cps. We found the following as the glue-relation:
 
 \begin{equation}
 	\begin{split}
-		\forall y \in \mathbb{R} . \forall y_j \in \mathbb{Z}. \forall valve \in \mathbb{R}. \forall tick \in \mathbb{R}&. \forall tick_j \in \mathbb{Z} . \forall new \in \mathbb{Z}. \forall result \in \mathbb{R} : \\  [y_j = \textrm{floor}(10 * y)~\wedge&~ old_j = \textrm{floor}(10*valve) ~\wedge \\ tick_j = \textrm{floor}(10*tick)~\wedge&~result = 10 * new~\wedge \\ y >= 1~\wedge&~y \leq 12~\wedge \\ (valve = 1 ~\vee~valve = -2)~\wedge&~tick > 2] \implies \\  \{[result * tick_j/10 + y_j + 2 * old_j \leq 116~\wedge&~result * tick_j/10 + y_j + 2 * old_j \geq 12~\wedge \\ (result = 10~\vee&~result = -20)] \implies \\ y + 2 * valve + tick * new \geq 1~\wedge&~y + 2 * valve + tick * new \leq 12~\wedge \\ (new = 1~\vee&~new = -2)]\}
+		\forall y \in \mathbb{R} . \forall y_j \in \mathbb{Z}. \forall valve \in \mathbb{R}. \forall tick \in \mathbb{R}&. \forall tick_j \in \mathbb{Z} . \forall new \in \mathbb{Z}. \forall result \in \mathbb{R} : \\  y_j = \textrm{floor}(10 * y)~\wedge&~ old_j = \textrm{floor}(10*valve) \wedge tick_j = \textrm{floor}(10*tick)~\wedge \\ result = 10 * new~\wedge&~ y \geq 1~\wedge~y \leq 12~\wedge  (valve = 1 ~\vee~valve = -2)~\wedge \\&tick > 2 
 	\end{split}
 	\label{eq:glueWatertank}
+\end{equation}
+
+Whereby \(\psi(x)\) is equivalent to:
+\begin{equation}
+	\begin{split}
+		result * tick_j/10 + y_j + 2 * old_j \leq 116~\wedge&~result * tick_j/10 + y_j + 2 * old_j \geq 12~\wedge \\ (result = 10~\vee&~result = -20)
+	\end{split}
+	\label{eq:psiWatertank}
+\end{equation}
+
+And \(\phi(y)\) is equivalent to:
+
+\begin{equation}
+	\begin{split}
+		 y + 2 * valve + tick * new \geq 1~\wedge&~y + 2 * valve + tick * new \leq 12~\wedge \\ (new = 1~\vee&~new = -2)
+	\end{split}
+	\label{eq:phiWatertank}
 \end{equation}
 
 As can be seen, the \(\psi(x)\) that we found for the glue is not equal to the original trivial postcondition for our java program (See List.~\ref{lst:JDL}). This can be explained by the floor functions that has to be used for translation from the \(\mathbb{R}\) into \(\mathbb{Z}\) world. Due to the usage of the floor function, we only can approximate the original value in the discrete world, and therefore these approximation erorrs have to be accounted for in \(\psi\). Again the fact that we only found this error in our original postcondition devised for the java program, proves the non-triviality of the process even in seemingly simple examples as this watertank.
@@ -164,22 +211,22 @@ As can be seen, the \(\psi(x)\) that we found for the glue is not equal to the o
 \section{Verification based on \keym}
 \label{sec:Watertank:Verification}
 
-Verification of the glue proved difficult since \keym, or specifically Mathematica (\keym~backend algebraic solver), has problems with the translation of unintepreted functions. Therefore we found an abstraction of the floor function using inequalities to approximate it (See Eq.~\ref{eq:approxF}). 
+Verification of the glue proved difficult since \keym, or specifically Mathematica (cf.~\cite{mathematica}) (\keym~backend algebraic solver), has problems with the translation of unintepreted functions. Therefore we found an abstraction of the floor function using inequalities to approximate it (See Eq.~\ref{eq:approxF}). 
 
 \begin{align*}
-		\forall x \in \mathbb{R^{+}}. \exists c \in \mathbb{R}. floor(x) = c \implies x-1 < c \wedge c \leq x \wedge c \geq 0
+		\forall x \in \mathbb{R}. \forall c \in \mathbb{R}. floor(x) = c \implies x-1 < c \wedge c \leq x \wedge( x>0\implies c>0)
 	\label{eq:approxF}
 \end{align*}
 Also, since \keym~does not deal with numbers outside of the reals, we generalized the preconditions for every variable to be in the reals. This obviously only strengthens the proof and therefore does not change the correctness.
 
 This still lead to problems when using the automatic proof-mechanism, so we had to add a full new taclet fdef to the definition file to be able to use the automatic proover (See App..~\ref{app:lst:ruleF}).
 
-Applying the rule manually to the floor function and changing the first-order-strategy (so the time at which quantifier elimination using mathematica is tried) from lazy (extending every possible leave with case differentiation) to eager (quantifier elimination as soon as possible), the proof runs automatically aside from the application of our own defined rule.
+The proof runs fully automatically with our own defined taclet.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %--PROCESS--%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Introduction of formalized approach of using refinement to gain a concrete implementation for a CPS}
+\chapter{Formalized approach of using refinement to gain an implementation for a CPS}
 \label{ch:Process}
 
 What the Watertank example shows is the non-triviality of refining the hybrid model into an implementation and of the verification of all necessary parts. Overall it is obvious, that a formalized approach to the general problem presented in chapter~\ref{ch:Introduction} is necessary. In this chapter we present a possible formalized approach to the problem, that we deemed feasible.
