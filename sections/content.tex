@@ -30,18 +30,22 @@ To better understand the process of refinement of a CPS we take an example from 
 	\label{fig:watertank}
 \end{figure}
 
-The ``control'' part of this hybrid system is the valve, it can either drain the watertank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goal of the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. To be able to  we first took a look at the hybrid model of the watertank. It is provided both in the form of a hybrid automaton (See Fig.~\ref{fig:watertank_ha}) and a hybrid program (See Sec.~\ref{pdf:watertank_hp}). In the hybrid automaton, the system starts in the ``fill'' state, where water is constantly flowing into the tank with the rate of \(y^{\prime} = 1\), while the clock is counting by \(x^{\prime}=1\) per tick. Once the water level reaches a certain level \(y=10\) the clock is reset to \(x:=0\) and the state changes from ``fill'' to ``stop'', where the water level is still raising for 2 ticks since the valve can not change in instant time. Once those 2 ticks pass \(x=2\) the watertank switches its state again to ``drain'' in which water flows out of the tank at the rate of 2 per clock tick, before it changes again to ``start'' the filling of the tank agan at the water level of \(y=5\).
+\section{Detailing the Watertank CPS}
+\label{sec:watertank:detail}
+
+The ``control'' part of this hybrid system is the valve, it can either drain the watertank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goal of the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. To be able to  we first took a look at the hybrid model of the watertank. It is provided both in the form of a hybrid automaton (See Fig.~\ref{fig:watertank_ha}) and a hybrid program (See Sec.~\ref{sec:watertank_hp}). In the hybrid automaton, the system starts in the ``fill'' state, where water is constantly flowing into the tank with the rate of \(y^{\prime} = 1\), while the clock is counting by \(x^{\prime}=1\) per tick. Once the water level reaches a certain level \(y=10\) the clock is reset to \(x:=0\) and the state changes from ``fill'' to ``stop'', where the water level is still raising for 2 ticks since the valve can not change in instant time. Once those 2 ticks pass \(x=2\) the watertank switches its state again to ``drain'' in which water flows out of the tank at the rate of 2 per clock tick, before it changes again to ``start'' the filling of the tank agan at the water level of \(y=5\).
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/watertank_ha}
 	\caption{The Watertank CPS expressed as a hybrid automata~\cite{keymaeraGuide}.}
 	\label{fig:watertank_ha}
 \end{figure}
+
 \subsection{The original Hybrid Program}
-\label{pdf:watertank_hp}
+\label{sec:watertank_hp}
 
 The hybrid program (see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has three variables (water level y, time x and state st all as Real numbers) defined as:
-\(\mathbb{R} y, x, st;\) in the \(\\ProgramVariables\) section. Then the complete program notatio with a preceeding initialization of values and state.
+\(\mathbb{R} y, x, st;\) in the \(\\ProgramVariables\) section. Then the complete program notation with a preceeding initialization of values and state.
 \begin{flalign*}
 		[ x:=0,y:=1, st:=0]& ((st = 0) \implies \\
 			\quad& [ (?(st=0); \\
@@ -63,10 +67,10 @@ The hybrid program (see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has t
 \section{Finding the concrete Control Value Assisgnment}
 \label{sec:Watertank:ControlValue}
 
-In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment(s) the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automata describing the Watertank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-determnistic manner and would not fit in the model of the cps. Therefore, we remodelled the system to better serve our purpose, featuring a clear ticked hook that is called upon at deterministic times (See sec~\ref{pdf:watertank_hp_ref}).
+In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment(s) the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automata describing the Watertank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-determnistic manner and would not fit in the model of the cps. Therefore, we remodelled the system to better serve our purpose, featuring a clear ticked hook that is called upon at deterministic times (See sec~\ref{sec:watertank_hp_ref}).
 
 \subsection{The Remodelled Hybrid Program}
-\label{pdf:watertank_hp_ref}
+\label{sec:watertank_hp_ref}
 The remodelled hybrid program(see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has 5 variables and a constant: tick defined in the \(\\functions\) clause as being \(\in \mathbb{R}\), and water level y, time x, new valve value new and valve value from a tick ago valve which are defined in the \(\\programVariables\) clause as being \(\in \mathbb{R}\).
 \begin{flalign*}
 		tick > 2 &\implies \\
@@ -76,7 +80,7 @@ The remodelled hybrid program(see App.~\ref{app:sec:pdfs} for HP expressed in AS
 			\quad&(new=1\vee new=2)); \\ 
 			\quad&((?(new\neq valve); x^{\prime}=1, y^{\prime}=valve \wedge x \leq 2); \\
 			\quad&\quad(\textrm{if } (x=2) \\
-			\quad&\quad \textrm{then }valve:=new; x^{\prime}, y^{\prime} = valve \wedge x \leq tick~\textrm{fi}) \\
+			\quad&\quad \textrm{then }valve:=new; x^{\prime} = 1, y^{\prime} = valve \wedge x \leq tick~\textrm{fi}) \\
 			\quad&(?(\neg(new\neq valve)); x^{\prime}=1,y^{\prime}=valve\wedge x \leq tick)))] \\
 			&(y \geq 1 \wedge y \leq 12)	
 \end{flalign*}

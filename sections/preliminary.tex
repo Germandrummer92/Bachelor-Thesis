@@ -14,7 +14,7 @@
 \chapter{Preliminary Definitions}
 \label{ch:Preliminary}
 
-In the following chapter we want to define and terms, models and logic used throughout this thesis. Our explanations are based on the premise, that first-order logic is a known concept.
+In the following chapter we want to define and terms, models and logic used throughout this thesis. We skip the explanation of first-order logic, which we presume to be known by the reader.
 
 \section{Introducing Cyber-Physical-Systems}
 \label{sec:pre:cps}
@@ -87,11 +87,11 @@ As an example we take a look at the hybrid program notation of a train control s
 Dynamic logic is a multi-modal logic and has two basic operators (one of which is relevant to this thesis): Either \textit{safety} (\([]\)) in which a first-order-logic formula \(\phi\) holds true in all exit states of the program \(\alpha\). Or \textit{liveness} (\(\langle\rangle\)), where a possible execution of the program \(\alpha\) exists, after which the first-order-logic formula \(\phi\) holds. In this paper only the safety operator is used. They can be expressed as in Eq.~\ref{eq:ddl}, whereby \(\alpha\) denotes the (hybrid) program that is enacted, and \(\phi\) is the postcondition expressed in first-order-logic.
 
 \begin{equation}
-	\label{eq:ddl}
 	\begin{split}
 		Safety: [\alpha]\phi \\
 		Liveliness: \langle\alpha\rangle\phi \equiv \neg ([\alpha] \neg \phi) \\
 	\end{split}
+	\label{eq:ddl}
 \end{equation}
 
 \subsection{Differential Dynamic Logic as our Verification Logic}
@@ -102,5 +102,33 @@ While dynamic logic in itself is not bound to only be applicable to hybrid progr
 \subsection{JML: Verification of Java Programs using \key}
 \label{subsec:jml}
 
-In this thesis we also deal with the verification of java programs (the control programs of our cps). We now want to introduce the Java Modelling Language \textit{JML}, which is used to model specification of java classes/modules or single methods. JML is based on the Design-By-Contract premise, which means that the user and the java classes have a contract with each other which defines the input and output conditions of the program. JML is then listed as a comment in
+In this thesis we also deal with the verification of Java programs (the control programs of our cps). We now want to introduce the Java Modelling Language \textit{JML}, which is used to model specification of Java classes/modules or single methods. JML is based on the Design-By-Contract premise, which means that the user and the Java classes have a contract with each other which defines the input and output conditions of the program~\cite{keybook2007}. JML is then listed as a comment in the Java sourcecode right before the method in question~\cite{fmcoKeYTutorial06}. For example the JML code for a method in question could look like this:
 
+
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+\lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{blue},commentstyle=\color{darkgreen},stringstyle=\color{red},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
+\begin{lstlisting}[label=lst:jml_example]
+
+/*@ public normal_behavior
+   @ requires a >= 0
+   @ ensures b >= 2
+  */
+  public int getPlusTwo(int a) {
+  	return a+=2;
+}
+
+\end{lstlisting}
+
+As one can see, the JML proof obligation needs to have the access level and a name and (for our purposes) always will have a \textit{requires} precondition that must hold true before the method is called for all arguments or some class variables and a \textit{ensures} postcondition clause, that ha to hold true for all exit states of the method (where the precondition was true before calling it). This means the JML above could also be expressed in Dynamic Logic as:
+
+\begin{equation}
+	a \geq 0 \implies [getPlusTwo] b \geq 2
+	\label{eq:jmlddl}
+\end{equation}
+
+\section{\keym~as our Verification Tool for CPS}
+\label{sec:pre:key}
+
+As \key~can only deal with Java programs, but we deal with problems expressed in ddl descrribing hybrid systems, we use \keym~as our tool of choice. It is basen on \key's source and developed by Andr\'e Platzer at Carnegie Mellon University~\cite{keymaera}. As its backend arithmetic solver we used Wolfram Mathematica~\cite{mathematica}, but \keym~supports other computer algebra solvers as well.
+
+Hybrid Programs are expressed in DDL, but as for example \(\cup\) is not a symbol used in ASCII text, the program notation in the \textit{.key} \keym-files is different (e.g. \(\cup\) as \(++\)), but we will present every hybrid program in DDL as well as to avoid confusion and adding another syntax.
