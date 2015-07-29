@@ -1,7 +1,21 @@
-\begin{thebibliography}{Pla15b}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{ABH{\etalchar{+}}07}
+
+\bibitem[ABH{\etalchar{+}}07]{fmcoKeYTutorial06}
+Wolfgang Ahrendt, Bernhard Beckert, Reiner H\"ahnle, Philipp R\"ummer, and
+  Peter~H. Schmitt.
+\newblock Verifying object-oriented programs with {KeY}: A tutorial.
+\newblock In {\em 5th International Symposium onFormal Methods for Components
+  and Objects, Amsterdam, The Netherlands}, volume 4709 of {\em LNCS}, pages
+  70--101. Springer, 2007.
+
+\bibitem[BHS07]{keybook2007}
+Bernhard Beckert, Reiner H\"ahnle, and Peter~H. Schmitt, editors.
+\newblock {\em Verification of Object-Oriented Software: The {KeY} Approach}.
+\newblock LNCS 4334. Springer-Verlag, 2007.
 
 \bibitem[Hen00]{Heinzinger2000b}
-ThomasA. Henzinger.
+Thomas~A. Henzinger.
 \newblock The theory of hybrid automata.
 \newblock In M.Kemal Inan and RobertP. Kurshan, editors, {\em Verification of
   Digital and Hybrid Systems}, volume 170 of {\em NATO ASI Series}, pages

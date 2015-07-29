@@ -36,7 +36,7 @@ Two different modelling approaches exist for CPS, the first one we now explain a
 		\end{description}
 \end{quote} 
 
-Based on non-deterministic finite automata (NFA), they are easy to understand for humans and serve well to model the abstract behavior of hybrid systems. A possible hybrid automatacan be seen in Fig.~\ref{fig:automata}. It describes the behavior of a controller controlling the train on a rail section. A train is therefore always either traveling freely (accelerating)  or being slowed. The biggest difference to NFAs is apparent when looking inside both states: They are continuous, so there is no single value assigned to the train's acceleration but rather a description of the behavior of the value over time is given. This means, that the single state "accelerate" can also be seen as a continous flowing assignment of values according to the specified differential equation.~\cite{platzerb2010}.
+Based on non-deterministic finite automata (NFA), they are easy to understand for humans and serve well to model the abstract behavior of hybrid systems. A possible hybrid automatacan be seen in Fig.~\ref{fig:automata}. It describes the behavior of a controller controlling the train on a rail section. A train is therefore always either traveling freely (accelerating)  or being slowed. The biggest difference to NFAs is apparent when looking inside both states: They are continuous, so there is no single value assigned to the train's acceleration but rather a description of the behavior of the value over time is given. This means, that the single state "accelerate" can also be seen as a continous flowing assignment of values according to the specified differential equation.~\cite{platzer2010b}.
 
 The system still obviously exhibits its continuous behavior, as any change to the acceleration also brings the change of speed and location. As the train comes passes arbitrarily chosen point \emph{SB}, the controller automatically assigns a discrete negative value to the train's acceleration, decelerating it, so it slows down. In the brake state the train again follows the equations of linear motion with continuous assignment, only that the guard \(v \geq 0\) makes sure the train never travels backwards (with a negative velocity), but rather at some point starts accelerating again according to the discrete assignment in the state change between brake and accelerate.
 
@@ -94,10 +94,10 @@ Dynamic logic is a multi-modal logic and has two basic operators (one of which i
 	\label{eq:ddl}
 \end{equation}
 
-\subsection{Differential Dynamic Logic as our Verification Logic}
+\subsection{Differential Dynamic Logic}
 \label{subsec:DDL}
 
-While dynamic logic in itself is not bound to only be applicable to hybrid programs, this means we need a way to express differential equations, as most continuous movement or behavior is expressed by differential equations. DDL or d\(\mathcal{L}\), the language also used by our verification tool \keym, has ways to express differential equations as can be seen in Table~\ref{tab:hp}.
+While dynamic logic in itself was not specifically devised for hybrid programs, this means we need a way to express differential equations, as most continuous movement or behavior is expressed by differential equations. DDL or d\(\mathcal{L}\), the language also used by our verification tool \keym, has ways to express differential equations as can be seen in Table~\ref{tab:hp}.
 
 \subsection{JML: Verification of Java Programs using \key}
 \label{subsec:jml}
@@ -114,21 +114,22 @@ In this thesis we also deal with the verification of Java programs (the control 
    @ ensures b >= 2
   */
   public int getPlusTwo(int a) {
-  	return a+=2;
+  	b = a + 2;
+  	return b;
 }
 
 \end{lstlisting}
 
-As one can see, the JML proof obligation needs to have the access level and a name and (for our purposes) always will have a \textit{requires} precondition that must hold true before the method is called for all arguments or some class variables and a \textit{ensures} postcondition clause, that ha to hold true for all exit states of the method (where the precondition was true before calling it). This means the JML above could also be expressed in Dynamic Logic as:
+As one can see, the JML proof obligation needs to have the access level and a name and (for our purposes) always will have a \textit{requires} precondition that must hold true before the method is called for all arguments or some class variables and a \textit{ensures} postcondition clause, that has to hold true for all exit states of the method (where the precondition was true before calling it). This means the JML above could also be expressed in Java Dynamic Logic as:
 
 \begin{equation}
-	a \geq 0 \implies [getPlusTwo] b \geq 2
+	a \geq 0 \implies [b := getPlusTwo(a) ] b \geq 2
 	\label{eq:jmlddl}
 \end{equation}
 
-\section{\keym~as our Verification Tool for CPS}
+\section{\keym~as our Verification Tool for Hybrid Programs}
 \label{sec:pre:key}
 
-As \key~can only deal with Java programs, but we deal with problems expressed in ddl descrribing hybrid systems, we use \keym~as our tool of choice. It is basen on \key's source and developed by Andr\'e Platzer at Carnegie Mellon University~\cite{keymaera}. As its backend arithmetic solver we used Wolfram Mathematica~\cite{mathematica}, but \keym~supports other computer algebra solvers as well.
+As \key~can only deal with Java programs, but we deal with problems with hybrid systems, we use \keym~as our tool of choice to verify our hybrid models. It is based on \key's source and developed by Andr\'e Platzer at Carnegie Mellon University~\cite{keymaera}. As its backend arithmetic solver we used Wolfram Mathematica~\cite{mathematica}, but \keym~supports other computer algebra solvers as well.
 
-Hybrid Programs are expressed in DDL, but as for example \(\cup\) is not a symbol used in ASCII text, the program notation in the \textit{.key} \keym-files is different (e.g. \(\cup\) as \(++\)), but we will present every hybrid program in DDL as well as to avoid confusion and adding another syntax.
+Hybrid Programs are expressed as \textit{regular programs}, but as for example \(\cup\) is not a symbol used in ASCII text, the program notation in the \textit{.key} \keym-files is different (e.g. \(\cup\) as \(++\)), but we will present every hybrid program in the syntax presented above as well as to avoid confusion and adding another layer of abstraction.

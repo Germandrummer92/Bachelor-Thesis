@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  14 JUL 2015 22:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  30 JUL 2015 00:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1571,7 +1571,7 @@ LaTeX Info: Redefining \nameref on input line 85.
 
 \c@lstlisting=\count171
 
-<logos/kitlogo_en_cmyk.pdf, id=159, 198.7425pt x 92.345pt>
+<logos/kitlogo_en_cmyk.pdf, id=175, 198.7425pt x 92.345pt>
 File: logos/kitlogo_en_cmyk.pdf Graphic file (type pdf)
 
 <use logos/kitlogo_en_cmyk.pdf>
@@ -1631,7 +1631,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.9pt on input line 92.
 
-<title-background.pdf, id=160, 597.50786pt x 845.04686pt>
+<title-background.pdf, id=176, 597.50786pt x 845.04686pt>
 File: title-background.pdf Graphic file (type pdf)
 
 <use title-background.pdf>
@@ -1828,15 +1828,12 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
 (Font)              scaled to size 13.24796pt on input line 26.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/it' will be
 (Font)              scaled to size 11.03998pt on input line 31.
-
-LaTeX Warning: Citation `platzerb2010' on page 3 undefined on input line 39.
-
 [3
 
 
 
 
-] <images/automata.png, id=322, 442.2924pt x 251.0178pt>
+] <images/automata.png, id=344, 442.2924pt x 251.0178pt>
 File: images/automata.png Graphic file (type png)
 
 <use images/automata.png>
@@ -1859,13 +1856,6 @@ Overfull \hbox (31.10936pt too wide) in paragraph at lines 57--70
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern -1.20007pt
 (hyperref)                removed on input line 102.
-
-
-LaTeX Warning: Citation `keybook2007' on page 5 undefined on input line 105.
-
-
-LaTeX Warning: Citation `fmcoKeYTutorial06' on page 5 undefined on input line 1
-05.
 
 [5] (c:/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
@@ -1891,7 +1881,7 @@ Package microtype Info: Loading generic settings for font family
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern -1.20007pt
-(hyperref)                removed on input line 129.
+(hyperref)                removed on input line 130.
 
 ) [6]
 \openout2 = `sections/content.aux'.
@@ -1910,14 +1900,14 @@ LABELS NOT IMPORTED.
  on input line 15.
 
 Chapter 3.
-<images/watertank.png, id=366, 198.7425pt x 150.5625pt>
+<images/watertank.png, id=392, 198.7425pt x 150.5625pt>
 File: images/watertank.png Graphic file (type png)
 
 <use images/watertank.png>
 Package pdftex.def Info: images/watertank.png used on input line 28.
 (pdftex.def)             Requested size: 259.4918pt x 196.6065pt.
 
-<images/watertank_ha.png, id=372, 186.74568pt x 185.58936pt>
+<images/watertank_ha.png, id=398, 186.74568pt x 185.58936pt>
 File: images/watertank_ha.png Graphic file (type png)
 
 <use images/watertank_ha.png>
@@ -1969,71 +1959,96 @@ Underfull \hbox (badness 10000) in paragraph at lines 236--238
 
  []
 
+
+LaTeX Warning: Reference `sec:ch:Watertank' on page 15 undefined on input line 
+261.
+
 [15]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern -1.20007pt
-(hyperref)                removed on input line 265.
-
 
 LaTeX Warning: Reference `ch:Watertank:SafetyCond' on page 16 undefined on inpu
 t line 268.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern -1.20007pt
-(hyperref)                removed on input line 274.
-
 [16]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \kern -1.20007pt
-(hyperref)                removed on input line 281.
-
 
 LaTeX Warning: Reference `app:glueQuant' on page 17 undefined on input line 296
 .
 
-)
-Overfull \hbox (49.2552pt too wide) has occurred while \output is active
-[] |\T1/LinuxLibertineT-TLF/m/it/12 4.4. Finding the correct glue between hybri
-d model and control program and verifying it with KeYmaera.[]
- []
-
-[17]
-\openout2 = `sections/evaluation.aux'.
-
- (./sections/evaluation.tex [18
-
-
+[17] [18
 
 
 ]
 Chapter 5.
-) [19]
-\openout2 = `sections/conclusion.aux'.
 
- (./sections/conclusion.tex [20
+LaTeX Warning: Citation `TrafficControl' on page 19 undefined on input line 312
+.
+
+<images/trafficControl.png, id=532, 218.31563pt x 57.21375pt>
+File: images/trafficControl.png Graphic file (type png)
+
+<use images/trafficControl.png>
+Package pdftex.def Info: images/trafficControl.png used on input line 316.
+(pdftex.def)             Requested size: 259.4918pt x 68.00487pt.
+
+
+LaTeX Warning: Reference `eq:traffic:orig' on page 19 undefined on input line 3
+26.
+
+
+LaTeX Warning: Reference `eq:traffic:rem' on page 19 undefined on input line 33
+0.
+
+[19 <./images/trafficControl.png>]
+Overfull \hbox (7.47307pt too wide) in paragraph at lines 357--357
+[] 
+ []
+
+
+Overfull \hbox (72.44489pt too wide) in paragraph at lines 381--381
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+
+LaTeX Warning: Reference `eq:traffic:post2' on page 21 undefined on input line 
+386.
+
+[21]) [22]
+\openout2 = `sections/evaluation.aux'.
+
+ (./sections/evaluation.tex
+Chapter 6.
+) [23
 
 
 
 
 ]
-Chapter 6.
-) [21] (./thesis.bbl [22
+\openout2 = `sections/conclusion.aux'.
+
+ (./sections/conclusion.tex [24
 
 
 
-]) [23]
+
+]
+Chapter 7.
+) [25] (./thesis.bbl [26
+
+
+
+]) [27]
 \openout2 = `sections/appendix.aux'.
 
- (./sections/appendix.tex [24
+ (./sections/appendix.tex [28
 
 
 
 ]
 Appendix A.
-<Images/ex_control.png, id=532, 179.16937pt x 186.6975pt>
+<Images/ex_control.png, id=582, 179.16937pt x 186.6975pt>
 File: Images/ex_control.png Graphic file (type png)
 
 <use Images/ex_control.png>
@@ -2043,7 +2058,7 @@ Package pdftex.def Info: Images/ex_control.png used on input line 25.
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank_hp.pdf, id=533, 614.295pt x 794.97pt>
+<images/watertank_hp.pdf, id=583, 614.295pt x 794.97pt>
 File: images/watertank_hp.pdf Graphic file (type pdf)
 
 <use images/watertank_hp.pdf>
@@ -2061,11 +2076,11 @@ Package pdftex.def Info: images/watertank_hp.pdf used on input line 56.
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-[25] [26 <./Images/ex_control.png>]
+[29] [30 <./Images/ex_control.png>]
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank_hp.pdf, id=557, page=1, 614.295pt x 794.97pt>
+<images/watertank_hp.pdf, id=608, page=1, 614.295pt x 794.97pt>
 File: images/watertank_hp.pdf Graphic file (type pdf)
 
 <use images/watertank_hp.pdf, page 1>
@@ -2089,11 +2104,11 @@ File: images/watertank_hp.pdf Graphic file (type pdf)
 <use images/watertank_hp.pdf, page 1>
 Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 56.
 (pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
- [27 <./images/watertank_hp.pdf>]
+ [31 <./images/watertank_hp.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<images/Watertank.pdf, id=590, 614.295pt x 794.97pt>
+<images/Watertank.pdf, id=641, 614.295pt x 794.97pt>
 File: images/Watertank.pdf Graphic file (type pdf)
 
 <use images/Watertank.pdf>
@@ -2115,7 +2130,7 @@ d PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./images/Watertank.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<images/Watertank.pdf, id=593, page=1, 614.295pt x 794.97pt>
+<images/Watertank.pdf, id=644, page=1, 614.295pt x 794.97pt>
 File: images/Watertank.pdf Graphic file (type pdf)
 
 <use images/Watertank.pdf, page 1>
@@ -2139,7 +2154,7 @@ File: images/Watertank.pdf Graphic file (type pdf)
 <use images/Watertank.pdf, page 1>
 Package pdftex.def Info: images/Watertank.pdf, page1 used on input line 58.
 (pdftex.def)             Requested size: 491.43666pt x 635.97687pt.
- [28 <./images/Watertank.pdf>])
+ [32 <./images/Watertank.pdf>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
  (./thesis.aux (./sections/declaration.aux) (./sections/abstract_en.aux)
@@ -2149,20 +2164,29 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
 (./sections/appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BE236FEC4F5BE0C9DE554B9B42DC32CA;3020.
 
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: F03C86EE6FF42EC221022984A25D90C3;3131
+(rerunfilecheck)             After:  2A5123AB9920032DD0519EEB74395263;3220.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 152.
  ) 
 Here is how much of TeX's memory you used:
- 26873 strings out of 493109
- 478982 string characters out of 6138587
- 671330 words of memory out of 5000000
- 29345 multiletter control sequences out of 15000+600000
- 229106 words of font info for 292 fonts, out of 8000000 for 9000
+ 26927 strings out of 493109
+ 479734 string characters out of 6138587
+ 671350 words of memory out of 5000000
+ 29367 multiletter control sequences out of 15000+600000
+ 233880 words of font info for 307 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  80i,19n,74p,1326b,1463s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{c:/tex
@@ -2184,10 +2208,10 @@ b><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/
 blic/txfonts/txsyb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/t
 xsyc.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxlr.pfb><c:/texl
 ive/2014/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
-Output written on thesis.pdf (42 pages, 673662 bytes).
+Output written on thesis.pdf (46 pages, 692416 bytes).
 PDF statistics:
- 720 PDF objects out of 1000 (max. 8388607)
- 609 compressed objects within 7 object streams
- 171 named destinations out of 1000 (max. 500000)
- 30083 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 774 PDF objects out of 1000 (max. 8388607)
+ 657 compressed objects within 7 object streams
+ 186 named destinations out of 1000 (max. 500000)
+ 30120 words of extra memory for PDF output out of 35830 (max. 10000000)
 

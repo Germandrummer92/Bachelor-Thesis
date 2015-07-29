@@ -8,31 +8,36 @@
 \BOOKMARK [2][-]{subsection.2.1.1}{Modelling CPS as Hybrid Automata}{section.2.1}% 8
 \BOOKMARK [2][-]{subsection.2.1.2}{Modelling CPS as Hybrid Programs}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{Dynamic Logic}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.1}{Differential Dynamic Logic as our Verification Logic}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{Differential Dynamic Logic}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.2}{JML: Verification of Java Programs using KeY}{section.2.2}% 12
-\BOOKMARK [1][-]{section.2.3}{KeYmaera as our Verification Tool for CPS}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.3}{KeYmaera as our Verification Tool for Hybrid Programs}{chapter.2}% 13
 \BOOKMARK [0][-]{chapter.3}{Motivating Example: Refinement of CPS ``Watertank''}{}% 14
 \BOOKMARK [1][-]{section.3.1}{Detailing the Watertank CPS}{chapter.3}% 15
 \BOOKMARK [2][-]{subsection.3.1.1}{The original Hybrid Program}{section.3.1}% 16
-\BOOKMARK [1][-]{section.3.2}{Finding the concrete Control Value Assisgnment}{chapter.3}% 17
-\BOOKMARK [2][-]{subsection.3.2.1}{The Remodelled Hybrid Program}{section.3.2}% 18
-\BOOKMARK [1][-]{section.3.3}{Finding the correct Program Safety Condition}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{The ``Hook'': Concrete Control Value Assisgnment}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.2.1}{Remodelled Hybrid Program}{section.3.2}% 18
+\BOOKMARK [1][-]{section.3.3}{Implementation Safety Condition}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.4}{The \(simple\) Java Control Program}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.5}{Finding the glue between Java and the Hybrid Model of the system}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.5}{Glue between Java and Hybrid Model}{chapter.3}% 21
 \BOOKMARK [1][-]{section.3.6}{Verification based on KeYmaera}{chapter.3}% 22
-\BOOKMARK [0][-]{chapter.4}{Formalized approach of using refinement to gain an implementation for a CPS}{}% 23
-\BOOKMARK [1][-]{section.4.1}{Modelling CPS as Hybrid System that includes concrete Hook}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.2}{Finding the necessary safety condition of the control value for verification with KeYmaera}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.3}{Implementing control program according to safety condition as its specification and verification by KeY.}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.4}{Finding the correct glue between hybrid model and control program and verifying it with KeYmaera.}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.5}{Validating glue results against implementation}{chapter.4}% 28
-\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 29
-\BOOKMARK [1][-]{section.5.1}{First Section}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.2}{Second Section}{chapter.5}% 31
-\BOOKMARK [1][-]{section.5.3}{Third Section}{chapter.5}% 32
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 33
-\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 34
-\BOOKMARK [1][-]{section.A.1}{Images}{appendix.A}% 35
-\BOOKMARK [1][-]{section.A.2}{Listings}{appendix.A}% 36
-\BOOKMARK [1][-]{section.A.3}{Watertank simulator}{appendix.A}% 37
-\BOOKMARK [1][-]{section.A.4}{Complete Hybrid Programs in correct notation}{appendix.A}% 38
+\BOOKMARK [0][-]{chapter.4}{Formalized approach of refining hybrid models into implementation}{}% 23
+\BOOKMARK [1][-]{section.4.1}{Modelling Hybrid System with Implementation Hook}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.2}{Devising Control Value Safety Postcondition}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{Implementation according to Postcondition and its Verification}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.4}{Glue between Hybrid Model and Implementation and its Verification}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.5}{Validating Verificiation results against Implementation}{chapter.4}% 28
+\BOOKMARK [0][-]{chapter.5}{Application of Process on Example: ``Traffic Speed Control''}{}% 29
+\BOOKMARK [1][-]{section.5.1}{Remodelling with Hook}{chapter.5}% 30
+\BOOKMARK [2][-]{subsection.5.1.1}{Remodelling}{section.5.1}% 31
+\BOOKMARK [1][-]{section.5.2}{Safety Hook Postconditions}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.3}{Implementation according to postconditions}{chapter.5}% 33
+\BOOKMARK [0][-]{chapter.6}{Evaluation}{}% 34
+\BOOKMARK [1][-]{section.6.1}{First Section}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.2}{Second Section}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.3}{Third Section}{chapter.6}% 37
+\BOOKMARK [0][-]{chapter.7}{Conclusion}{}% 38
+\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 39
+\BOOKMARK [1][-]{section.A.1}{Images}{appendix.A}% 40
+\BOOKMARK [1][-]{section.A.2}{Listings}{appendix.A}% 41
+\BOOKMARK [1][-]{section.A.3}{Watertank simulator}{appendix.A}% 42
+\BOOKMARK [1][-]{section.A.4}{Complete Hybrid Programs in correct notation}{appendix.A}% 43
