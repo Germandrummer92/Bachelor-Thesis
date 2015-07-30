@@ -327,18 +327,20 @@ When taking a look at the original hybrid program notation of thes traffic contr
 
 \subsection{Remodelling}
 \label{subsec:traffic:remodel}
-To simplify the problem at hand, we first removed the communication time ep, by arguing, that it can be 0 without affecting the correctness of the model. To introduce a tick we use the same trick as in the watertank example by only ``executing'' the differential equations when the tick was reached and forcing them to run the full duration until the next tick every time. Also, for simplification we tick the speed limit control system at \(n * (tick of car control system)\). This seems plausible in reality and we forego the need to model/implement the communication between both control programs. Our remodelled hybrid program can be seen in Eq.~\ref{eq:traffic:rem}. Here, the \(onego\),\(abool\) and \(bbool\) are help variables to make the logic of the program more understandable and to workaround the constraints imposed by the semantics of the hybrid program notation (e.g no modulo implemented).
+To simplify the problem at hand, we first removed the communication time ep, by arguing, that it can be 0 without affecting the correctness of the model, but for our purposes using ep as the length of the tick, as this is the time in which we cannot exert control over the system. To introduce the tick we use the same trick as in the watertank example by only ``executing'' the differential equations when the tick was reached and forcing them to run the full duration until the next tick every time. Also, for simplification we tick the speed limit control system synchronized to the car control system, as to remove complexity and make the model easier. This seems plausible in reality and we forego the need to model/implement the communication between both control programs. Our remodelled hybrid program can be seen in Eq.~\ref{eq:traffic:rem}. Here, the two hooks can be seen at \(a_1:=*;\) and \(x_{sl} :=*; v_{sl} := *;\) .
 
-In our remodelled version, the car is controlled at an arbitrary time \(t~mod~tick\equiv0\), whose control program then ensures safety for the car until the next tick occurs and the program is enacted again. Then at an arbitrary time  \(t~mod~n*tick\equiv 0\), the second hook for the speed limit control program is enacted. 
+In our remodelled version, the car is controlled at an arbitrary time \(t~mod~ep\equiv0\), whose control program then ensures safety for the car until the next tick occurs and the program is enacted again, meaning if the car breaks at maximum braking speed\( B\) at the next tick it can still reach a safe position/speed. Then at the same time t the second hook for the speed limit control program is enacted, where another postcondition has to be checked as to make sure the new chosen speed limit is in a safe spot for the car.
 
+\phantomsection
+\label{eq:traffic:orig}
 \begin{flalign*}
-v_1 \geq 0& \wedge v_{sl} \geq 0 \wedge x_1 \leq x_{sl} \\
-{}\wedge{}&  2 * B (x_{sl} - x_1) \geq v_1^{2} - v_{sl}^{2} \\
-{}\wedge{}& A \geq 0 \\
-{}\wedge{}& B \geq 0 \\
-{}\wedge{}& ep \geq 0 \implies \\
+ v_1 \geq 0 \wedge{}& v_{sl} \geq 0 \wedge x_1 \leq x_{sl} \\
+ {}\wedge{}&  2 * B (x_{sl} - x_1) \geq v_1^{2} - v_{sl}^{2} \\
+ {}\wedge{}& A \geq 0 \\
+ {}\wedge{}& B \geq 0 \\
+ {}\wedge{}& ep \geq 0 \implies \\
 			[& a_1 := -B \\
-			\quad&\quad\quad \cup (?(x_{sl} \geq x_1 + (v_1^{2}-v_{sl}^{2}) / (2*B) + (A/B) (A / B + 1) * (A / 2 * ep^2 + ep * v_1)) ; \\
+			\quad&\quad\quad \cup (?(x_{sl} \geq x_1 + (v_1^{2}-v_{sl}^{2}) / (2*B) + (A / B + 1) * (A / 2 * ep^2 + ep * v_1)) ; \\
 			\quad&\quad\quad\quad a_1:= *; \\
 			\quad&\quad\quad\quad?(-B \leq a_1 \wedge a_1 \leq A)) \\
 			\quad&\quad\quad\cup (?(x_1 \geq x_{sl}); \\
@@ -353,46 +355,45 @@ v_1 \geq 0& \wedge v_{sl} \geq 0 \wedge x_1 \leq x_{sl} \\
 			\quad&\quad\quad \{ a_1^{\prime} = v_1, v_1^{\prime} = a_1, \\
 			\quad&\quad\quad t^{\prime} = 1, v_1 \geq 0 , t \leq ep\})* \\
 			 ]& (x_1 \geq x_{sl} \implies v_1 \leq v_{sl}) 
-	\label{eq:traffic:orig}
 \end{flalign*}
+\phantomsection
+\label{eq:traffic:rem}
 \begin{flalign*}
-	v_1 \geq 0 \wedge{}& v_{sl} \geq 0 \wedge x_1 \leq x_{sl} \\
- 	{}\wedge{}& A \geq 0 \\
-	{}\wedge{}& B \geq 0 \\
-	{}\wedge{}&oneGo \geq 0 \\
-	{}\wedge{}& abool = 0 \\
-	{}\wedge{}& bbool = 0 \implies \\
-      	[&( \\
-      	\quad&\quad\quad(?(t = tick); oneGo := 1; t := 0; a1 := *; \\
-      	\quad&\quad\quad\quad \textrm{if} ( - B \leq a_1 \wedge a_1 \leq A \wedge  ((x_1+tick*v_1 + 1/2*tick^2*a_1 < x_{sl}) \vee (v_1 + tick * a_1 \leq v_{sl}))) \\
-      	\quad&\quad\quad\quad\quad \textrm{then abool} := 1 \\
-      	\quad&\quad\quad\quad\quad \textrm{else abool} := 0 \\
-      	\quad&\quad\quad\quad \textrm{fi}; \\
-      	\quad&\quad\quad\quad (?(t = tick \wedge oneGo = 1); oneGo := 0; x_{sl} := *; v_{sl} := *; \\
-      	 \quad&\quad\quad\quad\quad \textrm{if} (v_{sl} \geq 0 \wedge (x_{sl} > x_1 + v_1 *tick+1/2* a_1  *tick^2 \vee v_{sl} \geq v_1 + tick * a_1)) \\
-      	 \quad&\quad\quad\quad\quad\quad \textrm{then bbool} := 1 \\
-      	 \quad&\quad\quad\quad\quad\quad \textrm{else bbool} := 0 \\
-      	 \quad&\quad\quad\quad\quad \textrm{fi} \\
-      	 \quad&\quad\quad )); \\
-      	  \quad&\quad\quad(?(abool = 1 \wedge bbool = 1); \{x_1^{\prime} = v_1, v_1^{\prime} = a_1, t^{\prime} = 1, v_1 \geq 0, t \leq tick)\} \\
-		&)*	 \\	
-		]& (x_1 \geq x_{sl} \implies v_1 \leq v_{sl})	
-		%\label{eq:traffic:rem}
+ v_1 \geq 0 \wedge{}& v_{sl} \geq 0 \wedge x_1 \leq x_{sl} \\
+ {}\wedge{}&  2 * B (x_{sl} - x_1) \geq v_1^{2} - v_{sl}^{2} \\
+ {}\wedge{}& A \geq 0 \\
+ {}\wedge{}& B \geq 0 \\ 
+ {}\wedge{}& ep \geq 0 \implies \\
+			[& ( \\
+			\quad&\quad\quad?(t=ep); \\
+			\quad&\quad\quad(a_1 := *); \\
+			\quad&\quad\quad?(-B < a_1 \wedge a_1 < A \wedge (x_1 \geq x_{sl} \implies (a_1 \leq (vsl - v1) / ep)) \\
+			\quad&\quad\quad{}\wedge (x_1 < x_{sl} \implies (x_{sl} \geq x_1 + (v_1^2 - v_{sl}^2) / (2 * B) + (A / B + 1) * (A / 2 * ep^2 + ep * v_1)))); \\
+			\quad&\quad\quad x_{sl} := *; v_{sl} := *; \\
+			\quad&\quad\quad\quad ?(v_{sl} \geq 0 \wedge x_{sl} \geq x_1 + (v_1^{2} - v_{sl} ^{2}) / (2*B) + (A/B + 1) *  (A / 2 * ep^2 + ep * v_1)); \\
+			\quad&\quad\quad t:=0; \\
+			\quad&\quad\quad \{ a_1^{\prime} = v_1, v_1^{\prime} = a_1, \\
+			\quad&\quad\quad t^{\prime} = 1, v_1 \geq 0 , t \leq ep\})* \\
+			 ]& (x_1 \geq x_{sl} \implies v_1 \leq v_{sl})
 \end{flalign*}
 
 \section{Safety Hook Postconditions}
 \label{sec:traffic:postcondition}
 
-Following our process outline, the next step is to find a suitable safety postcondition for the two hooks. Using logic deduction we came up with two suitable safety postconditions (See Eq.~\ref{eq:traffic:post1},~\ref{eq:traffic:post2}), as \keym~then automatically verifies the entire hybrid model. In the first postcondition, meant for the car control program, the chosen acceleration for the car has to be in between the minimum and maximum acceleration and either it doesn't reach the new speed limit position at the next tick (meaning it can then be controlled again and stopped) or it doesn't reach a speed higher than the actual speed limit at the next tick. The second postcondition, responsible for the speed limit chooser program, has to make sure that the new speed limit is bigger than 0 (so as to make it possible for the car to even keep the speed limit), and that either the speed limit position is farther away from the car than the distance the car travels until the next car program tick or that the speed limit chosen is higher than the speed the car will have at the next control tick.
+Following our process outline, the next step is to find a suitable safety postcondition for the two hooks. Using logic deduction we came up with two suitable safety postconditions (See Eq.~\ref{eq:traffic:post1},~\ref{eq:traffic:post2}), as \keym~then automatically verifies the entire hybrid model. In the first postcondition, meant for the car control program, the chosen acceleration for the car has to be in between the minimum and maximum acceleration and the acceleration has to be chosen in such a way, that both cases are safe: 1) the car is currently before the speed limit, we accelerate in a way so that we can still break with the maximum braking speed at the next tick and stay under the limit or to the right of the speed limit. 2) If the car is already in the speed limited zone we accelerate in such a way that we don't reach a speed higher than the speed limit until the next tick. The second postcondition, responsible for the speed limit chooser program, has to make sure that the new speed limit is bigger than 0 (so as to make it possible for the car to even keep the speed limit), and that the speed limit is chosen in such a way that the car can still break with the maximum brake speed and be safe.
 
 \begin{equation}
-	\phi_1 \equiv- B \leq a_1 \wedge a_1 \leq A \wedge ((x_1+tick*v_1 + 1/2*tick^2*a_1 < x_{sl}) \vee (v_1 + tick * a_1 \leq v_{sl}))
+\begin{split}
+	\phi_1 \equiv&-B < a_1 \wedge a_1 < A \wedge (x_1 \geq x_{sl} \implies (a_1 \leq (vsl - v1) / ep)) \\
+	 {}\wedge{}& (x_1 < x_{sl} \implies (x_{sl} \geq x_1 + (v_1^2 - v_{sl}^2) / (2 * B) + (A / B + 1) * (A / 2 * ep^2 + ep * v_1)))
+	\end{split}
 	\label{eq:traffic:post1}
 \end{equation}
 	
 	
 \begin{equation}
-	\phi_2\equiv v_{sl} \geq 0 \wedge (x_{sl} > x_1 + v_1*tick+1/2*a_1*tick^2 \vee v_{sl} \geq v_1 + tick * a_1)
+	\phi_2\equiv v_{sl} \geq 0 \wedge x_{sl} \geq x_1 + (v_1^{2} - v_{sl} ^{2}) / (2*B) + (A/B + 1) *  (A / 2 * ep^2 + ep * v_1) \\
+	\label{eq:traffic:post2}
 \end{equation}
 
 \section{Implementation according to postconditions}
