@@ -3,15 +3,15 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces A simple Hybrid Automata~\cite {platze2010b}.}}{4}{figure.2.1}
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces A simplified train control system as a Hybrid Program~\cite {platzer2010b}.}}{5}{figure.2.2}
+\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces A simple Hybrid Automata~\cite {platzer2010b}.}}{6}{figure.2.1}
+\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces A simplified train control system as a Hybrid Program~\cite {platzer2010b}.}}{7}{figure.2.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite {keymaeraGuide}.}}{7}{figure.3.1}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces The Watertank CPS expressed as a hybrid automata~\cite {keymaeraGuide}.}}{8}{figure.3.2}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces The set-up of this CPS~\cite {keymaera}.}}{19}{figure.5.1}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite {keymaeraGuide}.}}{9}{figure.3.1}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces The Watertank CPS expressed as a hybrid automata~\cite {keymaeraGuide}.}}{10}{figure.3.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces The set-up of this CPS~\cite {keymaera}.}}{21}{figure.5.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{30}{figure.A.1}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}}{31}{figure.A.1}

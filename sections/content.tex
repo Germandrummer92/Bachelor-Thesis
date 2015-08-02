@@ -159,9 +159,9 @@ The control method consists only of simple if-else-statements and just assigns t
 For testing purposes, we also implemented a complete simulator of the Watertank CPS (See App.~\ref{app:Simulator}).
 
 \begin{lstlisting}[label=lst:JDL]
-	/*@ public normal_behavior //
-	  @ requires tick == 30 && y >= 10 && y <= 120 && y + 2 * old <= 120 && y + 2 * old >= 10 && (old == 10 || old == -20); //
-	  @ ensures \result * (tick / 10) + y + 2 * old  >= 12 & \result * (tick / 10) + y + 2 * old <= 116 && (\result == 10 || \result == -20); //
+	/*@ public normal_behavior 
+	  @ requires tick == 30 && y >= 10 && y <= 120 && y + 2 * old <= 120 && y + 2 * old >= 10 && (old == 10 || old == -20);
+	  @ ensures \result * (tick / 10) + y + 2 * old  >= 12 & \result * (tick / 10) + y + 2 * old <= 116 && (\result == 10 || \result == -20); 
 	  @*/
 \end{lstlisting} 
 

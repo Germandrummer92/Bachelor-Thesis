@@ -1,0 +1,360 @@
+\ifglsentryexists{cps}{}%
+{%
+\gls@defglossaryentry{cps}%
+{%
+name={Cyber-Physical System[CPS]},%
+sort={Cyber-Physical System[CPS]},%
+type={main},%
+first={Cyber-Physical System[CPS]},%
+firstplural={Cyber-Physical System[CPS]s},%
+text={Cyber-Physical System[CPS]},%
+plural={Cyber-Physical System[CPS]s},%
+description={is a system describing motions or evolutions in which a physical aspect is being controlled by a computer/computer program. In this thesis equivalent to the notion of Hybrid Systems.},%
+descriptionplural={is a system describing motions or evolutions in which a physical aspect is being controlled by a computer/computer program. In this thesis equivalent to the notion of Hybrid Systems.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hybrid}{}%
+{%
+\gls@defglossaryentry{hybrid}%
+{%
+name={Hybrid System},%
+sort={Hybrid System},%
+type={main},%
+first={Hybrid System},%
+firstplural={Hybrid Systems},%
+text={Hybrid System},%
+plural={Hybrid Systems},%
+description={is a system in which discrete as well as continuous evolutions are present. E.g, a remote controlled car which can only be accelerated or braked, its movement is continuous and follows continuous differential equations, while the control program is discrete and can only take discrete values (e.g, Acceleration := 1; Acceleration := 2 etc.).},%
+descriptionplural={is a system in which discrete as well as continuous evolutions are present. E.g, a remote controlled car which can only be accelerated or braked, its movement is continuous and follows continuous differential equations, while the control program is discrete and can only take discrete values (e.g, Acceleration := 1; Acceleration := 2 etc.).},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hook}{}%
+{%
+\gls@defglossaryentry{hook}%
+{%
+name={Hook},%
+sort={Hook},%
+type={main},%
+first={Hook},%
+firstplural={Hooks},%
+text={Hook},%
+plural={Hooks},%
+description={is the concrete instruction at which the control program is executed when describing a hybrid system as a hybrid program. This is one or multiple non-deterministic assignments of values, e.g a:=*.},%
+descriptionplural={is the concrete instruction at which the control program is executed when describing a hybrid system as a hybrid program. This is one or multiple non-deterministic assignments of values, e.g a:=*.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hookcond}{}%
+{%
+\gls@defglossaryentry{hookcond}%
+{%
+name={Hook Safety Postcondition},%
+sort={Hook Safety Postcondition},%
+type={main},%
+first={Hook Safety Postcondition},%
+firstplural={Hook Safety Postconditions},%
+text={Hook Safety Postcondition},%
+plural={Hook Safety Postconditions},%
+description={is the condition that has to be fullfilled by the value(s) that were assigned in the hook for the safey condition of the whole program to hold true.},%
+descriptionplural={is the condition that has to be fullfilled by the value(s) that were assigned in the hook for the safey condition of the whole program to hold true.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{glue}{}%
+{%
+\gls@defglossaryentry{glue}%
+{%
+name={Glue},%
+sort={Glue},%
+type={main},%
+first={Glue},%
+firstplural={Glues},%
+text={Glue},%
+plural={Glues},%
+description={is the relation between the values in the world of reals and the discrete world. For us, refers to a way of gaining the corresponding value in the other world from a given value.},%
+descriptionplural={is the relation between the values in the world of reals and the discrete world. For us, refers to a way of gaining the corresponding value in the other world from a given value.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hybridProg}{}%
+{%
+\gls@defglossaryentry{hybridProg}%
+{%
+name={Hybrid Program},%
+sort={Hybrid Program},%
+type={main},%
+first={Hybrid Program},%
+firstplural={Hybrid Programs},%
+text={Hybrid Program},%
+plural={Hybrid Programs},%
+description={is a way to describe hybrid systems in the form of a program. Expressed in the syntax of regular programs with the extension of differential equations.},%
+descriptionplural={is a way to describe hybrid systems in the form of a program. Expressed in the syntax of regular programs with the extension of differential equations.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hybridAuto}{}%
+{%
+\gls@defglossaryentry{hybridAuto}%
+{%
+name={Hybrid Automata},%
+sort={Hybrid Automata},%
+type={main},%
+first={Hybrid Automata},%
+firstplural={Hybrid Automatas},%
+text={Hybrid Automata},%
+plural={Hybrid Automatas},%
+description={is a way to model hybrid systems in the form of a non-deterministic automata. Uses the same syntax as finite automata with the addition of differential equations.},%
+descriptionplural={is a way to model hybrid systems in the form of a non-deterministic automata. Uses the same syntax as finite automata with the addition of differential equations.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{dl}{}%
+{%
+\gls@defglossaryentry{dl}%
+{%
+name={Dynamic Logic},%
+sort={Dynamic Logic},%
+type={main},%
+first={Dynamic Logic},%
+firstplural={Dynamic Logics},%
+text={Dynamic Logic},%
+plural={Dynamic Logics},%
+description={is the logic we use to express the safety property for our CPS.},%
+descriptionplural={is the logic we use to express the safety property for our CPS.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DDL}{}%
+{%
+\gls@defglossaryentry{DDL}%
+{%
+name={Differntial Dynamic Logic[DDL]},%
+sort={Differntial Dynamic Logic[DDL]},%
+type={main},%
+first={Differntial Dynamic Logic[DDL]},%
+firstplural={Differntial Dynamic Logic[DDL]s},%
+text={Differntial Dynamic Logic[DDL]},%
+plural={Differntial Dynamic Logic[DDL]s},%
+description={is the logic in which we express the safety properties for our CPS, and it also includes a syntax to express differential equations.},%
+descriptionplural={is the logic in which we express the safety properties for our CPS, and it also includes a syntax to express differential equations.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{key}{}%
+{%
+\gls@defglossaryentry{key}%
+{%
+name={KeY},%
+sort={KeY},%
+type={main},%
+first={KeY},%
+firstplural={KeYs},%
+text={KeY},%
+plural={KeYs},%
+description={is the tool we use to verify our java control programs as our concrete implementations.},%
+descriptionplural={is the tool we use to verify our java control programs as our concrete implementations.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{keym}{}%
+{%
+\gls@defglossaryentry{keym}%
+{%
+name={KeYmaera},%
+sort={KeYmaera},%
+type={main},%
+first={KeYmaera},%
+firstplural={KeYmaeras},%
+text={KeYmaera},%
+plural={KeYmaeras},%
+description={is the tool we use to verify both our remodelled hybrid programs as well as the glue relation.},%
+descriptionplural={is the tool we use to verify both our remodelled hybrid programs as well as the glue relation.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{jml}{}%
+{%
+\gls@defglossaryentry{jml}%
+{%
+name={Java Modelling Language},%
+sort={Java Modelling Language},%
+type={main},%
+first={Java Modelling Language},%
+firstplural={Java Modelling Languages},%
+text={Java Modelling Language},%
+plural={Java Modelling Languages},%
+description={is the language we use to express the contracts a certain method or class has to fulfill to be considered correct.},%
+descriptionplural={is the language we use to express the contracts a certain method or class has to fulfill to be considered correct.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

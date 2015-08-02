@@ -11,25 +11,28 @@
 %% Version 1.1, 2014-11-21
 
 
-\iflanguage{english}
-{\chapter{Appendix}}    % english style
-{\chapter{Anhang}}      % german style
-\label{chap:appendix}
 
+\chapter{Appendix}
+\label{chap:appendix}
+In this Appendix we present images, complete source code/hybrid program code listings as well as a Glossary at the end.
 
 \section{Images}
 \label{app:sec:images}
 
-	\begin{figure}
+In the following section different images that have been excluded from the main thesis are presented.
+
+	\begin{figure}[h!]
 		\centering
-		\includegraphics[height=0.7\textheight,width=1.0\textwidth]{Images/ex_control}
+		\includegraphics[height=0.5\textheight,width=0.6\textwidth]{Images/ex_control}
 		\caption{Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}
 		\label{fig:ex_control}
 	\end{figure}
-
+-
 
 \section{Listings}
 \label{app:sec:listings}
+
+In the following section we present the full java source code for our control program classes, as well as the rule definition we used for \keym. First is the rule definition for \keym, that abstracts the application of the floor function to a inequality of the form \(\textrm{floor}(x) = y \equiv \exists c:x-1 < c \wedge c \leq x \wedge (x \geq 0 \implies c \geq 0) \wedge (x < 0 \implies c < 0)  \longrightarrow\) whereby \(\longrightarrow\) refers to the big implication arrow in the verification of a hybrid program, meaning we get the abstraction of \(f(x)\) on the left side of the implication.
 
 \lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{black},commentstyle=\color{black},stringstyle=\color{black},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
 \begin{lstlisting}[label=app:lst:ruleF]
@@ -47,12 +50,253 @@
 	}	
 \end{lstlisting}
 
+Next, we provide the full java source code for the Watertank control program class. This means, not only the control method itself is provided, but all the needed class definitions as well.
+
+\lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{blue},commentstyle=\color{darkgreen},stringstyle=\color{red},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
+\begin{lstlisting}[label=app:lst:watertankContr]
+package watertankSplit;
+
+/**
+ * @author Daniel Draper
+ * @version 1.0
+ * This class is the Watertank's control system.
+ */
+public class Controller {
+	private int tick;
+	
+	public Controller() {
+		tick = 30;
+	}
+	
+	/**
+	 * Returns the actual control value for the valve of the watertank.
+	 * @param y the current water level
+	 * @param old the old valve setting
+	 * @return the new valve setting
+	 */
+	/*@ public normal_behavior
+	  @ requires tick == 31 && y >= 10 && y <= 120 && y + 2 * old <= 120 && y + 2 * old >= 10 && (old == 10 || old == -20);
+	  @ ensures \result * (tick / 10) + y + 2 * old  >= 12 & \result * (tick / 10) + y + 2 * old <= 116 && (\result == 10 || \result == -20);
+	  @*/
+	public int getControlValue (int y, int old) {
+		//Waterlevel in two time units
+		int inTwo = y + 2 * old;
+		//If we are raising level, keep raising if possible without hitting max_level before next tick
+		if (old == 10) {
+			if (inTwo + tick * 1 <= 116) {
+				return 10;
+			}
+			else {
+					return -20;
+			}
+		}
+		//ELSE if we are currently lowering level, keep lowering if we can lower further without hitting min_level b4 next tick
+		else {
+			if (old == -20) {
+				if (inTwo - tick * 2 >= 12) {
+					return -20;
+				}
+				else {
+						return 10;
+				
+				}
+		
+			}
+		}
+		//Only returned if old != 10 && old != -20, unreachable.
+		return 0;
+	}
+}
+\end{lstlisting}
 \section{Watertank simulator}
 \label{app:sec:simulator}
 
-\section{Complete Hybrid Programs in correct notation}
+To be able to execute the watertank control programs and see a result of the computations done on screen (in a form of console output) we had to write a simulator of the differential evolution of the watertank values. The watertank simulator class can be found below:
+
+
+
+\begin{lstlisting}[label=app:lst:watertankSim]
+package watertankSplit;
+
+/**
+ * @author Daniel Draper
+ * @version 1.0
+ * This class simulates a watertank as modelled in the hybrid model in the KeYmaera Guide.
+ */
+
+public class Simulator
+{
+	private int TICK = 30;
+	private Controller contr;
+	private int y;
+	private int x;
+	private int state;
+	private int oldDif;
+	private int newDif;
+	
+	/**
+	 * Constructs the simulator with correct starting values according to hybrid model.
+	 */
+	public Simulator() {
+		contr = new Controller();
+		state = 1;
+		y = 10;
+		x = TICK;
+		oldDif = 10;
+		newDif = 10;
+	}
+	
+	/**
+	 * One step in the differential evolution of the watertank.
+	 */
+	private void step() {
+		switch (state) {
+		case 0:
+			if (x == 20) {
+				state = 1;
+			}
+			else {
+				y+=oldDif;
+				x+=10;
+			}
+			break;
+		case 1:
+			if (x == TICK) {
+				oldDif = newDif;
+				System.out.println("Controlled!");
+				newDif = contr.getControlValue(y, oldDif);
+				if (newDif == oldDif) {
+					state = 1;
+					x = 0;
+				}
+				else {
+					state = 0;
+					x = 0;
+				}
+			}
+			else {
+				y+=newDif;
+				x+=10;
+			}
+			break;
+	}
+	}
+	
+	/**
+	 * Continuous execution of each timestep and printing the state with an included delay.
+	 */
+	public void run() {
+		do {
+			step();
+			printState();
+				synchronized(this) {		
+					try {
+						this.wait(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}	
+					finally {} 
+				}
+		} while(true);
+	}
+	/**
+	 * Prints the current state of the Watertank.
+	 */
+	private void printState() {
+		System.out.println("Time: " + x/10 + " newDif: " + newDif + " Fillstatus:");
+		for (int i = 0; i < y/10; i++) {
+		System.out.print("X ");
+		}
+		for (int i = 0; i < 12 - y/10; i++) {
+			System.out.print("_ ");
+		}
+		System.out.println();
+		
+	}
+	
+	/**
+	 * Main function creating and executing a new Simulator.
+	 * @param args commandline arguments
+	 */
+	public static void main(String args[]) {
+		Simulator s = new Simulator();
+		s.run();
+	}
+
+}
+\end{lstlisting}
+
+\section{Complete Hybrid Programs in correct ASCII notation}
 \label{app:sec:pdfs}
 
-\includepdf[pages=1,scale=0.8]{images/watertank_hp.pdf}
+In this section we present the complete hybrid programs from this thesis. As we mentioned in~\ref{ch:Preliminary}, hybrid programs have to be typeset in ASCII for \keym~to be able to read it, which is why these hybrid programs look different from the ones we present in the previous chapters. The first two hybrid programs are the original watertank hybrid program and our remodelled version that includes the hook, a suitable postcondition as well as the tick.
+\includepdf[pages=1,scale=1]{images/watertank_hp.pdf}
 
-\includepdf[pages=1,scale=0.8]{images/Watertank.pdf}
+\includepdf[pages=1,scale=1]{images/watertank.pdf}
+
+The next two hybrid programs are the original Traffic Control hybrid program, as well as it's remodelled version that includes the hooks (as in this case we have two control programs), the postconditions and a tick.
+\includepdf[page=1,scale=1]{images/trafficControlOrig.pdf}
+
+\includepdf[page=1,scale=1]{images/trafficControlRem.pdf}
+
+\newglossaryentry{cps} {
+ name=Cyber-Physical System[CPS],
+ description={is a system describing motions or evolutions in which a physical aspect is being controlled by a computer/computer program. In this thesis equivalent to the notion of Hybrid Systems.}
+}
+
+\newglossaryentry{hybrid}{
+ name=Hybrid System,
+ description={is a system in which discrete as well as continuous evolutions are present. E.g, a remote controlled car which can only be accelerated or braked, its movement is continuous and follows continuous differential equations, while the control program is discrete and can only take discrete values (e.g, Acceleration := 1; Acceleration := 2 etc.).}
+}
+
+\newglossaryentry{hook}{
+name=Hook,
+description={refers to a/multiple concrete instruction at which the control program is executed when describing a hybrid system as a hybrid program. This is one or multiple non-deterministic assignments of values, e.g a:=*.}
+}
+
+\newglossaryentry{hookcond}{
+name=Hook Safety Postcondition,
+description={refers to the condition that has to be fullfilled by the value(s) that were assigned in the hook for the safey condition of the whole program to hold true.}
+}
+
+\newglossaryentry{glue}{
+name=Glue,
+description={refers to a relation between the values in the world of reals and the discrete world. For us, refers to a way of gaining the corresponding value in the other world from a given value.}
+}
+
+\newglossaryentry{hybridProg}{
+name=Hybrid Program,
+description={is a way to describe hybrid systems in the form of a program. Expressed in the syntax of regular programs with the extension of differential equations.}
+}
+
+\newglossaryentry{hybridAuto}{
+name=Hybrid Automata,
+description={is a way to model hybrid systems in the form of a non-deterministic automata. Uses the same syntax as finite automata with the addition of differential equations.}
+}
+
+\newglossaryentry{dl}{
+name=Dynamic Logic,
+description={is the logic we use to express the safety property for our CPS.}
+}
+
+\newglossaryentry{DDL}{
+name=Differntial Dynamic Logic[DDL],
+description={is the logic in which we express the safety properties for our CPS, and it also includes a syntax to express differential equations.}
+}
+
+\newglossaryentry{key}{
+name=\key,
+description={is the tool we use to verify our java control programs as our concrete implementations.}
+}
+
+\newglossaryentry{keym}{
+name=\keym,
+description={is the tool we use to verify both our remodelled hybrid programs as well as the glue relation.}
+}
+
+\newglossaryentry{jml}{
+name=Java Modelling Language,
+description={is the language we use to express the contracts a certain method or class has to fulfill to be considered correct.}
+}
+
+

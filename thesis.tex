@@ -21,7 +21,7 @@
 \author{Daniel H. Draper}
 
 %% Title (and possibly subtitle) of the thesis
-\title{A Theory of Refinement of Cyber-Physical-Systems into Implementations}
+\title{A Theory of Refinement of Cyber-Physical Systems into Implementations}
 
 %% Type of the thesis 
 \thesistype{Bachelor's Thesis}
@@ -69,12 +69,13 @@
 \usepackage{xr}
 \usepackage{listings}
 \usepackage{pdfpages}
+\usepackage[nopostdot,nonumberlist,toc]{glossaries}
 %\addbibresource{thesis.bib}
 \newcommand{\keym}{Ke\kern-.1emYmaera}
 \newcommand{\key}{Ke\kern-.1emY}
 \newcommand{\ltab}{\raggedright\arraybackslash}
 
-
+\makeglossaries
 %% ====================================
 %% ====================================
 %% ||                                ||
@@ -148,5 +149,6 @@
 %% ----------------
 \appendix
 \include{sections/appendix}
-
+\glsaddall
+\printglossaries
 \end{document}

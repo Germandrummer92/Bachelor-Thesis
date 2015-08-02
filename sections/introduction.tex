@@ -23,8 +23,6 @@ To be able to verifiy the entire implementation against the cps-safety-constrain
 
 If we summarize the goal of this thesis we get~\ref{eq:Main_LogicRefinement}. Here, glue is the aforementioned relation to be able to translate from the real into the discrete world.
 
-
-
 \begin{center}
 \begin{tabular}{p{.5cm}c}1. &  \ltab Verification of hybrid model against safety property \(\alpha\) using \keym. \\
 2. & \ltab Verification of implementation using \key. \\
@@ -35,12 +33,22 @@ If we summarize the goal of this thesis we get~\ref{eq:Main_LogicRefinement}. He
 \end{tabular}
 \end{center}
 
-
 This means: if we have a certain hybrid program with an explicit hook that models a CPS and fullfills safety condition \(\alpha\) (meaning the CPS always terminates and is always in a state which fullfills \(\alpha\)), an implementation that is correct and have found a valid, verified glue relation between the different values of the physical and discrete system-parts, then the hybrid program using the concrete implementation in place of the hook also fullfills safety condition \(\alpha\).
-
 
 \section{Related Work}
 \label{sec:related}
+
+Hybrid systems offer many challenges not present in discrete approaches to refinement, as the continuous evolution of reals means that computation is complex and state space as well as transitions can be uncountably infinite. Discrete refinement approaches (e.g for Z(\cite{ZRef},~\cite{ZBookRef}), or for Event-B(\cite{EventB})), do not really apply to the problems in the Cyber-Physical hybrid world.  Timed automata (as presented in~\cite{Alur94atheory}), while closely related to hybrid systems as timed progression is one of the basic principles of hybrid systems, are still finite-state automata and do not solve the problem of abstracting a hybrid system with infinite states into a finite-state version.
+
+Other refinement approaches as in~\cite{RefCalcBook} offer mathematical foundations for discrete refinement, but can not find application in our problem space. Counter-example guided refinement as presented in~\cite{CounterExample}, offers a way to abstract hybrid systems based on counter-examples found by a model checker to find a suitable finite-state abstraction for the hybrid system for easier verification. They does not present a way of refinement into a concrete implementation as we are trying to establish.
+
+While refinement as a technique for analyzing hybrid systems in the context of implementations has been used in~\cite{RefCalc}, their approach offers only a refinement on a more abstract level, establishing a formalized approach to refinement of hybrid system and not the concrete implementation we achieve. 
+
+As we established a general procedure for finding an implementation, we found we needed an easy way to model a tick in our hybrid systems. One approach can be seen in~\cite{Raskin96stateclock} using event-based automata as opposed to timed automata or infinite-state hybrid programs.
+
+\cite{Robustness} takes a look at establishing a notion of robustness for Cyber-Physical-Systems, based on existing notions of robustness for discrete systems. It uses an abstraction and refinement process as to find robust versions of existing CPS models, but does not bother with actual implementations.
+
+Overall we outline a more concrete approach to refinement as opposed to the more abstract presented approaches, resulting in real-world applicable control programs verified automatically using \key~and \keym, as opposed to further abstractions of the problem as in the related works.
 
 \section{Outline}
 \label{sec:Outline}
@@ -52,5 +60,7 @@ In this thesis we take a look at the following:
 \item Preliminary Definitions.
 \item Motivating Example: Refining a concrete case study: CPS ``Watertank'' (Example taken from~\cite{keymaeraGuide}).
 \item Introduction of approach to using Refinement to gain an implementation from a hybrid model.
-\item Application of newly found approach: another case study: CPS ``Traffic Control'' (See ref.~\cite{bla}).
+\item Application of newly found approach: case study: CPS ``Traffic Control'' (See ref.~\cite{TrafficControl}).
 \end{enumerate}
+
+In the appendix, additional images are provided as well as the full source code for both hybrid programs and our implementations.

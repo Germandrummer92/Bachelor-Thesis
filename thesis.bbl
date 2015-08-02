@@ -5,14 +5,45 @@
 Wolfgang Ahrendt, Bernhard Beckert, Reiner H\"ahnle, Philipp R\"ummer, and
   Peter~H. Schmitt.
 \newblock Verifying object-oriented programs with {KeY}: A tutorial.
-\newblock In {\em 5th International Symposium onFormal Methods for Components
+\newblock In {\em 5th International Symposium on Formal Methods for Components
   and Objects, Amsterdam, The Netherlands}, volume 4709 of {\em LNCS}, pages
   70--101. Springer, 2007.
+
+\bibitem[AD94]{Alur94atheory}
+Rajeev Alur and David~L. Dill.
+\newblock {A Theory of Timed Automata}.
+\newblock {\em Theoretical Computer Science}, 126:183--235, 1994.
 
 \bibitem[BHS07]{keybook2007}
 Bernhard Beckert, Reiner H\"ahnle, and Peter~H. Schmitt, editors.
 \newblock {\em Verification of Object-Oriented Software: The {KeY} Approach}.
 \newblock LNCS 4334. Springer-Verlag, 2007.
+
+\bibitem[CFH{\etalchar{+}}03]{CounterExample}
+Edmund Clarke, Ansgar Fehnker, Zhi Han, Bruce Krogh, Olaf Stursberg, and
+  Michael Theobald.
+\newblock {Verification of Hybrid Systems Based on Counterexample-Guided
+  Abstraction Refinement}.
+\newblock In Hubert Garavel and John Hatcliff, editors, {\em Tools and
+  Algorithms for the Construction and Analysis of Systems}, volume 2619 of {\em
+  Lecture Notes in Computer Science}, pages 192--207. Springer Berlin
+  Heidelberg, 2003.
+
+\bibitem[CW98]{ZRef}
+Ana Cavalcanti and Jim Woodcock.
+\newblock {ZRC – A Refinement Calculus for Z}.
+\newblock {\em Formal Aspects of Computing}, 10(3):267--289, 1998.
+
+\bibitem[DB14]{ZBookRef}
+John Derrick and Eerke~A. Boiten.
+\newblock {\em Refinement in Z and Object-Z}.
+\newblock Springer London, 2014.
+
+\bibitem[GZ14]{RefCalc}
+Bin Gu and Liang Zou.
+\newblock A refinement calculus for hybrid systems.
+\newblock In {\em Engineering of Complex Computer Systems (ICECCS), 2014 19th
+  International Conference on}, pages 176--185, Aug 2014.
 
 \bibitem[Hen00]{Heinzinger2000b}
 Thomas~A. Henzinger.
@@ -21,6 +52,16 @@ Thomas~A. Henzinger.
   Digital and Hybrid Systems}, volume 170 of {\em NATO ASI Series}, pages
   265--292. Springer Berlin Heidelberg, 2000.
 
+\bibitem[MLP12]{TrafficControl}
+Stefan Mitsch, Sarah~M. Loos, and Andr{\'e} Platzer.
+\newblock Towards formal verification of freeway traffic control.
+\newblock In Chenyang Lu, editor, {\em ICCPS}, pages 171--180. IEEE, 2012.
+
+\bibitem[MV92]{RefCalcBook}
+Carroll Morgan and Trevor Vickers.
+\newblock {\em On the Refinement Calculus}.
+\newblock Springer London, 1992.
+
 \bibitem[Pla10]{platzer2010b}
 Andr{\'e} Platzer.
 \newblock {\em {L}ogical {A}nalysis of {H}ybrid {S}ystems}.
@@ -28,16 +69,32 @@ Andr{\'e} Platzer.
 
 \bibitem[Pla15a]{keymaeraGuide}
 Andr{\'e} Platzer.
-\newblock {G}uide for {K}eymaera {H}ybrid {S}ystems {V}erification {T}ool,
-  2015.
+\newblock {G}uide for {K}eymaera {H}ybrid {S}ystems {V}erification {T}ool.
+\newblock http://symbolaris.com/info/KeYmaera-guide.html, 2015.
 
 \bibitem[Pla15b]{keymaera}
 Andr{\'e} Platzer.
-\newblock {K}e{Y}maera: {A} {H}ybrid {T}heorem {P}rover for {H}ybrid {S}ystems,
-  2015.
+\newblock {K}e{Y}maera: {A} {H}ybrid {T}heorem {P}rover for {H}ybrid {S}ystems.
+\newblock http://symbolaris.com/info/KeYmaera.html, 2015.
+
+\bibitem[RT13]{Robustness}
+Matthias Rungger and Paulo Tabuada.
+\newblock Abstracting and refining robustness for cyber-physical systems.
+\newblock {\em CoRR}, abs/1310.5199, 2013.
+
+\bibitem[RyS96]{Raskin96stateclock}
+Jean-François Raskin and Pierre yves Schobbens.
+\newblock {State Clock Logic: a Decidable Real-Time Logic}.
+\newblock In {\em HART'97, LNCS 1201}, pages 33--47. Springer-Verlag, 1996.
+
+\bibitem[STW14]{EventB}
+Steve Schneider, Helen Treharne, and Heike Wehrheim.
+\newblock {The behavioural semantics of Event-B refinement}.
+\newblock {\em Formal Aspects of Computing}, 26(2):251--280, 2014.
 
 \bibitem[{Wol}]{mathematica}
 {Wolfram Research, Inc.}
 \newblock Mathematica.
+\newblock https://www.wolfram.com.
 
 \end{thebibliography}
