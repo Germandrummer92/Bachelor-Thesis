@@ -23,11 +23,10 @@ In the following section different images that have been excluded from the main 
 
 	\begin{figure}[h!]
 		\centering
-		\includegraphics[height=0.5\textheight,width=0.6\textwidth]{Images/ex_control}
-		\caption{Watertank Hybrid Program and - Automata with Non-Deterministic Control Program Abstraction marked.}
+		\includegraphics[height=0.5\textheight,width=0.8\textwidth]{Images/ha_control}
+		\caption{Watertank Hybrid  Automata with Non-Deterministic Control Program Abstraction marked.}
 		\label{fig:ex_control}
 	\end{figure}
--
 
 \section{Listings}
 \label{app:sec:listings}
@@ -108,12 +107,153 @@ public class Controller {
 	}
 }
 \end{lstlisting}
+
+Next, you can find the full source code for the Traffic Control Car Control Program. 
+
+\begin{lstlisting}[label=app:lst:carContr]
+package trafficControl;
+
+/**
+ * @author Daniel Draper
+ * @version 1.0
+ * This class models the Car Controller of the Traffic Control CPS.
+ */
+public class CarController {
+	private int TICK;
+	private int MAXBREAK;
+	private int MAXACCEL;
+
+	public CarController(int TICK, int MAXBREAK, int MAXACCEL) {
+		this.TICK = TICK;
+		this.MAXBREAK = MAXBREAK;
+		this.MAXACCEL = MAXACCEL;
+	}
+	/**
+	 * @param slPos Current Speed Limit Position
+	 * @param sl current Speed Limit
+	 * @param y current Car Position 
+	 * @param v current Car Velocity
+	 * @param accel current Car acceleration
+	 * @return the new acceleration control Value
+	 * The actual control Method.
+	 */
+	/*@ public normal_behavior
+	  @ requires MAXBREAK <= accel && accel <= MAXACCEL && ((!(y >= slPos)) || v <= sl) && v >= 0 && sl >= 0 && TICK == 1 && MAXBREAK == -10 && MAXACCEL == 10 && 2 * MAXBREAK * (slPos - y) >= v*v - sl*sl && (v <= sl || slPos * 2 * MAXBREAK >= y*2*MAXBREAK + (v*v - sl*sl));
+	  @ ensures MAXBREAK <= \result && \result <= MAXACCEL && ((!(y >= slPos)) || (\result*TICK <= (sl - v))) && ((!(y < slPos)) || (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + (\result+(-1)*MAXBREAK) * (\result * TICK*TICK + 2*TICK * v)));
+	 @*/
+	public int control(int y, int v, int accel, int sl, int slPos) {
+		if (y >= slPos) {
+			if ((accel+1)*TICK <= (sl-v)) {
+				if (accel+1 <= MAXACCEL) {
+					return accel+1;
+				}
+				
+			}
+			else {
+				if((accel-1)*TICK <= (sl-v)) {
+					if (accel-1 >= MAXBREAK) {
+						return accel-1;
+					}
+			}
+			}
+		}
+		else {
+			if (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + ((accel+1)+(-1)*MAXBREAK) * ((accel+1) * TICK*TICK + 2*TICK * v)) {
+				if (accel+1 <= MAXACCEL) {
+					return accel+1;
+				}
+			}
+			else {
+				if (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + ((accel-1)+(-1)*MAXBREAK) * ((accel-1) * TICK*TICK + 2*TICK * v)) {
+					if (accel-1 >= MAXBREAK) {
+						return accel-1;
+					}
+				}
+			}
+		}
+			return MAXBREAK;
+		
+	}
+\end{lstlisting}
+
+Next, you can find the full source code for the Speed Limit Control Class.
+\begin{lstlisting}[label=app:lst:speed]
+
+package trafficControl;
+
+
+/**
+ * @author Daniel Draper
+ * @version 1.0
+ * This class models the Speed Limit Controller used by the Traffic Control CPS.
+ */
+public class SpeedLimitController {
+
+	private int TICK;
+	private int MAXBREAK;
+	private int MAXACCEL;
+	/**
+	 * @param TICK the Tick duration
+	 * @param MAXBREAK the maximum breaking power (<0)
+	 * @param MAXACCEL the maximum acceleration (>=0)
+	 */
+	public SpeedLimitController(int TICK, int MAXBREAK, int MAXACCEL) {
+		this.TICK = TICK;
+		this.MAXBREAK = MAXBREAK;
+		this.MAXACCEL = MAXACCEL;
+	}
+
+	/**
+	 * @param slPos the current speed limit position
+	 * @param sl the current speed limit
+	 * @param accel the current car's acceleration value
+	 * @param v the current car's velocity
+	 * @param y the current car's position
+	 * @return both the new speed limit and speed limit position in an array.
+	 * The actual control Method.
+	 */
+	/*@ public normal_behavior
+	  @ requires MAXBREAK == -10 && MAXACCEL == 10 && TICK == 1 && ((!(y >= slPos)) || v <= sl) && v >= 0 && sl >= 0 && (v <= sl || slPos * 2 * MAXBREAK >= y*2*MAXBREAK + (v*v - sl*sl)) && ((!(sl < v)) || slPos * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - sl*sl) + (MAXACCEL + MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v)) && ((!(sl >= v)) || accel*TICK <= (sl - v)) && (\exists int x;x>=0; (slPos+x) * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - sl*sl) + (MAXACCEL + (-1)*MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v));
+	  @ ensures \result[0] >= 0 && ((!(\result[0] < v)) || \result[1] * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - \result[0]*result[0]) + (MAXACCEL + (-1)*MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v)) && ((!(\result[0] >= v)) || accel*TICK <= (\result[0] - v));
+	*/
+	public int[] control(int y, int v, int accel, int sl, int slPos) {
+		int[] result = new int[2];
+		result[0] = sl;
+		result[1] = slPos;
+		if (sl<25) {
+			if (sl+1 < v) {
+				result[0]++;
+				result[1] = y + (v*v - result[0]) + (MAXACCEL  + 1) * (MAXACCEL * TICK*TICK + 2 * TICK * v);
+			}
+			else {
+				if (accel*TICK <= result[0]+1 - v) {
+					result[0]++;
+				}
+			}
+		}
+		else {
+		if (result[0]-1 < v) {
+			if (result[0]-1 >= 0) {
+			result[0]--;
+			
+			result[1] = y + (v*v - result[0]) + (MAXACCEL  + 1) * (MAXACCEL * TICK*TICK + 2 * TICK * v);
+			}
+		}
+		else {
+			if (accel*TICK <= (result[0]-1 - v) && result[0]-1 >= 0) {
+				result[0]--;
+			}
+		}
+	}
+		return result;
+
+	}
+}
+\end{lstlisting}
 \section{Watertank simulator}
 \label{app:sec:simulator}
 
 To be able to execute the watertank control programs and see a result of the computations done on screen (in a form of console output) we had to write a simulator of the differential evolution of the watertank values. The watertank simulator class can be found below:
-
-
 
 \begin{lstlisting}[label=app:lst:watertankSim]
 package watertankSplit;
@@ -226,18 +366,128 @@ public class Simulator
 }
 \end{lstlisting}
 
+\section{Traffic Control Simulator}
+\label{app:sec:TrafficSim}
+
+As we did for the Watertank CPS, we also wrote a Simulator for the Traffic Control CPS as to be able to execute the entire program and see the evolution of the car. As the amount of distance between the next speed limit and current car's position can vary greatly, we chose a different way to present the current status of the system than for the watertank, just listing the current status in text form and checking if safety is still guaranteed. It consists of an infinite loop always continuing with one step in the differential evolution of the system, printing the state and an added delay as to make console output readable.
+
+\begin{lstlisting}[label=app:lst:trafficSim]
+
+package trafficControl;
+
+/**
+ * @author Daniel Draper
+ * @version 1.0
+ * This class simulates the environment in the Traffic Control CPS.
+ */
+public class Simulator {
+
+	private int xDif;
+	private int x;
+	private int y;
+	private int v;
+	private int accel;
+	private int sl;
+	private int slPos;
+	private CarController carContr;
+	private SpeedLimitController limContr;
+	private static int TICK = 1;
+	private static int MAXACCEL = 10;
+	private static int MAXBREAK = -10;
+	
+	/**
+	 * Creates a new Traffic Control Simulator.
+	 */
+	public Simulator() {
+		xDif = 1;
+		v = 10;
+		x = 0;
+		y = 0;
+		slPos = 10;
+		sl = 10;
+		carContr = new CarController(TICK, MAXBREAK, MAXACCEL);
+		limContr = new SpeedLimitController(TICK,MAXBREAK,MAXACCEL);
+	}
+	
+	/**
+	 * Starts the entire system, running in an infinite loop.
+	 */
+	public void run() {
+		do {
+			printState();
+			if (x \% TICK == 0) {
+				accel = carContr.control(y,v,accel,sl,slPos);
+					int[] res = limContr.control(y,v,accel,sl,slPos);
+					sl = res[0];
+					slPos = res[1];
+			}
+			int v0 = v;
+			x += xDif;
+			v += accel;
+			y += (v0 + 0.5 * accel);
+				synchronized(this) {		
+			try {
+				this.wait(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+			finally {} 
+		}
+		} while(true);
+	}
+	/**
+	 * Prints the current state of the system.
+	 */
+	private void printState() {
+		System.out.println("We have: Car at Pos. " + y + " with velocity " + v + " and acceleration " + accel);
+		System.out.println("Speed limit " + sl + " at Pos. " + slPos);
+		System.out.println("If car breaks at max_Break_Speed " + MAXBREAK + " at next tick, car has speed " + (v + accel) + " and afterwards speed " + (v+accel+MAXBREAK));
+		if (y >= slPos) {
+			if (accel*TICK <= (sl- v)) {
+				System.out.println("Safety kept!");
+				return;
+			}
+		}
+		else {
+			if (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + (accel+(-1)*MAXBREAK) * (accel * TICK*TICK + 2*TICK * v)); {
+				System.out.println("Safety kept!");
+				return;
+			}
+		}
+		System.err.println("Safety condition not kept!");
+	}
+
+	/**
+	 * @param args Commandline Arguments.
+	 * Main function for execution.
+	 */
+	public static void main(String[] args) {
+		Simulator s = new Simulator();
+		s.run();
+	}
+}
+\end{lstlisting}
+
 \section{Complete Hybrid Programs in correct ASCII notation}
 \label{app:sec:pdfs}
 
-In this section we present the complete hybrid programs from this thesis. As we mentioned in~\ref{ch:Preliminary}, hybrid programs have to be typeset in ASCII for \keym~to be able to read it, which is why these hybrid programs look different from the ones we present in the previous chapters. The first two hybrid programs are the original watertank hybrid program and our remodelled version that includes the hook, a suitable postcondition as well as the tick.
+In this section we present the complete hybrid programs from this thesis. As we mentioned in Ch.~\ref{ch:Preliminary}, hybrid programs have to be typeset in ASCII for \keym~to be able to read it, which is why these hybrid programs look different from the ones we present in the previous chapters. The first two hybrid programs are the original watertank hybrid program and our remodelled version that includes the hook, a suitable postcondition as well as the tick.
 \includepdf[pages=1,scale=1]{images/watertank_hp.pdf}
 
 \includepdf[pages=1,scale=1]{images/watertank.pdf}
+
+Next up is the glue proof for the watertank cps typeset in ASCII.
+
+\includepdf[pages=1,scale=1]{images/glue.pdf}
 
 The next two hybrid programs are the original Traffic Control hybrid program, as well as it's remodelled version that includes the hooks (as in this case we have two control programs), the postconditions and a tick.
 \includepdf[page=1,scale=1]{images/trafficControlOrig.pdf}
 
 \includepdf[page=1,scale=1]{images/trafficControlRem.pdf}
+
+What now follows is the glue proof for the traffic control cps typeset in ASCII.
+
 
 \newglossaryentry{cps} {
  name=Cyber-Physical System[CPS],

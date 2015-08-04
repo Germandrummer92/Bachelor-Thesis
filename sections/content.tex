@@ -67,7 +67,7 @@ The hybrid program (see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has t
 \section{The ``Hook'': Concrete Control Value Assisgnment}
 \label{sec:Watertank:ControlValue}
 
-In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment(s) the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automata describing the Watertank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-determnistic manner and would not fit in the model of the cps. Therefore, we remodelled the system to better serve our purpose, featuring a clear ticked hook that is called upon at deterministic times (See sec~\ref{sec:watertank_hp_ref}).
+In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment(s) the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automata describing the Watertank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-determnistic manner and would not fit in the model of the cps. A version of the hyrbrid automata with the hook marked in red can be found at App.~\ref{fig:ex_control}. Our remodelled system features a clear ticked hook that is called upon at deterministic times (See Sec.~\ref{sec:watertank_hp_ref}).
 
 \subsection{Remodelled Hybrid Program}
 \label{sec:watertank_hp_ref}
@@ -118,7 +118,7 @@ During verification of the entire hybrid program, \keym would not verify the hyb
 
 After completing verification of our hybrid model with \keym, we proceeded to implement a (simple) control program for the Watertank. Finding a suitable implementation proved difficult, as a parallel implementation (Both the control system and the differential equations working in parallel, modifying the water level) seemed more intuitive. This would defeat the purpose of actually finding a suitable hook and was more based on our understanding of the original hybrid model and not our version including the hook.
 
-Using our understanding of a singular hook of the control system into the watertank as well as the hook postcondition from the previous section as our specification for the actual control method, that would return the control value to the watertank's valve, we then managed to implement a suitable discrete control method (See Lst.~\ref{lst:source_controlMethod}).
+Using our understanding of a singular hook of the control system into the watertank as well as the hook postcondition from the previous section as our specification for the actual control method, that would return the control value to the watertank's valve, we then managed to implement a suitable discrete control method (See Lst.~\ref{lst:source_controlMethod}). As can be seen, the control method is relatively simply and only assigns the best/worst case scenario values. For the entire control class see App.~\ref{app:lst:watertankContr}.
 
 \definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
 \lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{blue},commentstyle=\color{darkgreen},stringstyle=\color{red},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
@@ -156,7 +156,7 @@ public int getControlValue (int y, int old) {
 
 The control method consists only of simple if-else-statements and just assigns the best-case (keep raising level if we were raising, keep lowering if we are lowering as long as postcondition is still valid) value to the valve. We translated the hook postcondition (See  Eq.~\ref{eq:postCondOrig}) into, what we thought to be, a suitable JDL postcondition statement for verification with \key~(See List.~\ref{lst:JDL}). In the next section we will explain why this postcondition would not work for our complete proof. \key~verified our program fully automatically, aside from the fact, that the \(tick>2\) precondition added too much computational complexity, so we let \key~prove the property with the more concrete \(tick==30;~tick==31;\dots\) assignments. 
 
-For testing purposes, we also implemented a complete simulator of the Watertank CPS (See App.~\ref{app:Simulator}).
+For testing purposes, we also implemented a complete simulator of the Watertank CPS (See App.~\ref{app:lst:watertankSim}).
 
 \begin{lstlisting}[label=lst:JDL]
 	/*@ public normal_behavior 
@@ -210,7 +210,7 @@ And \(\phi(y)\) is equivalent to:
 	\label{eq:phiWatertank}
 \end{equation}
 
-As can be seen, the \(\psi(x)\) that we found for the glue is not equal to the original trivial postcondition for our java program (See List.~\ref{lst:JDL}). This can be explained by the floor functions that has to be used for translation from the \(\mathbb{R}\) into \(\mathbb{Z}\) world. Due to the usage of the floor function, we only can approximate the original value in the discrete world, and therefore these approximation erorrs have to be accounted for in \(\psi\). Again the fact that we only found this error in our original postcondition devised for the java program, proves the non-triviality of the process even in seemingly simple examples as this watertank.
+As can be seen, the \(\psi(x)\) that we found for the glue is not equal to the original trivial postcondition for our java program (See List.~\ref{lst:JDL}). This can be explained by the floor functions that has to be used for translation from the \(\mathbb{R}\) into \(\mathbb{Z}\) world. Due to the usage of the floor function, we only can approximate the original value in the discrete world, and therefore these approximation erorrs have to be accounted for in \(\psi\). Again the fact that we only found this error in our original postcondition devised for the java program, proves the non-triviality of the process even in seemingly simple examples as this watertank. The glue in ASCII notation can be found in App. Sec.~\ref{app:sec:pdfs}.
 
 \section{Verification based on \keym}
 \label{sec:Watertank:Verification}
@@ -291,7 +291,7 @@ As both our model and implementation are now verified, the actual glue between t
 	\tag{\ref{eq:glueGeneral}}
 \end{equation}
 
-Coming up with the glue is the hardest part of the entire process, and took multiple iterations before a correct and verified glue was found. Most of the time the glue will probably incorporate some form of rounding/flooring mechanism, as we have to translate real values into discrete ones. This makes the entire proof hard to fully understand without lots of complex mathematical computations, making the proof hard to understand for humans.
+Coming up with the glue is the hardest part of the entire process, and took multiple iterations before a correct and verified glue was found. Most of the time the glue will probably incorporate some form of rounding/flooring mechanism, as we have to translate real values into discrete ones. This makes the entire proof hard to fully understand for humans without lots of complex mathematical computations.
 
 We used a form of logical deduction to come up with the correct quantifiers for the glue proof (so the \(\forall\) in Eq.~\ref{eq:glueGeneral}), which can be found in App.~\ref{app:glueQuant}. Verification of the glue should then happen using \keym, which means formulation of the glue should already be in the required syntax of DDL.
 
@@ -306,7 +306,7 @@ As we realized in our Watertank example (See Sec.~\ref{sec:Watertank:Glue}), wit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %--TRAFFIC CONTROL--%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Application of Process on Example: ``Traffic Speed Control''}
+\chapter{Evaluation using Example CPS: ``Traffic Speed Control''}
 \label{ch:Traffic}
 
 After formalizing our approach used in the opening watertank example, we now want to prove its feasability on a new and fresh example. The following example is taken from~\cite{TrafficControl} and describes a two-part control system responsible for a one-way linear freeway on which speed limits are set randomly by one part of the control system and the one moving car's acceleration is set by the car's part of the program. The goal for the system is to never let the car break the speed limit at any point. This means the two control systems have to communicate, which also has to be represented in the hybrid system.  
@@ -325,7 +325,7 @@ To show feasibility of our newly found approach, we now follow the process outli
 
 When taking a look at the original hybrid program notation of thes traffic control cps (See Eq.~\ref{eq:traffic:orig}), one can see the complexity of this problem. Here, \(t\) is the time, \(x_1\)\ is the position of the car, \(x_{sl}\) is the position of the next speedlimit, \(v_1\) is the speed of the car, \(v_{sl}\) is the speed limit, \(A\) is the maximum acceleration, \(B\) is the maximum braking power and \(ep\) is the maximum communication time between the car and speed limit controller. This hybrid program notation already obviously brings a high level of complexity and is hard to understand, so we decided to simplify the problem during remodelling. 
 
-\subsection{Remodelling}
+\subsection{Remodelled Hybrid Program}
 \label{subsec:traffic:remodel}
 To simplify the problem at hand, we first removed the communication time ep, by arguing, that it can be 0 without affecting the correctness of the model, but for our purposes using ep as the length of the tick, as this is the time in which we cannot exert control over the system. To introduce the tick we use the same trick as in the watertank example by only ``executing'' the differential equations when the tick was reached and forcing them to run the full duration until the next tick every time. Also, for simplification we tick the speed limit control system synchronized to the car control system, as to remove complexity and make the model easier. This seems plausible in reality and we forego the need to model/implement the communication between both control programs. Our remodelled hybrid program can be seen in Eq.~\ref{eq:traffic:rem}. Here, the two hooks can be seen at \(a_1:=*;\) and \(x_{sl} :=*; v_{sl} := *;\) .
 
@@ -367,12 +367,14 @@ In our remodelled version, the car is controlled at an arbitrary time \(t~mod~ep
 			[& ( \\
 			\quad&\quad\quad?(t=ep); \\
 			\quad&\quad\quad(a_1 := *); \\
-			\quad&\quad\quad?(-B < a_1 \wedge a_1 < A \wedge (x_1 \geq x_{sl} \implies (a_1 \leq (vsl - v1) / ep)) \\
+			\quad&\quad\quad?(-B \leq a_1 \wedge a_1 \leq A \wedge (x_1 \geq x_{sl} \implies (a_1 \leq (vsl - v1) / ep)) \\
 			\quad&\quad\quad{}\wedge (x_1 < x_{sl} \implies (x_{sl} \geq x_1 + (v_1^2 - v_{sl}^2) / (2 * B) + (A / B + 1) * (A / 2 * ep^2 + ep * v_1)))); \\
 			\quad&\quad\quad x_{sl} := *; v_{sl} := *; \\
-			\quad&\quad\quad\quad ?(v_{sl} \geq 0 \wedge x_{sl} \geq x_1 + (v_1^{2} - v_{sl} ^{2}) / (2*B) + (A/B + 1) *  (A / 2 * ep^2 + ep * v_1)); \\
+			\quad&\quad\quad\quad ?(v_{sl} \geq 0 \wedge v_{sl} < v_1 \implies{}  \\
+			\quad&\quad\quad\quad x_{sl} \geq x_1 + (v_1^{2} - v_{sl} ^{2}) / (2*B) + (A/B + 1) *  (A / 2 * ep^2 + ep * v_1)) \\
+			\quad&\quad\quad\quad {}\wedge  v_{sl} \geq v_1 \implies a_1 \leq (v_{sl} - v_1) / ep)); \\
 			\quad&\quad\quad t:=0; \\
-			\quad&\quad\quad \{ a_1^{\prime} = v_1, v_1^{\prime} = a_1, \\
+			\quad&\quad\quad \{ x_1^{\prime} = v_1, v_1^{\prime} = a_1, \\
 			\quad&\quad\quad t^{\prime} = 1, v_1 \geq 0 , t \leq ep\})* \\
 			 ]& (x_1 \geq x_{sl} \implies v_1 \leq v_{sl})
 \end{flalign*}
@@ -384,7 +386,7 @@ Following our process outline, the next step is to find a suitable safety postco
 
 \begin{equation}
 \begin{split}
-	\phi_1 \equiv&-B < a_1 \wedge a_1 < A \wedge (x_1 \geq x_{sl} \implies (a_1 \leq (vsl - v1) / ep)) \\
+	\phi_1 \equiv&-B \leq a_1 \wedge a_1 \leq A \wedge (x_1 \geq x_{sl} \implies (a_1 \leq (vsl - v1) / ep)) \\
 	 {}\wedge{}& (x_1 < x_{sl} \implies (x_{sl} \geq x_1 + (v_1^2 - v_{sl}^2) / (2 * B) + (A / B + 1) * (A / 2 * ep^2 + ep * v_1)))
 	\end{split}
 	\label{eq:traffic:post1}
@@ -392,12 +394,119 @@ Following our process outline, the next step is to find a suitable safety postco
 	
 	
 \begin{equation}
-	\phi_2\equiv v_{sl} \geq 0 \wedge x_{sl} \geq x_1 + (v_1^{2} - v_{sl} ^{2}) / (2*B) + (A/B + 1) *  (A / 2 * ep^2 + ep * v_1) \\
+\begin{split}
+	\phi_2\equiv (v_{sl} \geq 0 \wedge v_{sl} < v_1 \implies{}   x_{sl} \geq x_1 + (v_1^{2} - v_{sl} ^{2}) / (2*B) + (A/B + 1) *  (A / 2 * ep^2 + ep * v_1)) \\
+	{}\wedge  v_{sl} \geq v_1 \implies a_1 \leq (v_{sl} - v_1) / ep))
+\end{split}
 	\label{eq:traffic:post2}
 \end{equation}
 
 \section{Implementation according to postconditions}
 \label{sec:traffic:impl}
 
-Implemention of the two required control programs
-	
+For the implementation of the two control programs we chose to use a conservative, easier to understand approach, as \key~already had problems when trying to verify a more complicated approach. As there are two control programs/methods in use here, we just established the necessary ``communiction'' betwen both through our third Simulator class (See App.~\ref{app:sec:TrafficSim}). 
+
+\subsection{The Car Control Program}
+\label{subsec:traffic:car}
+For the car control program (See List.~\ref{lst:carControl}), one can see, that we only change the acceleration value by one if it fullfills the safety condition and break the maximum amount if not. This means, that more often than not we will be breaking at full speed,  and this control program could be improved greatly in future work. 
+
+\begin{lstlisting}[label=lst:carControl]
+	public int control(int y, int v, int accel, int sl, int slPos) {
+		
+		if (y >= slPos) {
+			if ((accel+1)*TICK <= (sl-v)) {
+				if (accel+1 <= MAXACCEL) {
+					return accel+1;
+				}
+				
+			}
+			else {
+				if((accel-1)*TICK <= (sl-v)) {
+					if (accel-1 >= MAXBREAK) {
+						return accel-1;
+					}
+			}
+			}
+		}
+		else {
+			if (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + ((accel+1)+(-1)*MAXBREAK) * ((accel+1) * TICK*TICK + 2*TICK * v)) {
+				if (accel+1 <= MAXACCEL) {
+					return accel+1;
+				}
+			}
+			else {
+				if (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + ((accel-1)+(-1)*MAXBREAK) * ((accel-1) * TICK*TICK + 2*TICK * v)) {
+					if (accel-1 >= MAXBREAK) {
+						return accel-1;
+					}
+				}
+			}
+		}
+			return MAXBREAK;
+		
+	}
+\end{lstlisting}
+
+In the contract we define for the car control program (See List.~\ref{lst:CondCar}),  one can see we had to explicitly list the value of the TICK and MAXBREAK/MAXACCEL as to make the automatic verification possible. We also had to give both the invariant as well as safety condition of the hybrid program as a precondition for the method, as we also did in our first watertank example (See List.~\ref{lst:JDL}), the first two preconditions can be seen as an invariant of the method, as we cannot control the acceleration level in our limit, if the acceleration level we get already violates this safety condition.
+
+\begin{lstlisting}[label=lst:CondCar]
+/*@ public normal_behavior
+	  @ requires MAXBREAK <= accel && accel <= MAXACCEL && ((!(y >= slPos)) || v <= sl) && v >= 0 && sl >= 0 && TICK == 1 && MAXBREAK == -10 && MAXACCEL == 10 && 2 * MAXBREAK * (slPos - y) >= v*v - sl*sl && (v <= sl || slPos * 2 * MAXBREAK >= y*2*MAXBREAK + (v*v - sl*sl));
+	  @ ensures MAXBREAK <= \result && \result <= MAXACCEL && ((!(y >= slPos)) || (\result*TICK <= (sl - v))) && ((!(y < slPos)) || (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + (\result+(-1)*MAXBREAK) * (\result * TICK*TICK + 2*TICK * v)));
+	 @*/
+\end{lstlisting}
+
+\subsection{The Speed Limit Control Program}
+\label{subsec:traffic:speed}
+
+List.~\ref{lst:programSpeed} shows the source code of the control method of our Speed Limit controller. The control method implements the two control values it has to assign by creating an array and returning the results in the array. The implementation proved interesting, as it has a certain freedom in choosing the next speed limit, as the control method could be trivial in case of just always returning the current speed limit and position, then the car would just continue with exactly it's current movement until it has to break and then come to a full stop. The control method tries to raise the current speed limit by one if we currently have a low speed limit set and lower it if we have a high speed limit set. We then assign the position of the speed limit as great enough to still be correct according to the set safety condition. Again this control method errs on the sude of caution and does not have a mathematically very interesting way to assign new values, something that could be improved upon in future work. The complete source code for the control class can be found in App.~\ref{app:lst:speed}.
+
+\begin{lstlisting}[label=lst:programSpeed]
+public int[] control(int y, int v, int accel, int sl, int slPos) {
+		int[] result = new int[2];
+		result[0] = sl;
+		result[1] = slPos;
+		if (sl<10) {
+			if (sl+1 < v) {
+				result[0]++;
+				result[1] = y + (v*v - result[0]) + (MAXACCEL  + 1) * (MAXACCEL * TICK*TICK + 2 * TICK * v);
+			}
+			else {
+				if (accel*TICK <= result[0]+1 - v) {
+					result[0]++;
+				}
+			}
+		}
+		else {
+		if (result[0]-1 < v) {
+			if (result[0]-1 >= 0) {
+			result[0]--;
+			
+			result[1] = y + (v*v - result[0]) + (MAXACCEL  + 1) * (MAXACCEL * TICK*TICK + 2 * TICK * v);
+			}
+		}
+		else {
+			if (accel*TICK <= (result[0]-1 - v) && result[0]-1 >= 0) {
+				result[0]--;
+			}
+		}
+	}
+		return result;
+
+	}
+\end{lstlisting}
+
+
+In the contract we establish for the speed limit control method (See List.~\ref{lst:condSpeed}), \key~again only verified the method after we added explicit numbers for MAXBREAK, MAXACCEL and the TICK, but these can be replaced easily in the precondition and \key~still completes. Again we also added the complete invariant as well as safety condition from the hybrid program, that would always apply before the method was enacted as it is part of the entire system modelled by the hybrid program.
+
+\begin{lstlisting}[label=lst:condSpeed]
+/*@ public normal_behavior
+	  @ requires MAXBREAK == -10 && MAXACCEL == 10 && TICK == 1 && ((!(y >= slPos)) || v <= sl) && v >= 0 && sl >= 0 && (v <= sl || slPos * 2 * MAXBREAK >= y*2*MAXBREAK + (v*v - sl*sl)) && ((!(sl < v)) || slPos * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - sl*sl) + (MAXACCEL + MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v)) && ((!(sl >= v)) || accel*TICK <= (sl - v)) && (\exists int x;x>=0; (slPos+x) * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - sl*sl) + (MAXACCEL + (-1)*MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v));
+	  @ ensures \result[0] >= 0 && ((!(\result[0] < v)) || \result[1] * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - \result[0]*result[0]) + (MAXACCEL + (-1)*MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v)) && ((!(\result[0] >= v)) || accel*TICK <= (\result[0] - v));
+*/
+\end{lstlisting}
+
+\section{Glue between Java and Hybrid Program}
+\label{sec:traffic:glue}
+
+The 
