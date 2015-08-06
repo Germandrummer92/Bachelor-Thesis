@@ -526,7 +526,7 @@ For each proof part, we still follow the general glue setup (See Eq.~\ref{eq:glu
 \phantomsection
 \label{eq:traffic:1.1}
 \begin{flalign*}
-	(a_j - 1 < a_1\wedge{}& a_1 \leq a_j \wedge (a_j \geq 0 \implies a_1 \geq 0) \wedge (a_j < 0 \implies a_1 < 0) \wedge \\
+	(a_j - 1 < a_1\wedge{}& a_1 \leq a_j \wedge (a_j \geq 0 \implies a_1 \geq 0) \wedge (a_j < 0 \implies a_1 < 0) \wedge{} \\
 	MAXBREAK-1 < -B \wedge{}& -B \leq MAXBREAK \wedge (MAXBREAK \geq 0 \implies -B \geq 0) \\
 	{}\wedge{}& (MAXBREAK < 0 \implies -B <0) \implies \\
 	((MAXBREAK \leq (a_j - 1))& \implies (-B \leq a_1)))
@@ -539,8 +539,8 @@ The second component of the first glue part, then proves the next postcondition:
 \begin{flalign*}
 	(a_j - 1 < a_1\wedge{}& a_1 \leq a_j \wedge (a_j \geq 0 \implies a_1 \geq 0) \wedge (a_j < 0 \implies a_1 < 0) \wedge \\
 	MAXACCEL-1 < A \wedge{}& A \leq MAXACCEL \wedge (MAXACCEL \geq 0 \implies A \geq 0) \\
-	 {}\wedge (MAXACCEL \leq 0 \implies A \leq 0) \implies \\
-	 ((a_j \leq (MAXACCEL - 1))& \implies (a_1 \leq A)))
+	 {}\wedge (MAXACCEL \leq 0 \implies{}& A \leq 0) \implies 
+	 ((a_j \leq (MAXACCEL - 1)) \implies (a_1 \leq A)))
 \end{flalign*}
 
 For the third postcondition figuring out the necessary strengthening of the java postcondition proved difficult, as the computation of counterexamples by mathematica took long due to the amount of equations and conditions in the glue making finding the correct postcondition difficult. We also had to assign an explicit number to TICK/ep, as to make computation of the proof easier. We ultimately found te following glue:
@@ -559,6 +559,26 @@ TICK = ep \wedge{}& ep = 2 \wedge{} \\
 (x_1 \geq x_{sl} \implies{}& (a_1 \leq (v_{sl} - v_1) / ep)))) 
 \end{flalign*}
 
+The last component of the first glue proof, had to be done twice, once as for the case that acceleration is positive and once for the case that acceleration is negative as to reduce complexity for \keym. We also abstracted the original postconditions as to not include division (as this does not change the correctness of the proof, as removing the division on the right side of the inequality only strengthens the statement) and removed the subtraction of \(v_{sl}^2\) on the right side as this again ony strengthens the assertion. The positive acceleration version can be found below, while the negative acceleration version can be found in App.~\ref{app:sec:neg}.
+
+\phantomsection
+\label{eq:traffic:1.4}
+\begin{flalign*}
+(x_1 - 1 <  x_j \wedge{}& x_j \leq x_1 \wedge{} \\
+v_1 -1 < v_j \wedge{}& v_j \leq v_1 \wedge{} \\
+a_1 - 1 < a_j \wedge{}& a_j \leq a_1 \wedge{}\\
+v_{sl} - 1 < sl \wedge{}& sl \leq v_{sl} \wedge{} \\
+x_{sl} - 1 < slPos \wedge{}& slPos \leq x_{sl} \wedge{} \\
+TICK = ep \wedge{}& ep = 2 \wedge{} \\
+v_j \geq 0 \wedge{}& v_1 \geq 0 \wedge{} \\
+a_j \geq 0 \wedge{}& a_1 \geq 0 \wedge{} \\
+x_j \geq 0 \wedge{}& s_1 \geq 0 \wedge{} \\
+sl \geq 0 \wedge{}& v_{sl} \geq 0 \implies{} \\
+((x_j < (slPos + 1) \implies{}& (slPos \geq (x_j + 1) + (v_j+1)^2+  \\ 
+(((a_j + 1) + 1)& * (a_j + 1) * TICK^2 + TICK *(v_j+1)))) \implies{} \\
+(x_1 < x_{sl} \implies{}& (x_{sl} \geq x_1 + v_{1}^2+(a_1+1)*(a_1*ep^2+ep*v_1)))))
+\end{flalign*}
+
 \subsection{Glue for the Speed Limit Control Program}
 \label{subsec:traffic:glueSpeed}
 
@@ -571,7 +591,7 @@ The second proof part then proves the postcondition for the speed control progra
 	(sl \geq 0) \implies{}& (v_{sl} \geq 0)))
 \end{flalign*}
 
-The next two proof components are very similar to the ones in the first glue proof for the car control program, as the postcondition are almost identically. First we prove:
+The next two proof components are very similar to the third and fourth component in the first glue proof for the car control program, as the postconditions are almost identically. First we prove:
 
 \phantomsection
 \label{eq:traffic:2.2}
@@ -587,10 +607,32 @@ TICK = ep \wedge{}& ep = 2 \wedge{} \\
 (v_{sl} \geq v_1 \implies{}& (a_1 \leq (v_{sl} - v_1) / ep)))) 
 \end{flalign*}
 
+The last component again had to be done twice, once for positive and once for negative acceleration and also removes the divisions on the right side of the inequality. It does not, however, need to be run twice to account for negative acceleration, as MAXACCEL is always going to be positive.
+
+\phantomsection
+\label{eq:traffic:2.3}
+\begin{flalign*}
+(x_1 - 1 <  x_j \wedge{}& x_j \leq x_1 \wedge{} \\
+v_1 -1 < v_j \wedge{}& v_j \leq v_1 \wedge{} \\
+a_1 - 1 < a_j \wedge{}& a_j \leq a_1 \wedge{}\\
+v_{sl} - 1 < sl \wedge{}& sl \leq v_{sl} \wedge{} \\
+x_{sl} - 1 < slPos \wedge{}& slPos \leq x_{sl} \wedge{} \\
+A-1 < MAXACCEL \wedge{}& MAXACCEL \leq A \wedge{} \\
+TICK = ep \wedge{}& ep = 2 \wedge{} \\
+v_j \geq 0 \wedge{}& v_1 \geq 0 \wedge{} \\
+x_j \geq 0 \wedge{}& s_1 \geq 0 \wedge{} \\
+sl \geq 0 \wedge{}& v_{sl} \geq 0 \wedge{} \\
+MAXACCEL \geq 0 \implies{}& \\
+((sl < (v_j + 1) \implies{}& (slPos \geq (x_j + 1) + (v_j+1)^2+  \\ 
+(((MAXACCEL + 1) + 1)& * (MAXACCEL + 1) * TICK^2 + TICK *(v_j+1)))) \implies{} \\
+(vsl < v_1 ) \implies{}& (x_{sl} \geq x_1 + v_{1}^2+(A+1)*(A*ep^2+ep*v_1)))))
+\end{flalign*}
+
+
 All glue components are verified automatically by \keym~seperately. If put together \keym~does not manage the computational complexity of the glue proof, showcasing the non-triviality of the case study.
 
 \section{Validation of Results}
 \label{sec:traffic:val}
 
-After the glue we again had to make our java postcondition stronger as to be able to prove our glue. This was relatively easy due to the relative simplicity of our java control programs. The version of our java control programs includes the correct (stronger) postconditions.
+After the glue we again had to make our java postcondition stronger as to be able to prove our glue. This was relatively easy due to the relative simplicity of our java control programs. The version of our java control programs includes the correct (stronger) postconditions. Again, however, this shows that the validation step is important as to actually make the java postcondition correct according to the glue proof.
 	

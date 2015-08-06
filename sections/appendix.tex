@@ -28,6 +28,27 @@ In the following section different images that have been excluded from the main 
 		\label{fig:ex_control}
 	\end{figure}
 
+\section{Negative Acceleration Glue Traffic Control CPS}
+\label{app:sec:neg}
+
+As mentioned in Sec.~\ref{subsec:traffic:GlueSpeed} for the fourth component we had to split up the proof into a positive acceleration and negative acceleration part. The glue proof for the negative acceleration can be found below.
+\phantomsection
+\label{app:eq:traffic1.4.2}
+\begin{flalign*}
+(x_1 - 1 <  x_j \wedge{}& x_j \leq x_1 \wedge{} \\
+v_1 -1 < v_j \wedge{}& v_j \leq v_1 \wedge{} \\
+a_1 - 1 < a_j \wedge{}& a_j \leq a_1 \wedge{}\\
+v_{sl} - 1 < sl \wedge{}& sl \leq v_{sl} \wedge{} \\
+x_{sl} - 1 < slPos \wedge{}& slPos \leq x_{sl} \wedge{} \\
+TICK = ep \wedge{}& ep = 2 \wedge{} \\
+v_j \geq 0 \wedge{}& v_1 \geq 0 \wedge{} \\
+a_j < 0 \wedge{}& a_1 <0 \wedge{} \\
+x_j \geq 0 \wedge{}& s_1 \geq 0 \wedge{} \\
+sl \geq 0 \wedge{}& v_{sl} \geq 0 \implies{} \\
+((x_j < (slPos + 1) \implies{}& (slPos \geq (x_j + 1) + (v_j+1)^2+  \\ 
+((((-a_j) + 1) + 1)& * ((-a_j) + 1) * TICK^2 + TICK *(v_j+1)))) \implies{} \\
+(x_1 < x_{sl} \implies{}& (x_{sl} \geq x_1 + v_{1}^2+(a_1+1)*(a_1*ep^2+ep*v_1)))))
+\end{flalign*}
 \section{Listings}
 \label{app:sec:listings}
 
@@ -488,6 +509,9 @@ The next two hybrid programs are the original Traffic Control hybrid program, as
 
 What now follows is the glue proof for the traffic control cps typeset in ASCII.
 
+\includepdf[page=1,scale=1]{images/glue_traffic_1.pdf}
+
+\includepdf[page=1,scale=1]{images/glue_traffic_2.pdf}
 
 \newglossaryentry{cps} {
  name=Cyber-Physical System[CPS],
