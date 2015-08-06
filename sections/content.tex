@@ -45,7 +45,7 @@ The ``control'' part of this hybrid system is the valve, it can either drain the
 \label{sec:watertank_hp}
 
 The hybrid program (see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has three variables (water level y, time x and state st all as Real numbers) defined as:
-\(\mathbb{R} y, x, st;\) in the \(\\ProgramVariables\) section. Then the complete program notation with a preceeding initialization of values and state.
+\(\mathbb{R}~y, x, st;\) in the \(\\ProgramVariables\) section. Then the complete program notation with a preceeding initialization of values and state.
 \begin{flalign*}
 		[ x:=0,y:=1, st:=0]& ((st = 0) \implies \\
 			\quad& [ (?(st=0); \\
@@ -179,7 +179,7 @@ As we went along, we figured out how a general glue proof should look (See Fig.~
 \begin{equation}
 	\centering
 	\begin{split}
-		\forall x \in (Discrete World)~\forall y \in (Real World):(x,y) \in \textit{glue} \implies (\psi(x) \implies \phi(y))
+		\forall~x \in (Discrete World)~\forall~y \in (Real World):(x,y) \in \textit{glue} \implies (\psi(x) \implies \phi(y))
 	\end{split}
 	\label{eq:glueGeneral}
 \end{equation}
@@ -188,7 +188,7 @@ Following this basic guideline, we were able to find a suitable glue relation (o
 
 \begin{equation}
 	\begin{split}
-		\forall y \in \mathbb{R} . \forall y_j \in \mathbb{Z}. \forall valve \in \mathbb{R}. \forall tick \in \mathbb{R}&. \forall tick_j \in \mathbb{Z} . \forall new \in \mathbb{Z}. \forall result \in \mathbb{R} : \\  y_j = \textrm{floor}(10 * y)~\wedge&~ old_j = \textrm{floor}(10*valve) \wedge tick_j = \textrm{floor}(10*tick)~\wedge \\ result = 10 * new~\wedge&~ y \geq 1~\wedge~y \leq 12~\wedge  (valve = 1 ~\vee~valve = -2)~\wedge \\&tick > 2 
+		\forall~y \in \mathbb{R}~. \forall~y_j \in \mathbb{Z}. \forall~valve \in \mathbb{R}. \forall~tick \in \mathbb{R}&. \forall~tick_j \in \mathbb{Z} . \forall~new \in \mathbb{Z}. \forall~result \in \mathbb{R}~: \\  y_j = \textrm{floor}(10 * y)~\wedge&~ old_j = \textrm{floor}(10*valve) \wedge tick_j = \textrm{floor}(10*tick)~\wedge \\ result = 10 * new~\wedge&~ y \geq 1~\wedge~y \leq 12~\wedge  (valve = 1 ~\vee~valve = -2)~\wedge \\&tick > 2 
 	\end{split}
 	\label{eq:glueWatertank}
 \end{equation}
@@ -218,7 +218,7 @@ As can be seen, the \(\psi(x)\) that we found for the glue is not equal to the o
 Verification of the glue proved difficult since \keym, or specifically Mathematica (cf.~\cite{mathematica}) (\keym~backend algebraic solver), has problems with the translation of unintepreted functions. Therefore we found an abstraction of the floor function using inequalities to approximate it (See Eq.~\ref{eq:approxF}). 
 
 \begin{align*}
-		\forall x \in \mathbb{R}. \forall c \in \mathbb{R}. floor(x) = c \implies x-1 < c \wedge c \leq x \wedge( x>0\implies c>0)
+		\forall~x \in \mathbb{R}. \forall~c \in \mathbb{R}. floor(x) = c \implies x-1 < c \wedge c \leq x \wedge( x>0\implies c>0)
 	\label{eq:approxF}
 \end{align*}
 Also, since \keym~does not deal with numbers outside of the reals, we generalized the preconditions for every variable to be in the reals. This obviously only strengthens the proof and therefore does not change the correctness.
@@ -286,7 +286,7 @@ As both our model and implementation are now verified, the actual glue between t
 \begin{equation}
 	\centering
 	\begin{split}
-		\forall x \in (Discrete World)~\forall y \in (Real World):(x,y) \in \textit{glue} \implies (\psi(x) \implies \phi(y))
+		\forall~x \in (Discrete World)~\forall~y \in (Real World):(x,y) \in \textit{glue} \implies (\psi(x) \implies \phi(y))
 	\end{split}
 	\tag{\ref{eq:glueGeneral}}
 \end{equation}
@@ -509,4 +509,88 @@ In the contract we establish for the speed limit control method (See List.~\ref{
 \section{Glue between Java and Hybrid Program}
 \label{sec:traffic:glue}
 
-The 
+The glue for this CPS proved interesting, as for two hook postconditions we also had to devise two proof steps. Aside from this, the complexity of the involved proof steps meant, we had to split up each proof into smaller steps as to be able to use \keym's automatic verificaton mechanism. For every glue part we again quantify all the variables as \(\forall~\mathbb{R}\) (See Eq.~\ref{eq:trafficQuant}). We also did not use the taclet we wrote for the watertank function, rather putting in the abstraction of the flooring function into our preconditions explicitly to further reduce computational complexity.
+
+\begin{equation}
+	\begin{split}
+	\forall~\mathbb{R}~x_1 .\forall~\mathbb{R}~v_1 .\forall~\mathbb{R}~a_1 .\forall~\mathbb{R}~v_{sl} .\forall~\mathbb{R}~x_{sl} .\forall~\mathbb{R}~B .\forall~\mathbb{R}~A . \forall~\mathbb{R}~ep . \\ \forall~\mathbb{R}~x_j .\forall~\mathbb{R}~v_j .\forall~\mathbb{R}~a_j .\forall~\mathbb{R}~sl .\forall~\mathbb{R}~slPos .\forall~\mathbb{R}~MAXBREAK .\forall~\mathbb{R}~MAXACCEL .\forall~\mathbb{R}~TICK .
+	\end{split}
+	\label{eq:trafficQuant}
+\end{equation}
+
+\subsection{Glue for the Car Control Program}
+\label{subsec:traffic:carGlue}
+
+For each proof part, we still follow the general glue setup (See Eq.~\ref{eq:glueGeneral}). We create a seperate glue proof file for each part of each glue proof, as to reduce complexity for \keym. For example the first part of the first glue proof (for the car control system) in the following Equation only has two glue conditions, one java postcondition and one hybrid world postcondition.
+
+\phantomsection
+\label{eq:traffic:1.1}
+\begin{flalign*}
+	(a_j - 1 < a_1\wedge{}& a_1 \leq a_j \wedge (a_j \geq 0 \implies a_1 \geq 0) \wedge (a_j < 0 \implies a_1 < 0) \wedge \\
+	MAXBREAK-1 < -B \wedge{}& -B \leq MAXBREAK \wedge (MAXBREAK \geq 0 \implies -B \geq 0) \\
+	{}\wedge{}& (MAXBREAK < 0 \implies -B <0) \implies \\
+	((MAXBREAK \leq (a_j - 1))& \implies (-B \leq a_1)))
+\end{flalign*}
+
+The second component of the first glue part, then proves the next postcondition:
+
+\phantomsection
+\label{eq:traffic:1.2}
+\begin{flalign*}
+	(a_j - 1 < a_1\wedge{}& a_1 \leq a_j \wedge (a_j \geq 0 \implies a_1 \geq 0) \wedge (a_j < 0 \implies a_1 < 0) \wedge \\
+	MAXACCEL-1 < A \wedge{}& A \leq MAXACCEL \wedge (MAXACCEL \geq 0 \implies A \geq 0) \\
+	 {}\wedge (MAXACCEL \leq 0 \implies A \leq 0) \implies \\
+	 ((a_j \leq (MAXACCEL - 1))& \implies (a_1 \leq A)))
+\end{flalign*}
+
+For the third postcondition figuring out the necessary strengthening of the java postcondition proved difficult, as the computation of counterexamples by mathematica took long due to the amount of equations and conditions in the glue making finding the correct postcondition difficult. We also had to assign an explicit number to TICK/ep, as to make computation of the proof easier. We ultimately found te following glue:
+
+\phantomsection
+\label{eq:traffic:1.3}
+\begin{flalign*}
+(x_1 - 1 <  x_j \wedge{}& x_j \leq x_1 \wedge{} \\
+v_1 -1 < v_j \wedge{}& v_j \leq v_1 \wedge{} \\
+a_1 - 1 < a_j \wedge{}& a_j \leq a_1 \wedge{}\\
+v_{sl} - 1 < sl \wedge{}& sl \leq v_{sl} \wedge{} \\
+x_{sl} - 1 < slPos \wedge{}& slPos \leq x_{sl} \wedge{} \\
+TICK = ep \wedge{}& ep = 2 \wedge{} \\
+(x_1 \geq x_{sl} \implies v_1 \leq v_{sl}) \wedge{}& (x_j \geq slPos \implies v_j \leq sl) \implies \\
+((x_j \geq slPos-1 \implies{}& (a_j \leq ((sl-v_j) / TICK) - 2)) \implies \\
+(x_1 \geq x_{sl} \implies{}& (a_1 \leq (v_{sl} - v_1) / ep)))) 
+\end{flalign*}
+
+\subsection{Glue for the Speed Limit Control Program}
+\label{subsec:traffic:glueSpeed}
+
+The second proof part then proves the postcondition for the speed control program. Again we split it up into parts for each postcondition part to reduce computational complexity using the quantification in Eq.~\ref{eq:trafficQuant}. We start with:
+
+\phantomsection
+\label{eq:traffic:2.1}
+\begin{flalign*}
+	(sl - 1 < v_{sl}\wedge{}& sl \leq v_{sl} \wedge (sl \geq 0 \implies v_{sl} \geq 0) \wedge (sl < 0 \implies v_{sl} < 0)) \implies \\
+	(sl \geq 0) \implies{}& (v_{sl} \geq 0)))
+\end{flalign*}
+
+The next two proof components are very similar to the ones in the first glue proof for the car control program, as the postcondition are almost identically. First we prove:
+
+\phantomsection
+\label{eq:traffic:2.2}
+\begin{flalign*}
+(x_1 - 1 <  x_j \wedge{}& x_j \leq x_1 \wedge{} \\
+v_1 -1 < v_j \wedge{}& v_j \leq v_1 \wedge{} \\
+a_1 - 1 < a_j \wedge{}& a_j \leq a_1 \wedge{}\\
+v_{sl} - 1 < sl \wedge{}& sl \leq v_{sl} \wedge{} \\
+x_{sl} - 1 < slPos \wedge{}& slPos \leq x_{sl} \wedge{} \\
+TICK = ep \wedge{}& ep = 2 \wedge{} \\
+(x_1 \geq x_{sl} \implies v_1 \leq v_{sl}) \wedge{}& (x_j \geq slPos \implies v_j \leq sl) \implies \\
+((sl \geq v_j-1 \implies{}& (a_j \leq ((sl-v_j) / TICK) - 2)) \implies \\
+(v_{sl} \geq v_1 \implies{}& (a_1 \leq (v_{sl} - v_1) / ep)))) 
+\end{flalign*}
+
+All glue components are verified automatically by \keym~seperately. If put together \keym~does not manage the computational complexity of the glue proof, showcasing the non-triviality of the case study.
+
+\section{Validation of Results}
+\label{sec:traffic:val}
+
+After the glue we again had to make our java postcondition stronger as to be able to prove our glue. This was relatively easy due to the relative simplicity of our java control programs. The version of our java control programs includes the correct (stronger) postconditions.
+	

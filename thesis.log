@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  5 AUG 2015 01:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  6 AUG 2015 03:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1727,7 +1727,7 @@ LaTeX Info: Redefining \nameref on input line 86.
 
 \c@lstlisting=\count194
  (./thesis.glsdefs)
-<logos/kitlogo_en_cmyk.pdf, id=187, 198.7425pt x 92.345pt>
+<logos/kitlogo_en_cmyk.pdf, id=199, 198.7425pt x 92.345pt>
 File: logos/kitlogo_en_cmyk.pdf Graphic file (type pdf)
 
 <use logos/kitlogo_en_cmyk.pdf>
@@ -1787,7 +1787,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.9pt on input line 93.
 
-<title-background.pdf, id=188, 597.50786pt x 845.04686pt>
+<title-background.pdf, id=200, 597.50786pt x 845.04686pt>
 File: title-background.pdf Graphic file (type pdf)
 
 <use title-background.pdf>
@@ -1984,7 +1984,7 @@ LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
 (Font)              scaled to size 13.24796pt on input line 26.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/it' will be
 (Font)              scaled to size 11.03998pt on input line 31.
-[5] <images/automata.png, id=389, 442.2924pt x 251.0178pt>
+[5] <images/automata.png, id=404, 442.2924pt x 251.0178pt>
 File: images/automata.png Graphic file (type png)
 
 <use images/automata.png>
@@ -2044,14 +2044,14 @@ LABELS NOT IMPORTED.
  on input line 15.
 
 Chapter 3.
-<images/watertank.png, id=438, 198.7425pt x 150.5625pt>
+<images/watertank.png, id=453, 198.7425pt x 150.5625pt>
 File: images/watertank.png Graphic file (type png)
 
 <use images/watertank.png>
 Package pdftex.def Info: images/watertank.png used on input line 28.
 (pdftex.def)             Requested size: 259.4918pt x 196.6065pt.
 
-<images/watertank_ha.png, id=444, 186.74568pt x 185.58936pt>
+<images/watertank_ha.png, id=459, 186.74568pt x 185.58936pt>
 File: images/watertank_ha.png Graphic file (type png)
 
 <use images/watertank_ha.png>
@@ -2075,7 +2075,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 5.5pt on input line 135.
  [13] [14]
-Overfull \hbox (3.35027pt too wide) in paragraph at lines 194--194
+Overfull \hbox (18.35027pt too wide) in paragraph at lines 194--194
 [] 
  []
 
@@ -2116,7 +2116,7 @@ LaTeX Warning: Reference `app:glueQuant' on page 19 undefined on input line 296
 
 ]
 Chapter 5.
-<images/trafficControl.png, id=586, 218.31563pt x 57.21375pt>
+<images/trafficControl.png, id=601, 218.31563pt x 57.21375pt>
 File: images/trafficControl.png Graphic file (type png)
 
 <use images/trafficControl.png>
@@ -2140,79 +2140,84 @@ Overfull \hbox (22.24846pt too wide) in paragraph at lines 402--402
 [] 
  []
 
-[23] [24] [25] [26]) [27]
+[23] [24] [25] [26]
+Overfull \hbox (28.70164pt too wide) in paragraph at lines 544--544
+[] 
+ []
+
+[27]) [28] [29]
 \openout2 = `sections/conclusion.aux'.
 
- (./sections/conclusion.tex [28
+ (./sections/conclusion.tex [30
 
 
 
 
 ]
 Chapter 6.
-) [29] (./thesis.bbl [30
+) [31] (./thesis.bbl [32
 
 
 
-] [31]) [32]
+] [33]) [34]
 \openout2 = `sections/appendix.aux'.
 
  (./sections/appendix.tex
 Appendix A.
-<Images/ha_control.png, id=735, 517.4532pt x 407.121pt>
+<Images/ha_control.png, id=768, 517.4532pt x 407.121pt>
 File: Images/ha_control.png Graphic file (type png)
 
 <use Images/ha_control.png>
 Package pdftex.def Info: Images/ha_control.png used on input line 26.
 (pdftex.def)             Requested size: 345.98912pt x 325.02011pt.
- [33
+ [35
 
 
 
- <./Images/ha_control.png>] [34] [35]
+ <./Images/ha_control.png>] [36] [37]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
+ [38]
 Underfull \vbox (badness 5563) has occurred while \output is active []
 
- [37]
-[38]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [39]
+[40]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40]
-[41]
+ [41]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42]
-
-pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
-ound PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank_hp.pdf, id=1186, 614.295pt x 794.97pt>
-File: images/watertank_hp.pdf Graphic file (type pdf)
-
-<use images/watertank_hp.pdf>
-Package pdftex.def Info: images/watertank_hp.pdf used on input line 476.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
-ound PDF version <1.7>, but at most version <1.5> allowed
-File: images/watertank_hp.pdf Graphic file (type pdf)
-<use images/watertank_hp.pdf>
-Package pdftex.def Info: images/watertank_hp.pdf used on input line 476.
-(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-
-
-pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
-ound PDF version <1.7>, but at most version <1.5> allowed
 [43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44]
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank_hp.pdf, id=1196, page=1, 614.295pt x 794.97pt>
+<images/watertank_hp.pdf, id=1218, 614.295pt x 794.97pt>
+File: images/watertank_hp.pdf Graphic file (type pdf)
+
+<use images/watertank_hp.pdf>
+Package pdftex.def Info: images/watertank_hp.pdf used on input line 476.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+File: images/watertank_hp.pdf Graphic file (type pdf)
+<use images/watertank_hp.pdf>
+Package pdftex.def Info: images/watertank_hp.pdf used on input line 476.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+[45]
+
+pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
+ound PDF version <1.7>, but at most version <1.5> allowed
+<images/watertank_hp.pdf, id=1228, page=1, 614.295pt x 794.97pt>
 File: images/watertank_hp.pdf Graphic file (type pdf)
 
 <use images/watertank_hp.pdf, page 1>
@@ -2241,11 +2246,11 @@ File: images/watertank_hp.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 476.
 
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- [44 <./images/watertank_hp.pdf>]
+ [46 <./images/watertank_hp.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank.pdf, id=1229, 614.295pt x 794.97pt>
+<images/watertank.pdf, id=1261, 614.295pt x 794.97pt>
 File: images/watertank.pdf Graphic file (type pdf)
 
 <use images/watertank.pdf>
@@ -2267,7 +2272,7 @@ d PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank.pdf, id=1232, page=1, 614.295pt x 794.97pt>
+<images/watertank.pdf, id=1264, page=1, 614.295pt x 794.97pt>
 File: images/watertank.pdf Graphic file (type pdf)
 
 <use images/watertank.pdf, page 1>
@@ -2291,11 +2296,11 @@ File: images/watertank.pdf Graphic file (type pdf)
 <use images/watertank.pdf, page 1>
 Package pdftex.def Info: images/watertank.pdf, page1 used on input line 478.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- [45 <./images/watertank.pdf>]
+ [47 <./images/watertank.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/glue.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
-<images/glue.pdf, id=1265, 614.295pt x 794.97pt>
+<images/glue.pdf, id=1298, 614.295pt x 794.97pt>
 File: images/glue.pdf Graphic file (type pdf)
  <use images/glue.pdf>
 Package pdftex.def Info: images/glue.pdf used on input line 482.
@@ -2312,11 +2317,11 @@ Package pdftex.def Info: images/glue.pdf used on input line 482.
 
 pdfTeX warning: pdflatex.exe (file ./images/glue.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
-[46]
+[48]
 
 pdfTeX warning: pdflatex.exe (file ./images/glue.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
-<images/glue.pdf, id=1272, page=1, 614.295pt x 794.97pt>
+<images/glue.pdf, id=1305, page=1, 614.295pt x 794.97pt>
 File: images/glue.pdf Graphic file (type pdf)
 
 <use images/glue.pdf, page 1>
@@ -2340,7 +2345,7 @@ File: images/glue.pdf Graphic file (type pdf)
 <use images/glue.pdf, page 1>
 Package pdftex.def Info: images/glue.pdf, page1 used on input line 482.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- [47 <./images/glue.pdf>]
+ [49 <./images/glue.pdf>]
 
 Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
@@ -2350,7 +2355,7 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlOrig.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/trafficControlOrig.pdf, id=1300, 614.295pt x 794.97pt>
+<images/trafficControlOrig.pdf, id=1333, 614.295pt x 794.97pt>
 File: images/trafficControlOrig.pdf Graphic file (type pdf)
 
 <use images/trafficControlOrig.pdf>
@@ -2368,11 +2373,11 @@ Package pdftex.def Info: images/trafficControlOrig.pdf used on input line 485.
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlOrig.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-[48]
+[50]
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlOrig.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/trafficControlOrig.pdf, id=1307, page=1, 614.295pt x 794.97pt>
+<images/trafficControlOrig.pdf, id=1340, page=1, 614.295pt x 794.97pt>
 File: images/trafficControlOrig.pdf Graphic file (type pdf)
 
 <use images/trafficControlOrig.pdf, page 1>
@@ -2403,7 +2408,7 @@ File: images/trafficControlOrig.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/trafficControlOrig.pdf, page1 used on input lin
 e 485.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- [49 <./images/trafficControlOrig.pdf>]
+ [51 <./images/trafficControlOrig.pdf>]
 
 Package pdfpages Warning: Option `page' is unknow to \includepdf.
 (pdfpages)                Did you mean `pages'? (Note the `s'!)
@@ -2413,7 +2418,7 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlRem.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/trafficControlRem.pdf, id=1341, 614.295pt x 794.97pt>
+<images/trafficControlRem.pdf, id=1373, 614.295pt x 794.97pt>
 File: images/trafficControlRem.pdf Graphic file (type pdf)
 
 <use images/trafficControlRem.pdf>
@@ -2435,7 +2440,7 @@ on: found PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlRem.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/trafficControlRem.pdf, id=1344, page=1, 614.295pt x 794.97pt>
+<images/trafficControlRem.pdf, id=1376, page=1, 614.295pt x 794.97pt>
 File: images/trafficControlRem.pdf Graphic file (type pdf)
 
 <use images/trafficControlRem.pdf, page 1>
@@ -2466,13 +2471,13 @@ File: images/trafficControlRem.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/trafficControlRem.pdf, page1 used on input line
  487.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- [50 <./images/trafficControlRem.pdf>]
+ [52 <./images/trafficControlRem.pdf>]
 \@gls@deffile=\write10
 \openout10 = `thesis.glsdefs'.
 
-) [51] (./thesis.gls [52
+) [53] (./thesis.gls [54
 
-]) [53
+]) [55
 
 
 
@@ -2487,17 +2492,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F1926558ECD3A72AFF5E2B928DD25859;3430.
+(rerunfilecheck)             Checksum: A6A376DBE08814B847E0F319050944F3;3678.
 
 LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 153.
  ) 
 Here is how much of TeX's memory you used:
- 31997 strings out of 493109
- 560176 string characters out of 6138587
- 908189 words of memory out of 5000000
- 33788 multiletter control sequences out of 15000+600000
+ 32020 strings out of 493109
+ 560515 string characters out of 6138587
+ 908776 words of memory out of 5000000
+ 33800 multiletter control sequences out of 15000+600000
  234993 words of font info for 313 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  80i,19n,74p,1809b,2004s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2520,10 +2525,10 @@ b><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/
 blic/txfonts/txsyb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/t
 xsyc.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxlr.pfb><c:/texl
 ive/2014/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
-Output written on thesis.pdf (67 pages, 990242 bytes).
+Output written on thesis.pdf (69 pages, 997939 bytes).
 PDF statistics:
- 1606 PDF objects out of 1728 (max. 8388607)
- 1411 compressed objects within 15 object streams
- 707 named destinations out of 1000 (max. 500000)
- 30204 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1640 PDF objects out of 1728 (max. 8388607)
+ 1443 compressed objects within 15 object streams
+ 718 named destinations out of 1000 (max. 500000)
+ 30228 words of extra memory for PDF output out of 35830 (max. 10000000)
 

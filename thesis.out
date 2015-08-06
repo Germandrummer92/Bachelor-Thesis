@@ -34,12 +34,15 @@
 \BOOKMARK [2][-]{subsection.5.3.1}{The Car Control Program}{section.5.3}% 34
 \BOOKMARK [2][-]{subsection.5.3.2}{The Speed Limit Control Program}{section.5.3}% 35
 \BOOKMARK [1][-]{section.5.4}{Glue between Java and Hybrid Program}{chapter.5}% 36
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 37
-\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 38
-\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 39
-\BOOKMARK [1][-]{section.A.1}{Images}{appendix.A}% 40
-\BOOKMARK [1][-]{section.A.2}{Listings}{appendix.A}% 41
-\BOOKMARK [1][-]{section.A.3}{Watertank simulator}{appendix.A}% 42
-\BOOKMARK [1][-]{section.A.4}{Traffic Control Simulator}{appendix.A}% 43
-\BOOKMARK [1][-]{section.A.5}{Complete Hybrid Programs in correct ASCII notation}{appendix.A}% 44
-\BOOKMARK [0][-]{section*.10}{Glossary}{}% 45
+\BOOKMARK [2][-]{subsection.5.4.1}{Glue for the Car Control Program}{section.5.4}% 37
+\BOOKMARK [2][-]{subsection.5.4.2}{Glue for the Speed Limit Control Program}{section.5.4}% 38
+\BOOKMARK [1][-]{section.5.5}{Validation of Results}{chapter.5}% 39
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 40
+\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 41
+\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 42
+\BOOKMARK [1][-]{section.A.1}{Images}{appendix.A}% 43
+\BOOKMARK [1][-]{section.A.2}{Listings}{appendix.A}% 44
+\BOOKMARK [1][-]{section.A.3}{Watertank simulator}{appendix.A}% 45
+\BOOKMARK [1][-]{section.A.4}{Traffic Control Simulator}{appendix.A}% 46
+\BOOKMARK [1][-]{section.A.5}{Complete Hybrid Programs in correct ASCII notation}{appendix.A}% 47
+\BOOKMARK [0][-]{section*.15}{Glossary}{}% 48
