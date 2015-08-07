@@ -132,6 +132,7 @@ public class Controller {
 Next, you can find the full source code for the Traffic Control Car Control Program. 
 
 \begin{lstlisting}[label=app:lst:carContr]
+
 package trafficControl;
 
 /**
@@ -159,46 +160,51 @@ public class CarController {
 	 * The actual control Method.
 	 */
 	/*@ public normal_behavior
-	  @ requires MAXBREAK <= accel && accel <= MAXACCEL && ((!(y >= slPos)) || v <= sl) && v >= 0 && sl >= 0 && TICK == 1 && MAXBREAK == -10 && MAXACCEL == 10 && 2 * MAXBREAK * (slPos - y) >= v*v - sl*sl && (v <= sl || slPos * 2 * MAXBREAK >= y*2*MAXBREAK + (v*v - sl*sl));
-	  @ ensures MAXBREAK <= \result && \result <= MAXACCEL && ((!(y >= slPos)) || (\result*TICK <= (sl - v))) && ((!(y < slPos)) || (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + (\result+(-1)*MAXBREAK) * (\result * TICK*TICK + 2*TICK * v)));
+	  @ requires MAXBREAK <= accel - 1 && accel + 1 <= MAXACCEL && v >= 0 && sl >= 0 && TICK == 1 && MAXBREAK == -10 && MAXACCEL == 10 && ((!(y >= slPos - 1)) || ((MAXBREAK+2)*TICK <= ((sl - v) - 2 * TICK))) && ((!(y < slPos + 1)) || (slPos >= (y+1) + (v+1)*(v+1)  + (MAXBREAK + 2 + 1) * ((MAXBREAK + 2) * TICK*TICK + TICK * (v+1))));
+	  @ ensures \result - 1 >= MAXBREAK && \result + 1 <= MAXACCEL  && ((!(y >= slPos - 1)) || (\result*TICK <= (sl - v) - 2 * TICK)) && ((!(y < slPos + 1)) || (slPos >= (y+1) + (v+1)*(v+1)  + (\result+ 1 + 1) * ((\result + 1) * TICK*TICK + TICK * (v+1))));
 	 @*/
 	public int control(int y, int v, int accel, int sl, int slPos) {
-		if (y >= slPos) {
-			if ((accel+1)*TICK <= (sl-v)) {
-				if (accel+1 <= MAXACCEL) {
+		if (y >= slPos - 1 && y < slPos + 1) {
+			return MAXBREAK + 1;
+		}
+		if (y >= slPos - 1) {
+			if ((accel+1)*TICK <= (sl-v) - 2 * TICK) {
+				if (accel+2 <= MAXACCEL) {
 					return accel+1;
 				}
 				
 			}
 			else {
-				if((accel-1)*TICK <= (sl-v)) {
-					if (accel-1 >= MAXBREAK) {
+				if((accel-1)*TICK <= (sl-v) - 2 * TICK) {
+					if (accel-2 >= MAXBREAK) {
 						return accel-1;
 					}
 			}
 			}
 		}
-		else {
-			if (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + ((accel+1)+(-1)*MAXBREAK) * ((accel+1) * TICK*TICK + 2*TICK * v)) {
-				if (accel+1 <= MAXACCEL) {
+		if (y < slPos + 1) {
+			if (slPos >= (y+1) + (v+1)*(v+1)  + ((accel+1)+1 +1) * ((accel+1 + 1) * TICK*TICK + TICK * (v+1))) {
+				if (accel+2 <= MAXACCEL) {
 					return accel+1;
 				}
 			}
 			else {
-				if (2*slPos*MAXBREAK*(-1) >= y*2*(-1)*MAXBREAK + (v*v - sl*sl)  + ((accel-1)+(-1)*MAXBREAK) * ((accel-1) * TICK*TICK + 2*TICK * v)) {
-					if (accel-1 >= MAXBREAK) {
+				if (slPos >= (y+1) + (v+1)*(v+1)  + ((accel-1)+1 +1) * ((accel-1 + 1) * TICK*TICK + TICK * (v+1))) {
+					if (accel-2 >= MAXBREAK) {
 						return accel-1;
 					}
 				}
 			}
 		}
-			return MAXBREAK;
+			return MAXBREAK + 1;
 		
 	}
+}
 \end{lstlisting}
 
 Next, you can find the full source code for the Speed Limit Control Class.
 \begin{lstlisting}[label=app:lst:speed]
+
 
 package trafficControl;
 
@@ -234,34 +240,40 @@ public class SpeedLimitController {
 	 * The actual control Method.
 	 */
 	/*@ public normal_behavior
-	  @ requires MAXBREAK == -10 && MAXACCEL == 10 && TICK == 1 && ((!(y >= slPos)) || v <= sl) && v >= 0 && sl >= 0 && (v <= sl || slPos * 2 * MAXBREAK >= y*2*MAXBREAK + (v*v - sl*sl)) && ((!(sl < v)) || slPos * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - sl*sl) + (MAXACCEL + MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v)) && ((!(sl >= v)) || accel*TICK <= (sl - v)) && (\exists int x;x>=0; (slPos+x) * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - sl*sl) + (MAXACCEL + (-1)*MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v));
-	  @ ensures \result[0] >= 0 && ((!(\result[0] < v)) || \result[1] * (-2) * MAXBREAK >= y*(-2)*MAXBREAK + (v*v - \result[0]*result[0]) + (MAXACCEL + (-1)*MAXBREAK) * (MAXACCEL * TICK*TICK + 2*TICK * v)) && ((!(\result[0] >= v)) || accel*TICK <= (\result[0] - v));
+	  @ requires MAXBREAK == -10 && MAXACCEL == 10 && TICK == 1 && v >= 0 && sl >= 0 && ((!(sl < v + 1)) || slPos  >= y+1+ (v+1)*(v+1) + (MAXACCEL + 1 + 1) * ((MAXACCEL+1) * TICK*TICK + TICK * (v+1))) && ((!(sl >= v - 1)) || accel*TICK <= ((sl - v) - 2 * TICK));
+	  @ ensures \result[0] >= 0 && ((!(\result[0] < v + 1)) || \result[1]  >= y+1 + ((v+1)*(v+1)) + (MAXACCEL + 1 + 1) * ((MAXACCEL+1) * TICK*TICK + TICK * (v+1))) && ((!(\result[0] >= v - 1)) || accel*TICK <= ((\result[0] - v) - 2 * TICK));
 	*/
 	public int[] control(int y, int v, int accel, int sl, int slPos) {
 		int[] result = new int[2];
 		result[0] = sl;
 		result[1] = slPos;
 		if (sl<25) {
-			if (sl+1 < v) {
-				result[0]++;
-				result[1] = y + (v*v - result[0]) + (MAXACCEL  + 1) * (MAXACCEL * TICK*TICK + 2 * TICK * v);
+			if (sl+1 < v + 1 && sl+1 >= v - 1) {
+				return result;
 			}
-			else {
-				if (accel*TICK <= result[0]+1 - v) {
+			if (sl+1 < v + 1) {
+				result[0]++;
+				result[1] = y+1 + ((v+1)*(v+1)) + (MAXACCEL  + 2) * ((MAXACCEL+1) * TICK*TICK +  TICK * (v+1));
+			}
+			if (sl+1 >= v -1) {
+				if (accel*TICK <= result[0]+1 - v - 2 * TICK) {
 					result[0]++;
 				}
 			}
 		}
 		else {
+			if (sl-1 < v + 1 && sl-1 >= v - 1) {
+				return result;
+			}
 		if (result[0]-1 < v) {
 			if (result[0]-1 >= 0) {
 			result[0]--;
 			
-			result[1] = y + (v*v - result[0]) + (MAXACCEL  + 1) * (MAXACCEL * TICK*TICK + 2 * TICK * v);
+			result[1] = y+1 + (v+1)*(v+1) + (MAXACCEL  + 2) * ((MAXACCEL+1) * TICK*TICK +  TICK * (v+1));
 			}
 		}
-		else {
-			if (accel*TICK <= (result[0]-1 - v) && result[0]-1 >= 0) {
+		if (sl-1 >= v - 1) {
+			if (accel*TICK <= ((result[0]-1 - v)-2*TICK) && result[0]-1 >= 0) {
 				result[0]--;
 			}
 		}
