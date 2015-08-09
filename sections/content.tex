@@ -17,35 +17,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %--WATERTANK--%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Motivating Example: Refinement of CPS ``Watertank''}
+\chapter{Motivating Example: Refinement of CPS ``Water tank''}
 \label{ch:Watertank}
 
-To better understand the process of refinement of a CPS we take an example from the \keym~tutorial~\cite{keymaera}, a watertank (See Fig.~\ref{fig:watertank}) whose water level is adjusted automatically to stay at a certain level, and refine its hybrid model to gain an implementation. Our goal therefore is finding a suitable and verified implementation from the hybrid model with all necessary proof steps. To accomplish this, we have to adjust and verify the hybrid model, code and verify a concrete implementation and finally verify the ``glue'' in between the discrete and continuous world we come up with as our last proof steep. 
+To better understand the process of refinement of a CPS we take an example from the \keym~tutorial~\cite{keymaera}, a Water tank (See Fig.~\ref{fig:watertank}) whose water level is adjusted automatically to stay at a certain level, and refine its hybrid model to gain an implementation. Our goal therefore is finding a suitable and verified implementation from the hybrid model with all necessary proof steps. To accomplish this, we have to adjust and verify the hybrid model, code and verify a concrete implementation and finally verify the ``glue'' in between the discrete and continuous world we come up with as our last proof steep. 
 
 \begin{figure}[h!]
 	\setcounter{figure}{0}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/watertank}
-	\caption{Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite{keymaeraGuide}.}
+	\caption{Picture of possible Water tank configuration: Water tank that can get drained at all times and has a valve controlled by a control program~\cite{keymaeraGuide}.}
 	\label{fig:watertank}
 \end{figure}
 
-\section{Detailing the Watertank CPS}
+\section{Detailing the Water tank CPS}
 \label{sec:watertank:detail}
 
-The ``control'' part of this hybrid system is the valve, it can either drain the watertank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goal of the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. To be able to  we first took a look at the hybrid model of the watertank. It is provided both in the form of a hybrid automaton (See Fig.~\ref{fig:watertank_ha}) and a hybrid program (See Sec.~\ref{sec:watertank_hp}). In the hybrid automaton, the system starts in the ``fill'' state, where water is constantly flowing into the tank with the rate of \(y^{\prime} = 1\), while the clock is counting by \(x^{\prime}=1\) per tick. Once the water level reaches a certain level \(y=10\) the clock is reset to \(x:=0\) and the state changes from ``fill'' to ``stop'', where the water level is still raising for 2 ticks since the valve can not change in instant time. Once those 2 ticks pass \(x=2\) the watertank switches its state again to ``drain'' in which water flows out of the tank at the rate of 2 per clock tick, before it changes again to ``start'' the filling of the tank agan at the water level of \(y=5\).
+The ``control'' part of this hybrid system is the valve, it can either drain the water tank with a rate of \(-2\) or it can fill the tank further with a rate of \(1\). The goal of the entire system then is, to keep the water level \(y\) of the tank between \(1\) and \(12\). Normally this is proven by \keym~ without actually implementing a control program. To be able to we first took a look at the hybrid model of the water tank. It is provided both in the form of a hybrid automaton (See Fig.~\ref{fig:watertank_ha}) and a hybrid program (See Sec.~\ref{sec:watertank_hp}). In the hybrid automaton, the system starts in the ``fill'' state, where water is constantly flowing into the tank with the rate of \(y^{\prime} = 1\), while the clock is counting by \(x^{\prime}=1\) per tick. Once the water level reaches a certain level \(y=10\) the clock is reset to \(x:=0\) and the state changes from ``fill'' to ``stop'', where the water level is still raising for 2 ticks since the valve can not change in instant time. Once those 2 ticks pass \(x=2\) the watertank switches its state again to ``drain'' in which water flows out of the tank at the rate of 2 per clock tick, before it changes again to ``start'' the filling of the tank again once the water level hits \(y=5\).
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/watertank_ha}
-	\caption{The Watertank CPS expressed as a hybrid automata~\cite{keymaeraGuide}.}
+	\caption{The Water tank CPS expressed as a hybrid automata~\cite{keymaeraGuide}.}
 	\label{fig:watertank_ha}
 \end{figure}
 
 \subsection{The original Hybrid Program}
-\label{sec:watertank_hp}
+\label{sec:watertank:hp}
 
 The hybrid program (see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has three variables (water level y, time x and state st all as Real numbers) defined as:
-\(\mathbb{R}~y, x, st;\) in the \(\\ProgramVariables\) section. Then the complete program notation with a preceeding initialization of values and state.
+\(\mathbb{R}~y, x, st;\) in the \(\\ProgramVariables\) section. Then the complete program notation with a preceding initialization of values and state.
 \begin{flalign*}
 		[ x:=0,y:=1, st:=0]& ((st = 0) \implies \\
 			\quad& [ (?(st=0); \\
@@ -64,14 +64,14 @@ The hybrid program (see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has t
 \end{flalign*}
 
 
-\section{The ``Hook'': Concrete Control Value Assisgnment}
+\section{The ``Hook'': Concrete Control Value Assignment}
 \label{sec:Watertank:ControlValue}
 
-In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment(s) the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automata describing the Watertank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-determnistic manner and would not fit in the model of the cps. A version of the hyrbrid automata with the hook marked in red can be found at App.~\ref{fig:ex_control}. Our remodelled system features a clear ticked hook that is called upon at deterministic times (See Sec.~\ref{sec:watertank_hp_ref}).
+In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automaton describing the Water tank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-deterministic manner and would not fit in the model of the cps. A version of the hybrid automaton with the hook marked in red can be found at App.~\ref{fig:ex_control}. Our remodeled system features a clear ticked hook that is called upon at deterministic times (See Sec.~\ref{sec:watertank_hp_ref}).
 
-\subsection{Remodelled Hybrid Program}
+\subsection{Remodeled Hybrid Program}
 \label{sec:watertank_hp_ref}
-The remodelled hybrid program(see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has 5 variables and a constant: tick defined in the \(\\functions\) clause as being \(\in \mathbb{R}\), and water level y, time x, new valve value new and valve value from a tick ago valve which are defined in the \(\\programVariables\) clause as being \(\in \mathbb{R}\).
+The remodeled hybrid program(see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has 5 variables and a constant: tick defined in the \(\\functions\) clause as being \(\in \mathbb{R}\), and water level y, time x, new valve value new and valve value from a tick ago valve which are defined in the \(\\programVariables\) clause as being \(\in \mathbb{R}\).
 \begin{flalign*}
 		tick > 2 &\implies \\
 			&[ x:=tick,y:=1, valve:=1; \\
@@ -86,12 +86,12 @@ The remodelled hybrid program(see App.~\ref{app:sec:pdfs} for HP expressed in AS
 \end{flalign*}
 
 
-We kept the model mostly equivalent to the original, preserving the two clock ticks of time needed for the valve to change its state from drain to fill and vice-versa. This presented a challenge, when thinking of possible implementations, as the program hook could be called again before the valve would have actually changed its state. To simplify this problem,we only model cases in which the actual program tick (so the time between two hook calls)  is greater than two clock ticks (however long they may be).  This means, that the valve or control program does not have to have a (possibly infinite) list of the last control values assigned, which could be the case if the program was called more frequently than the valve is able to change states.
+We kept the model mostly equivalent to the original, preserving the two clock ticks of time needed for the valve to change its state from drain to fill and vice-versa. This presented a challenge, when thinking of possible implementations, as the program hook could be called again before the valve would have actually changed its state. To simplify this problem, we only model cases in which the actual program tick (so the time between two hook calls)  is greater than two clock ticks (however long they may be). This means, that the valve or control program does not have to have a (possibly infinite) list of the last control values assigned, which could be the case if the program was called more frequently than the valve is able to change states.
 
 \section{Implementation Safety Condition}
 \label{sec:Watertank:SafetyCond}
 
-Next we devised a postcondition for the implementation hook, which would then serve as the abstraction of the java control program. This means, that the program would be built accordingly, so that it could be verified against this postcondition. It therefore also served as a form of specification for us when devising the implementation. The original postcondition we devised:
+Next we devised a postcondition for the implementation hook, which would then serve as the abstraction of the Java control program. This means, that the program would be built accordingly, so that it could be verified against this postcondition. It therefore also served as a form of specification for us when devising the implementation. The original postcondition we devised:
 
 \begin{equation}
 	\centering
@@ -101,7 +101,7 @@ Next we devised a postcondition for the implementation hook, which would then se
 \label{eq:postCondOrig}
 \end{equation}
 
-During verification of the entire hybrid program, \keym would not verify the hybrid program with this postcondition. This means, that even in such a simple CPS as this watertank control system, finding the hook postcondition was non-trivial and only with the help of \keym's counterexamples did we manage to find the correct postcondition (See Eq.~\ref{eq:postCondOrigCorrect}). 
+During verification of the new hybrid program, \keym would not verify the program with this postcondition. This means, that even in such a simple CPS as this water tank control system, finding the hook postcondition was non-trivial and only with the help of \keym's counterexample-search did we manage to find the correct postcondition (See Eq.~\ref{eq:postCondOrigCorrect}). 
 
 \begin{equation}
 	\centering
@@ -116,13 +116,13 @@ During verification of the entire hybrid program, \keym would not verify the hyb
 \section{The (simple) Java Control Program}
 \label{sec:Watertank:Java}
 
-After completing verification of our hybrid model with \keym, we proceeded to implement a (simple) control program for the Watertank. Finding a suitable implementation proved difficult, as a parallel implementation (Both the control system and the differential equations working in parallel, modifying the water level) seemed more intuitive. This would defeat the purpose of actually finding a suitable hook and was more based on our understanding of the original hybrid model and not our version including the hook.
+After completing verification of our hybrid model with \keym, we proceeded to implement a (simple) control program for the Water tank. Finding a suitable implementation proved difficult, as a parallel implementation (Both the control system and the differential equations working in parallel, modifying the water level) seemed more intuitive. This would defeat the purpose of actually finding a suitable hook and was more based on our understanding of the original hybrid model and not our version including the hook.
 
-Using our understanding of a singular hook of the control system into the watertank as well as the hook postcondition from the previous section as our specification for the actual control method, that would return the control value to the watertank's valve, we then managed to implement a suitable discrete control method (See Lst.~\ref{lst:source_controlMethod}). As can be seen, the control method is relatively simply and only assigns the best/worst case scenario values. For the entire control class see App.~\ref{app:lst:watertankContr}.
+Using our understanding of a singular hook of the control system into the water tank as well as the hook postcondition from the previous section as our specification for the actual control method, that would return the control value to the water tank's valve, we then managed to implement a suitable discrete control method (See Lst.~\ref{lst:source:controlMethod}). As can be seen, the control method is relatively simply and only assigns the best/worst case scenario values. For the entire control class see App.~\ref{app:lst:watertankContr}.
 
 \definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
 \lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{blue},commentstyle=\color{darkgreen},stringstyle=\color{red},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
-\begin{lstlisting}[label=lst:source_controlMethod]
+\begin{lstlisting}[label=lst:source:controlMethod]
 public int getControlValue (int y, int old) {
 		//Waterlevel in two time units
 		int inTwo = y + 2 * old;
@@ -154,9 +154,9 @@ public int getControlValue (int y, int old) {
 }
 \end{lstlisting}
 
-The control method consists only of simple if-else-statements and just assigns the best-case (keep raising level if we were raising, keep lowering if we are lowering as long as postcondition is still valid) value to the valve. We translated the hook postcondition (See  Eq.~\ref{eq:postCondOrig}) into, what we thought to be, a suitable JDL postcondition statement for verification with \key~(See List.~\ref{lst:JDL}). In the next section we will explain why this postcondition would not work for our complete proof. \key~verified our program fully automatically, aside from the fact, that the \(tick>2\) precondition added too much computational complexity, so we let \key~prove the property with the more concrete \(tick==30;~tick==31;\dots\) assignments. 
+The control method consists only of simple if-else-statements and just assigns the best-case (keep raising level if we were raising, keep lowering if we are lowering as long as postcondition is still valid) value to the valve. We translated the hook postcondition (See  Eq.~\ref{eq:postCondOrig}) into, what we thought to be at the time, a suitable JDL postcondition statement for verification with \key~(See List.~\ref{lst:JDL}). In the next section we will explain why this postcondition would not work for our complete proof. \key~verified our program fully automatically, aside from the fact, that the \(tick>2\) precondition added too much computational complexity, so we let \key~prove the property with the more concrete \(tick==30; \textrm{ or }tick==31;\dots\) assignments. 
 
-For testing purposes, we also implemented a complete simulator of the Watertank CPS (See App.~\ref{app:lst:watertankSim}).
+For testing purposes, we also implemented a complete simulator of the Water tank CPS (See App.~\ref{app:lst:watertankSim}).
 
 \begin{lstlisting}[label=lst:JDL]
 	/*@ public normal_behavior 
@@ -168,11 +168,11 @@ For testing purposes, we also implemented a complete simulator of the Watertank 
 \section{Glue between Java and Hybrid Model}
 \label{sec:Watertank:Glue}
 
-As real values (used in the hybrid model) and discrete values (used in our java implementation) are fundamentally different, a certain transformation has to occur.  In the Watertank example, this means, that the waterlevel as well as the last valve-value (be it fill or drain), which are passed to the control method, have to be converted into one direction by the glue. 
+As real values (used in the hybrid model) and discrete values (used in our Java implementation) are fundamentally different, a certain transformation has to occur.  In the Water tank example, this means, that the water level as well as the last valve-value (be it fill or drain), which are passed to the control method, have to be converted into one direction by the glue. 
 
-Also, the result of the computation in the method (so the new valve value) has to be converted in the other direction. In general the glue is not necessarily a bijective function, as some values will not exist in both worlds, making it a relation. For the Watertank, fortunately, this problem doe not exist, so finding a function translating the waterlevel and valve values into each other instead of a relation simplifies the problem.
+Also, the result of the computation in the method (so the new valve value) has to be converted in the other direction. In general the glue is not necessarily a bijective function, as some values will not exist in both worlds, making it a relation. For the Water tank, fortunately, this problem doe not exist, so finding a function translating the water level and valve values into each other instead of a relation simplifies the problem.
 
-Finding the glue between the real parts of the hybrid system and our java control program still proved difficult though.
+Finding the glue between the real parts of the hybrid system and our Java control program still proved difficult though.
 
 As we went along, we figured out how a general glue proof should look (See Fig.~\ref{eq:glueGeneral}). Here \(x\) are the discrete values in our control program, \(y\) are the real world values, \(\psi\) is the postcondition of the control program expressed using discrete values and \(\phi\) is the actual safety condition we want to show for the entire hybrid system.
 
@@ -184,7 +184,7 @@ As we went along, we figured out how a general glue proof should look (See Fig.~
 	\label{eq:glueGeneral}
 \end{equation}
 
-Following this basic guideline, we were able to find a suitable glue relation (or in our case total relatin) for this cps. We found the following as the glue-relation:
+Following this basic guideline, we were able to find a suitable glue relation (or in our case total relation) for this cps. We found the following as the glue-relation:
 
 \begin{equation}
 	\begin{split}
@@ -210,12 +210,12 @@ And \(\phi(y)\) is equivalent to:
 	\label{eq:phiWatertank}
 \end{equation}
 
-As can be seen, the \(\psi(x)\) that we found for the glue is not equal to the original trivial postcondition for our java program (See List.~\ref{lst:JDL}). This can be explained by the floor functions that has to be used for translation from the \(\mathbb{R}\) into \(\mathbb{Z}\) world. Due to the usage of the floor function, we only can approximate the original value in the discrete world, and therefore these approximation erorrs have to be accounted for in \(\psi\). Again the fact that we only found this error in our original postcondition devised for the java program, proves the non-triviality of the process even in seemingly simple examples as this watertank. The glue in ASCII notation can be found in App. Sec.~\ref{app:sec:pdfs}.
+As can be seen, the \(\psi(x)\) that we found for the glue is not equal to the original trivial postcondition for our Java program (See List.~\ref{lst:JDL}). This can be explained by the floor functions that has to be used for translation from the \(\mathbb{R}\) into \(\mathbb{Z}\) world. Due to the usage of the floor function, we only can approximate the original value in the discrete world, and therefore these approximation errors have to be accounted for in \(\psi\). Again the fact that we only found this error in our original postcondition devised for the Java program, proves the non-triviality of the process even in seemingly simple examples as this water tank. The glue in ASCII notation can be found in App. Sec.~\ref{app:sec:pdfs}.
 
 \section{Verification based on \keym}
 \label{sec:Watertank:Verification}
 
-Verification of the glue proved difficult since \keym, or specifically Mathematica (cf.~\cite{mathematica}) (\keym~backend algebraic solver), has problems with the translation of unintepreted functions. Therefore we found an abstraction of the floor function using inequalities to approximate it (See Eq.~\ref{eq:approxF}). 
+Verification of the glue proved difficult since \keym, or specifically Mathematica (cf.~\cite{mathematica}) (\keym~backend algebraic solver), has problems with the translation of uninterpreted functions. Therefore we found an abstraction of the floor function using inequalities to approximate it (See Eq.~\ref{eq:approxF}). 
 
 \begin{align*}
 		\forall~x \in \mathbb{R}. \forall~c \in \mathbb{R}. floor(x) = c \implies x-1 < c \wedge c \leq x \wedge( x>0\implies c>0)
@@ -223,7 +223,7 @@ Verification of the glue proved difficult since \keym, or specifically Mathemati
 \end{align*}
 Also, since \keym~does not deal with numbers outside of the reals, we generalized the preconditions for every variable to be in the reals. This obviously only strengthens the proof and therefore does not change the correctness.
 
-This still lead to problems when using the automatic proof-mechanism, so we had to add a full new taclet fdef to the definition file to be able to use the automatic proover (See App..~\ref{app:lst:ruleF}).
+This still lead to problems when using the automatic proof-mechanism, so we had to add a full new taclet fdef to the definition file to be able to use the automatic prover (See App..~\ref{app:lst:ruleF}).
 
 The proof runs fully automatically with our own defined taclet.
 
@@ -233,16 +233,16 @@ The proof runs fully automatically with our own defined taclet.
 \chapter{Formalized approach of refining hybrid models into implementation}
 \label{ch:Process}
 
-What the Watertank example shows is the non-triviality of refining the hybrid model into an implementation and of the verification of all necessary parts. Overall it is obvious, that a formalized approach to the general problem presented in chapter~\ref{ch:Introduction} is necessary. In this chapter we present a possible formalized approach to the problem, that we deemed feasible.
+What the Water tank example shows is the non-triviality of refining the hybrid model into an implementation and of the verification of all necessary parts. Overall it is obvious, that a formalized approach to the general problem presented in chapter~\ref{ch:Introduction} is necessary. In this chapter we present a possible formalized approach to the problem, that we deemed feasible.
 \\
 
 
-To aid readability we will now give an overview of the process without explanation, then detailing each step in the following sections. 
+To aid readability we will now give an overview of the process without explanation, then detail each step in the following sections. 
 
 \begin{enumerate}
-	\item Modelling CPS as Hybrid System that includes concrete hook.
+	\item Modeling CPS as Hybrid System that includes concrete hook.
 	\item Finding the necessary safety condition of the control value for verification with \keym.
-	\item Implementing control program according to (preiliminary) safety condition and Verification by \key.		
+	\item Implementing control program according to (preliminary) safety condition and Verification by \key.		
 	\item Finding the correct ``glue'' between hybrid model and control program and its verification by \keym.
 	\item Result validation: Does our implementation still match the correct safety condition after verifying the glue?
 \end{enumerate}
@@ -250,31 +250,31 @@ To aid readability we will now give an overview of the process without explanati
 Overall for verification of our resulting implementation three proof obligations exist:
 \begin{enumerate}[label=\roman*]
 	\item Proving correctness of our hybrid model that includes a hook and (probably) the hook postcondition with \keym.
-	\item Proving correctness of our implementation according to the (preliminary) safety condition and verifiying it against it using \key.
+	\item Proving correctness of our implementation according to the (preliminary) safety condition and verifying it against it using \key.
 	\item Proving correctness of our glue using \keym.
 \end{enumerate} 
 
-With correct verification of all three parts, we can deduce that Eq.~\ref{eq:Main_LogicRefinement} has been fullfilled and our goal has been reached.
+With correct verification of all three parts, we can deduce that Eq.~\ref{eq:Main:LogicRefinement} has been fulfilled and our goal has been reached.
 
-\section{Modelling Hybrid System with Implementation Hook}
+\section{Modeling Hybrid System with Implementation Hook}
 \label{sec:Process:Hook}
-Most CPS we took a look at (See \cite{keymaera} Tutorial, \cite[p.~5, p.~11]{platzer2010b} \dots) as examples, did not have a concrete spot in which a control program could ``hook'' in easily. This means, that the first step in our refinement process has to be finding a suitable hook for the control program, referring to one or more non-deterministic assignments of a/multiple control values. Mostly for already existing hybrid systems, as was the case in Sec.~\ref{sec:Watertank:ControlValue}, a complete changing of the model is necessary. When creating a new model, one should try to find a suitable spot for a non-deterministic control value assignment. As a discrete deterministic control program can only be enacted at certain times, a model of a form of tick has to be found, as to make an actual implementation feasible. Mostly this will result in an extra condition for the entire hybrid program, as we only want the program to work if the differential equations run till the discrete tick(See Sec.~\ref{sec:ch:Watertank}).
+Most CPS we took a look at (See \cite{keymaera} Tutorial, \cite[p.~5, p.~11]{platzer2010b} \dots) as examples, did not have a concrete spot in which a control program could ``hook'' in easily. This means, that the first step in our refinement process has to be finding a suitable hook for the control program, referring to one or more non-deterministic assignments of a/multiple control values. Mostly for already existing hybrid systems, as was the case in Sec.~\ref{sec:Watertank:ControlValue}, a complete changing of the model is necessary. When creating a new model, one should try to find a suitable spot for a non-deterministic control value assignment. As a discrete deterministic control program can only be enacted at certain times, a model of a form of tick has to be found, as to make an actual implementation feasible. Mostly this will result in an extra condition for the entire hybrid program, as we only want the program to work if the differential equations run till the discrete tick(See Sec.~\ref{sec:watertank_hp_ref}).
 
-To prevent issues in later verification of the model, a hybrid program and not a hybrid automata representation of the model should be chosen (cf.~\cite[ch.~1.1.4]{platzer2010b}). Since the modelling of the system can often be incorrect and a formal way to verify if the model correctly models all necessities does not exist, great care should be enacted during modelling of the cps.
+To prevent issues in later verification of the model, a hybrid program and not a hybrid automaton representation of the model should be chosen, as a automaton cannot be verified using the compositional verification approach of \keym(cf.~\cite[ch.~1.1.4]{platzer2010b}). Since the modeling of the system can often be incorrect and a formal way to verify if the model correctly models all necessities does not exist, great care should be enacted during modeling or remodeling of the cps.
 
 \section{Devising Control Value Safety Postcondition}
 \label{sec:Process:SafetyCond}
 
-After finding a suitable hook spot in our program we have the analyze the hook for a safety condition. If we think back to the watertank example (See ch.~\ref{ch:Watertank:SafetyCond}), this was non-trivial as the first postcondition we came up with through logic deduction proved to be incorrect. When thinking of possible conditions we often found we overlooked the tick when considering different postconditions. Obviously, more than one valid postcondition exists, as the constraints imposed on the implementation can get arbirtrarily strong and we're not restricting the actual behavior of the physical part of the cps. 
+After finding a suitable hook spot in our program we have to the analyze the hook for a safety condition. If we think back to the water tank example (See ch.~\ref{ch:Watertank:SafetyCond}), this was non-trivial as the first postcondition we came up with through logic deduction proved to be incorrect. When thinking of possible conditions we often found we overlooked the tick when considering different postconditions. Obviously, more than one valid postcondition exists, as the constraints imposed on the implementation can get arbitrarily strong and we're not restricting the actual behavior of the physical part of the cps, it only restricts the system to the cases we want to actually consider in our analysis. 
 
-One should try and find the most general postcondition \(\psi\) for which the safety condition still holds, as this makes it easier to code the actual implementation with less constraints. Of course, if the model's proof works without any postcondition, this means that the program could also just assign random values making the implementation and glue trivial or non-existant. With correct modelling and sufficiently complex hybrid system (which even the relatively easy watertank had) this should never occur though.
+One should try and find the most general postcondition \(\psi\) for which the safety condition still holds, as this makes it easier to code the actual implementation with less constraints. Of course, if the model's proof works without any postcondition, this means that the program could also just assign random values making the implementation and glue trivial or non-existent. With correct modeling and sufficiently complex hybrid system (which even the relatively easy water tank had) this should never occur though.
 
-The entire hybrid model with the hook safety postcondition should then be verified by \keym.
+The entire hybrid model with the hook safety postcondition should then be verified by \keym. In certain cases, abstractions or simplifications of the original problem on hand have to be inserted (e.g. in our water tank case the precondition \(tick>2\)), as to not put \keym's automatic verification mechanism under too much strain.
 
 \section{Implementation according to Postcondition and its Verification}
 \label{sec:Process:Implementation}
 
-Implementation of the program can theorethically be done in any preferred language, for usage with \key~as the automatic prover, Java is preferred. The implementation is free from any constraints asides from the postcondition that was devised previously, and from the constraints provided by \key~itself (No threading etc.). Since the postcondition is in the hybrid model and therefore written in the form of real variables and values, one has to already think of a form of the glue that will be formally devised as the next step, as to find a suitable translation of the postcondition expressed with real values into JDL. This can be a preliminary condition, as it is possible (as in Sec.~\ref{sec:Watertank:Glue}) that the formal glue will show errors in the original safety condition.
+Implementation of the program can theoretically be done in any preferred language, for usage with \key~as the automatic prover, Java or other C-like languages are preferred. The implementation is free from any constraints asides from the postcondition that was devised previously, and from the constraints provided by \key~(or the alternative automatic verification program in use) itself (No threading etc. for \key). Since the postcondition is in the hybrid model and therefore written in the form of real variables and values, one has to already think of a form of the glue that will be formally devised in the next step, as to find a suitable translation of the postcondition expressed with real values into JDL. The postcondition in JML will most likely only be a preliminary condition, as it is possible (and rather likely due to rounding and/or flooring) (as in Sec.~\ref{sec:Watertank:Glue}) that the formal glue will show errors in the original safety condition.
 
 The implementation with its postcondition expressed in JDL then has to be verified by \key~before continuing with the glue. 
 
@@ -291,16 +291,16 @@ As both our model and implementation are now verified, the actual glue between t
 	\tag{\ref{eq:glueGeneral}}
 \end{equation}
 
-Coming up with the glue is the hardest part of the entire process, and took multiple iterations before a correct and verified glue was found. Most of the time the glue will probably incorporate some form of rounding/flooring mechanism, as we have to translate real values into discrete ones. This makes the entire proof hard to fully understand for humans without lots of complex mathematical computations.
+Coming up with the glue is the hardest part of the entire process, and took multiple iterations before a correct and verified glue was found for our studied examples. Most of the time the glue will probably incorporate some form of rounding/flooring mechanism, as we have to translate real values into discrete ones. This makes the entire proof hard to fully understand for humans without lots of complex mathematical computations.
 
-We used a form of logical deduction to come up with the correct quantifiers for the glue proof (so the \(\forall\) in Eq.~\ref{eq:glueGeneral}), which can be found in App.~\ref{app:glueQuant}. Verification of the glue should then happen using \keym, which means formulation of the glue should already be in the required syntax of DDL.
+We used a form of logical deduction to come up with the correct quantifiers for the glue proof (so the \(\forall\) in Eq.~\ref{eq:glueGeneral}), as if there only exists a Java-equivalent for a certain real-world variable, issues arise when analyzing the glue in the other direction (discrete -> real). Verification of the glue should then happen using \keym, which means formulation of the glue should already be in the required syntax of DDL.
 
-Overall this means, that for the discrete-world postcondition \(\psi\) that was proven by \key~, the real-world postcondition \(\phi\) found in sect.~\ref{sec:Process:SafetyCond}, and the glue that we devise which is verified by \keym, we reach the goal we set out for (See Ch.~\ref{eq:Main_LogicRefinement}).
+Overall this means, that for the discrete-world postcondition \(\psi\) that was proven by \key~, the real-world postcondition \(\phi\) found in Sect.~\ref{sec:Process:SafetyCond}, and the glue that we devise which is verified by \keym, we reach the goal we set out for (See Ref. ~\ref{eq:Main:LogicRefinement}).
 
-\section{Validating Verificiation results against Implementation}
+\section{Validating Verification results against Implementation}
 \label{sec:Process:Eval}
 
-As we realized in our Watertank example (See Sec.~\ref{sec:Watertank:Glue}), with verification of our glue some changes might have to be made to the implementation and its postcondition. To complete the process of refinement we have to change the implementation and JDL condition and verify it again with \key~, make sure all our decisions made were actually valid and correct when taking a look back at the entire picture as outlined in Ch.~\ref{eq:Main_LogicRefinement}.
+As we realized in our Water tank example (See Sec.~\ref{sec:Watertank:Glue}), with verification of our glue some changes might have to be made to the implementation and its postcondition. To complete the process of refinement we have to change the implementation and JDL condition and verify it again with \key. At last we then make sure all our decisions made were actually valid and correct when taking a look back at the entire picture as outlined in Ref.~\ref{eq:Main:LogicRefinement}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

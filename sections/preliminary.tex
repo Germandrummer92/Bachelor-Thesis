@@ -14,18 +14,18 @@
 \chapter{Preliminary Definitions}
 \label{ch:Preliminary}
 
-In the following chapter we want to define and terms, models and logic used throughout this thesis. We skip the explanation of first-order logic, which we presume to be known by the reader.
+In the following chapter we want to define and explain terms, models and logic used throughout this thesis. We skip the explanation of first-order logic, which we presume to be known by the reader.
 
-\section{Introducing Cyber-Physical-Systems}
+\section{Introducing Cyber-Physical Systems}
 \label{sec:pre:cps}
 
-In this thesis we take a close look at \textbf{CPS}. These are systems in which a physical aspect or value is controlled by a computer (program). For example, an aircraft control system in which the computer exerts a form of speed control on the airplane would be a CPS. 
+In this thesis we take a close look at \textbf{Cyber-Physical Systems}. These are systems in which a physical aspect or value is controlled by a computer (program). For example, an aircraft control system in which the computer exerts a form of speed control on the airplane would be a CPS. 
 
-For our purposes we also refer to CPS as \textit{Hybrid Systems}, in which discrete values (in the control program) and continuous values (in the physical world) coexist. The difficulty in analyzing these kinds of systems stems from the ``hybridness'' of the systems: There is always some form of translation necessary to go from the program (discrete values) to the physical (continous reals) world. 
+For our purposes we also refer to CPS as \textit{Hybrid Systems}, in which discrete values (in the control program) and continuous values (in the physical world) coexist. The difficulty in analyzing these kinds of systems stems from the ``hybridness'' of the systems: There is always some form of translation necessary to go from the program (discrete values) world to the physical (continuous reals) world. 
 
-\subsection{Modelling CPS as Hybrid Automata}
+\subsection{Modeling CPS as Hybrid Automata}
 
-Two different modelling approaches exist for CPS, the first one we now explain are hybrid automata. Formally they are defined to have the following components (From~\cite{Heinzinger2000b}):
+Two different modeling approaches exist for CPS, the first one we now explain are hybrid automata. Formally they are defined to have the following components (From~\cite{Heinzinger2000b}):
 \begin{quote}
 		\begin{description}
 			\item[\textit{Variables}]A finite set \(X = \{x_1,\dots , x_n\}\) of real numbered variables. The number \(n\) is called the dimension of \(H\). [...]
@@ -36,9 +36,9 @@ Two different modelling approaches exist for CPS, the first one we now explain a
 		\end{description}
 \end{quote} 
 
-Based on non-deterministic finite automata (NFA), they are easy to understand for humans and serve well to model the abstract behavior of hybrid systems. A possible hybrid automatacan be seen in Fig.~\ref{fig:automata}. It describes the behavior of a controller controlling the train on a rail section. A train is therefore always either traveling freely (accelerating)  or being slowed. The biggest difference to NFAs is apparent when looking inside both states: They are continuous, so there is no single value assigned to the train's acceleration but rather a description of the behavior of the value over time is given. This means, that the single state "accelerate" can also be seen as a continous flowing assignment of values according to the specified differential equation.~\cite{platzer2010b}.
+Based on non-deterministic finite automata (NFA), they are easy to understand for humans and serve well to model the abstract behavior of hybrid systems. A possible hybrid automata can be seen in Fig.~\ref{fig:automata}. It describes the behavior of a controller controlling the train on a rail section. A train is therefore always either traveling freely (accelerating)  or being slowed. The biggest difference to NFAs is apparent when looking inside both states: They are continuous, so there is no single value assigned to the train's acceleration but rather a description of the behavior of the value over time is given. This means, that the single state "accelerate" can also be seen as a continuous flowing assignment of values according to the specified differential equation.~\cite{platzer2010b}.
 
-The system still obviously exhibits its continuous behavior, as any change to the acceleration also brings the change of speed and location. As the train comes passes arbitrarily chosen point \emph{SB}, the controller automatically assigns a discrete negative value to the train's acceleration, decelerating it, so it slows down. In the brake state the train again follows the equations of linear motion with continuous assignment, only that the guard \(v \geq 0\) makes sure the train never travels backwards (with a negative velocity), but rather at some point starts accelerating again according to the discrete assignment in the state change between brake and accelerate.
+The system still obviously exhibits its continuous behavior, as any change to the acceleration also brings the change of speed and location. As the train passes the arbitrarily chosen point \emph{SB}, the controller automatically assigns a discrete negative value to the train's acceleration, decelerating it, so it slows down. In the brake state the train again follows the equations of linear motion with continuous assignment, only that the guard \(v \geq 0\) makes sure the train never travels backwards (with a negative velocity), but rather at some point starts accelerating again according to the discrete assignment in the state change between brake and accelerate.
 
 \begin{figure}[ht!]
 	\centering
@@ -47,11 +47,11 @@ The system still obviously exhibits its continuous behavior, as any change to th
 	\label{fig:automata}
 \end{figure}
 
-\subsection{Modelling CPS as Hybrid Programs}
+\subsection{Modeling CPS as Hybrid Programs}
 
 As we are using \keym~for verification, which uses Hybrid Programs (HP), we also have to introduce the syntax of hybrid programs. They follow the syntax depicted in table~\ref{tab:hp}, whereby \(\theta_i\) are terms, \(x_i \in \Sigma\) are state variables and \(\chi\) is a formula of first-order logic~\cite{platzer2010b}.
 
-As an example we take a look at the hybrid program notation of a train control sustem (See Fig.~\ref{fig:etcs_hp}). As can be seen, the state variable \(x\) is first assigned the state accelerate, this corresponds to the hybrid automaton's (See Fig.~\ref{fig:automata}) starting state of the system. In line 3 we can see the hybrid program syntax being an extension of first-order logic: Only if \(q=accel\) \textbf{and} \(z \geq SB\) are true can this case be enacted (corresponding to the state change from accel. to brake in the automaton).
+As an example we take a look at the hybrid program notation of a train control system (See Fig.~\ref{fig:etcs_hp}). As can be seen, the state variable \(x\) is first assigned the state accelerate, this corresponds to the hybrid automaton's (See Fig.~\ref{fig:automata}) starting state. In line 3 we can see the hybrid program syntax being an extension of first-order logic: Only if \(q=accel\) \textbf{and} \(z \geq SB\) are true can this case be enacted (corresponding to the state change from accel. to brake in the automaton).
 
 \begin{table}
 	\begin{tabular}{p{5cm} | p{4cm} | p{6cm} }
@@ -97,12 +97,12 @@ Dynamic logic is a multi-modal logic and has two basic operators (one of which i
 \subsection{Differential Dynamic Logic}
 \label{subsec:DDL}
 
-While dynamic logic in itself was not specifically devised for hybrid programs, this means we need a way to express differential equations, as most continuous movement or behavior is expressed by differential equations. DDL or d\(\mathcal{L}\), the language also used by our verification tool \keym, has ways to express differential equations as can be seen in Table~\ref{tab:hp}.
+As dynamic logic in itself was not specifically devised for hybrid programs, this means we need a way to express differential equations, as most continuous movement or behavior is expressed by differential equations. DDL or d\(\mathcal{L}\), the language also used by our verification tool \keym, has ways to express differential equations, as can be seen in Table~\ref{tab:hp}.
 
 \subsection{JML: Verification of Java Programs using \key}
 \label{subsec:jml}
 
-In this thesis we also deal with the verification of Java programs (the control programs of our cps). We now want to introduce the Java Modelling Language \textit{JML}, which is used to model specification of Java classes/modules or single methods. JML is based on the Design-By-Contract premise, which means that the user and the Java classes have a contract with each other which defines the input and output conditions of the program~\cite{keybook2007}. JML is then listed as a comment in the Java sourcecode right before the method in question~\cite{fmcoKeYTutorial06}. For example the JML code for a method in question could look like this:
+In this thesis we also deal with the verification of Java programs (the control programs of our cps). We now want to introduce the Java Modeling Language \textit{JML}, which is used to model specification of Java classes/modules or single methods. JML is based on the Design-By-Contract premise, which means that the user and the Java classes have a contract with each other which defines the input and output conditions of the program~\cite{keybook2007}. JML is then listed as a comment in the Java source code right before the method in question~\cite{fmcoKeYTutorial06}. For example the JML code for a method in question could look like this:
 
 
 \definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
@@ -130,6 +130,6 @@ As one can see, the JML proof obligation needs to have the access level and a na
 \section{\keym~as our Verification Tool for Hybrid Programs}
 \label{sec:pre:key}
 
-As \key~can only deal with Java programs, but we deal with problems with hybrid systems, we use \keym~as our tool of choice to verify our hybrid models. It is based on \key's source and developed by Andr\'e Platzer at Carnegie Mellon University~\cite{keymaera}. As its backend arithmetic solver we used Wolfram Mathematica~\cite{mathematica}, but \keym~supports other computer algebra solvers as well.
+As \key~can only deal with Java programs, but we deal with problems with hybrid systems, we use \keym~as our tool of choice to verify our hybrid models. It is based on \key's source and developed by Andr\'e Platzer at Carnegie Mellon University~\cite{keymaera}. As its back-end arithmetic solver we used Wolfram Mathematica~\cite{mathematica}, but \keym~supports other computer algebra solvers as well. For verification of our glue relation we also express the problem in a hybrid program form, and use \keym~as our automatic solver.
 
 Hybrid Programs are expressed as \textit{regular programs}, but as for example \(\cup\) is not a symbol used in ASCII text, the program notation in the \textit{.key} \keym-files is different (e.g. \(\cup\) as \(++\)), but we will present every hybrid program in the syntax presented above as well as to avoid confusion and adding another layer of abstraction.

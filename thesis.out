@@ -4,9 +4,9 @@
 \BOOKMARK [1][-]{section.1.1}{Related Work}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.2}{Outline}{chapter.1}% 5
 \BOOKMARK [0][-]{chapter.2}{Preliminary Definitions}{}% 6
-\BOOKMARK [1][-]{section.2.1}{Introducing Cyber-Physical-Systems}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.1.1}{Modelling CPS as Hybrid Automata}{section.2.1}% 8
-\BOOKMARK [2][-]{subsection.2.1.2}{Modelling CPS as Hybrid Programs}{section.2.1}% 9
+\BOOKMARK [1][-]{section.2.1}{Introducing Cyber-Physical Systems}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{Modeling CPS as Hybrid Automata}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.2}{Modeling CPS as Hybrid Programs}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{Dynamic Logic}{chapter.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.1}{Differential Dynamic Logic}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.2}{JML: Verification of Java Programs using KeY}{section.2.2}% 12

@@ -13,32 +13,32 @@
 \chapter{Introduction}
 \label{ch:Introduction}
 
-A growing number of automation today is done through computers and computer programs that reach outside of their digital world into the analog world, controlling some physical aspects. These systems are called cyber-physical systems (\textit{CPS}) and are always safety-critical, due to the physical control they exert. While formal verification methods exist for hybrid models of CPS and formal verification methods exist for concrete implementations, a certain gap is evident in between the two, when trying to implement control programs for concrete CPSs.
+A growing number of automation today is done through computers and computer programs. More and more of them reach outside of their digital world into the analog world, controlling some physical aspects. These systems are called Cyber-Physical systems (\textit{CPS}) and are always safety-critical, due to the physical control they exert. While formal verification methods exist for hybrid models of CPS and formal verification methods exist for concrete implementations, a certain gap is evident in verifying the step of implementing a control program for a certain CPS.
 
-In this bachelorthesis we formalize an approach attempting to close that gap: Replacing the abstract notion of the control program in a verified (by \keym) Cyber-Physical-System (\textit{CPS}) with a concrete, verified (by \key) implementation through a form of Formal Refinement and being able to verify that the entire CPS still satisfies the required safety constraints, using \keym. 
+In this bachelor thesis we formalize an approach attempting to close that gap: Replacing the abstract notion of the control program in a verified (by \keym) Cyber-Physical-System (\textit{CPS}) with a concrete, verified (by \key) implementation through a form of Formal Refinement and being able to verify that the entire system still satisfies the required safety constraints, using \keym. 
 
-CPS are generally modelled as either Hybrid Automata or - Programs.(See ref.~\cite{platzer2010b}). In these hybrid models, the control-part only exists in an implicit manner, while we require an explicit statement at which the control program is enacted, what we later on refer to as the ``hook''.  
+CPS are generally modeled as either Hybrid Automata or - Programs.(See ref.~\cite{platzer2010b}). In these hybrid models, the control-part only exists in an implicit manner, while we require an explicit statement at which the control program is enacted, what we later on refer to as the ``hook''.  
 
-To be able to verifiy the entire implementation against the cps-safety-constraint, we define a ``glue'', which refers to a relation that translates real values into discrete values and vice-versa. In certain cases (See sect.~\ref{sec:Watertank:Glue}), glue will be a concrete function and not only a relation, but not in general.
+To be able to verify the entire implementation against the cps-safety-constraint, we define a ``glue'', which refers to a relation that translates real values into discrete values and vice-versa. In certain cases (See Sect.~\ref{sec:Watertank:Glue} for an example), the glue will be a concrete function and not only a relation, but not in general.
 
-If we summarize the goal of this thesis we get~\ref{eq:Main_LogicRefinement}. Here, glue is the aforementioned relation to be able to translate from the real into the discrete world.
+If we summarize the goal of this thesis we get Tab.~\ref{eq:Main:LogicRefinement}. Here, glue is the aforementioned relation to be able to translate from the real into the discrete world and vice-versa.
 
 \begin{center}
 \begin{tabular}{p{.5cm}c}1. &  \ltab Verification of hybrid model against safety property \(\alpha\) using \keym. \\
 2. & \ltab Verification of implementation using \key. \\
 3. & \ltab Verification of glue using \keym.
 \\ \hline 
-\(\implies\) & \ltab Hybrid model with concrete implementation inserted at hook fullfills safety property \(\alpha\).
-\label{eq:Main_LogicRefinement}
+\(\implies\) & CPS with concrete Implementation inserted at hook fulfills safety property \(\alpha\).
+\label{eq:Main:LogicRefinement}
 \end{tabular}
 \end{center}
 
-This means: if we have a certain hybrid program with an explicit hook that models a CPS and fullfills safety condition \(\alpha\) (meaning the CPS always terminates and is always in a state which fullfills \(\alpha\)), an implementation that is correct and have found a valid, verified glue relation between the different values of the physical and discrete system-parts, then the hybrid program using the concrete implementation in place of the hook also fullfills safety condition \(\alpha\).
+This means: if we have a certain hybrid program with an explicit hook that models a CPS and fulfills safety condition \(\alpha\) (meaning the CPS always terminates and is always in a state which fulfills \(\alpha\)), an implementation that is correct and have found a valid, verified glue relation between the different values of the physical and discrete system-parts, then the hybrid program using the concrete implementation in place of the hook also fulfills safety condition \(\alpha\).
 
 \section{Related Work}
 \label{sec:related}
 
-Hybrid systems offer many challenges not present in discrete approaches to refinement, as the continuous evolution of reals means that computation is complex and state space as well as transitions can be uncountably infinite. Discrete refinement approaches (e.g for Z(\cite{ZRef},~\cite{ZBookRef}), or for Event-B(\cite{EventB})), do not really apply to the problems in the Cyber-Physical hybrid world.  Timed automata (as presented in~\cite{Alur94atheory}), while closely related to hybrid systems as timed progression is one of the basic principles of hybrid systems, are still finite-state automata and do not solve the problem of abstracting a hybrid system with infinite states into a finite-state version.
+Hybrid systems offer many challenges not present in discrete approaches to refinement, as the continuous evolution of reals means that computation is complex and number of states as well as transitions can be uncountably infinite. Discrete refinement approaches (e.g for Z(\cite{ZRef},~\cite{ZBookRef}), or for Event-B(\cite{EventB})), do not really apply to the problems in the Cyber-Physical hybrid world. Timed automata (as presented in~\cite{Alur94atheory}), while closely related to hybrid systems as timed progression is one of the basic principles of hybrid systems, are still finite-state automata and do not solve the problem of abstracting a hybrid system with infinite states into a finite-state version.
 
 Other refinement approaches as in~\cite{RefCalcBook} offer mathematical foundations for discrete refinement, but can not find application in our problem space. Counter-example guided refinement as presented in~\cite{CounterExample}, offers a way to abstract hybrid systems based on counter-examples found by a model checker to find a suitable finite-state abstraction for the hybrid system for easier verification. They does not present a way of refinement into a concrete implementation as we are trying to establish.
 
@@ -58,7 +58,7 @@ In this thesis we take a look at the following:
 \begin{enumerate}[label=\bfseries \Roman*:]
 
 \item Preliminary Definitions.
-\item Motivating Example: Refining a concrete case study: CPS ``Watertank'' (Example taken from~\cite{keymaeraGuide}).
+\item Motivating Example: Refining a concrete case study: CPS ``Water tank'' (Example taken from~\cite{keymaeraGuide}).
 \item Introduction of approach to using Refinement to gain an implementation from a hybrid model.
 \item Application of newly found approach: case study: CPS ``Traffic Control'' (See ref.~\cite{TrafficControl}).
 \end{enumerate}
