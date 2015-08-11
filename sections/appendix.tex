@@ -24,14 +24,14 @@ In the following section different images that have been excluded from the main 
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[height=0.5\textheight,width=0.8\textwidth]{Images/ha_control}
-		\caption{Watertank Hybrid  Automata with Non-Deterministic Control Program Abstraction marked.}
+		\caption{Water tank Hybrid Automaton with Non-Deterministic Control Program Abstraction marked.}
 		\label{fig:ex_control}
 	\end{figure}
 
 \section{Negative Acceleration Glue Traffic Control CPS}
 \label{app:sec:neg}
 
-As mentioned in Sec.~\ref{subsec:traffic:GlueSpeed} for the fourth component we had to split up the proof into a positive acceleration and negative acceleration part. The glue proof for the negative acceleration can be found below.
+As mentioned in Sec.~\ref{subsec:traffic:glueSpeed} for the fourth component of the first part of the traffic control glue proof, we had to split up the proof into a positive acceleration and negative acceleration part. The glue proof for the negative acceleration can be found below.
 \phantomsection
 \label{app:eq:traffic1.4.2}
 \begin{flalign*}
@@ -52,7 +52,7 @@ sl \geq 0 \wedge{}& v_{sl} \geq 0 \implies{} \\
 \section{Listings}
 \label{app:sec:listings}
 
-In the following section we present the full java source code for our control program classes, as well as the rule definition we used for \keym. First is the rule definition for \keym, that abstracts the application of the floor function to a inequality of the form \(\textrm{floor}(x) = y \equiv \exists c:x-1 < c \wedge c \leq x \wedge (x \geq 0 \implies c \geq 0) \wedge (x < 0 \implies c < 0)  \longrightarrow\) whereby \(\longrightarrow\) refers to the big implication arrow in the verification of a hybrid program, meaning we get the abstraction of \(f(x)\) on the left side of the implication.
+In the following section we present the full Java source code for our control program classes, as well as the rule definition we used for \keym. First is the rule definition for \keym, that abstracts the application of the floor function to a inequality of the form \(\textrm{floor}(x) = y \equiv \exists c:x-1 < c \wedge c \leq x \wedge (x \geq 0 \implies c \geq 0) \wedge (x < 0 \implies c < 0)  \longrightarrow\) whereby \(\longrightarrow\) refers to the big implication arrow in the verification of a hybrid program, meaning we get the abstraction of \(f(x)\) on the left side of the implication.
 
 \lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{black},commentstyle=\color{black},stringstyle=\color{black},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
 \begin{lstlisting}[label=app:lst:ruleF]
@@ -70,7 +70,7 @@ In the following section we present the full java source code for our control pr
 	}	
 \end{lstlisting}
 
-Next, we provide the full java source code for the Watertank control program class. This means, not only the control method itself is provided, but all the needed class definitions as well.
+Next, we provide the full Java source code for the Water tank control program class. This means, not only the control method itself is provided, but all the needed class definitions as well.
 
 \lstset{language=Java,captionpos=b,tabsize=3,frame=lines,keywordstyle=\color{blue},commentstyle=\color{darkgreen},stringstyle=\color{red},numbers=left,numberstyle=\tiny,numbersep=5pt,breaklines=true,showstringspaces=false,basicstyle=\footnotesize,emph={label}}
 \begin{lstlisting}[label=app:lst:watertankContr]
@@ -79,7 +79,7 @@ package watertankSplit;
 /**
  * @author Daniel Draper
  * @version 1.0
- * This class is the Watertank's control system.
+ * This class is the Water tank's control system.
  */
 public class Controller {
 	private int tick;
@@ -89,7 +89,7 @@ public class Controller {
 	}
 	
 	/**
-	 * Returns the actual control value for the valve of the watertank.
+	 * Returns the actual control value for the valve of the water tank.
 	 * @param y the current water level
 	 * @param old the old valve setting
 	 * @return the new valve setting
@@ -99,7 +99,7 @@ public class Controller {
 	  @ ensures \result * (tick / 10) + y + 2 * old  >= 12 & \result * (tick / 10) + y + 2 * old <= 116 && (\result == 10 || \result == -20);
 	  @*/
 	public int getControlValue (int y, int old) {
-		//Waterlevel in two time units
+		//Water level in two time units
 		int inTwo = y + 2 * old;
 		//If we are raising level, keep raising if possible without hitting max_level before next tick
 		if (old == 10) {
@@ -283,10 +283,10 @@ public class SpeedLimitController {
 	}
 }
 \end{lstlisting}
-\section{Watertank simulator}
+\section{Water tank simulator}
 \label{app:sec:simulator}
 
-To be able to execute the watertank control programs and see a result of the computations done on screen (in a form of console output) we had to write a simulator of the differential evolution of the watertank values. The watertank simulator class can be found below:
+To be able to execute the water tank control programs and see a result of the computations done on screen (in a form of console output) we had to write a simulator of the differential evolution of the water tank values. The water tank simulator class can be found below:
 
 \begin{lstlisting}[label=app:lst:watertankSim]
 package watertankSplit;
@@ -294,7 +294,7 @@ package watertankSplit;
 /**
  * @author Daniel Draper
  * @version 1.0
- * This class simulates a watertank as modelled in the hybrid model in the KeYmaera Guide.
+ * This class simulates a water tank as modeled in the hybrid model in the KeYmaera Guide.
  */
 
 public class Simulator
@@ -320,7 +320,7 @@ public class Simulator
 	}
 	
 	/**
-	 * One step in the differential evolution of the watertank.
+	 * One step in the differential evolution of the water tank.
 	 */
 	private void step() {
 		switch (state) {
@@ -356,7 +356,7 @@ public class Simulator
 	}
 	
 	/**
-	 * Continuous execution of each timestep and printing the state with an included delay.
+	 * Continuous execution of each time step and printing the state with an included delay.
 	 */
 	public void run() {
 		do {
@@ -373,7 +373,7 @@ public class Simulator
 		} while(true);
 	}
 	/**
-	 * Prints the current state of the Watertank.
+	 * Prints the current state of the Water tank.
 	 */
 	private void printState() {
 		System.out.println("Time: " + x/10 + " newDif: " + newDif + " Fillstatus:");
@@ -389,7 +389,7 @@ public class Simulator
 	
 	/**
 	 * Main function creating and executing a new Simulator.
-	 * @param args commandline arguments
+	 * @param args command-line arguments
 	 */
 	public static void main(String args[]) {
 		Simulator s = new Simulator();
@@ -402,7 +402,7 @@ public class Simulator
 \section{Traffic Control Simulator}
 \label{app:sec:TrafficSim}
 
-As we did for the Watertank CPS, we also wrote a Simulator for the Traffic Control CPS as to be able to execute the entire program and see the evolution of the car. As the amount of distance between the next speed limit and current car's position can vary greatly, we chose a different way to present the current status of the system than for the watertank, just listing the current status in text form and checking if safety is still guaranteed. It consists of an infinite loop always continuing with one step in the differential evolution of the system, printing the state and an added delay as to make console output readable.
+As we did for the Water tank CPS, we also wrote a Simulator for the Traffic Control CPS as to be able to execute the entire program and see the evolution of the car. As the amount of distance between the next speed limit and current car's position can vary greatly, we chose a different way to present the current status of the system than for the water tank, just listing the current status in text form and checking if safety is still guaranteed. The simulator consists of an infinite loop always continuing with one step in the differential evolution of the system, printing the state and an added delay as to make console output readable.
 
 \begin{lstlisting}[label=app:lst:trafficSim]
 
@@ -505,26 +505,14 @@ public class Simulator {
 \section{Complete Hybrid Programs in correct ASCII notation}
 \label{app:sec:pdfs}
 
-In this section we present the complete hybrid programs from this thesis. As we mentioned in Ch.~\ref{ch:Preliminary}, hybrid programs have to be typeset in ASCII for \keym~to be able to read it, which is why these hybrid programs look different from the ones we present in the previous chapters. The first two hybrid programs are the original watertank hybrid program and our remodelled version that includes the hook, a suitable postcondition as well as the tick.
+In this section we present the complete hybrid programs from this thesis. As we mentioned in Ch.~\ref{ch:Preliminary}, hybrid programs have to be typeset in ASCII for \keym~to be able to read it, which is why these hybrid programs look different from the ones we present in the previous chapters. The first two hybrid programs are the original water tank hybrid program and our remodeled version that includes the hook, a suitable postcondition as well as the tick, followed by the Water tank glue, the Traffic Control Hybrid Programs (original then remodeled version), followed by the two glue proofs for the traffic control CPS.
 \includepdf[pages=1,scale=1]{images/watertank_hp.pdf}
-
 \includepdf[pages=1,scale=1]{images/watertank.pdf}
-
-Next up is the glue proof for the watertank cps typeset in ASCII.
-
 \includepdf[pages=1,scale=1]{images/glue.pdf}
-
-The next two hybrid programs are the original Traffic Control hybrid program, as well as it's remodelled version that includes the hooks (as in this case we have two control programs), the postconditions and a tick.
 \includepdf[page=1,scale=1]{images/trafficControlOrig.pdf}
-
 \includepdf[page=1,scale=1]{images/trafficControlRem.pdf}
-
-What now follows is the glue proof for the traffic control cps typeset in ASCII.
-
 \includepdf[page=1,scale=1]{images/glue_traffic_1.pdf}
-
 \includepdf[page=1,scale=1]{images/glue_traffic_2.pdf}
-
 \newglossaryentry{cps} {
  name=Cyber-Physical System[CPS],
  description={is a system describing motions or evolutions in which a physical aspect is being controlled by a computer/computer program. In this thesis equivalent to the notion of Hybrid Systems.}
@@ -572,7 +560,7 @@ description={is the logic in which we express the safety properties for our CPS,
 
 \newglossaryentry{key}{
 name=\key,
-description={is the tool we use to verify our java control programs as our concrete implementations.}
+description={is the tool we use to verify our Java control programs as our concrete implementations.}
 }
 
 \newglossaryentry{keym}{
@@ -584,5 +572,6 @@ description={is the tool we use to verify both our remodelled hybrid programs as
 name=Java Modelling Language,
 description={is the language we use to express the contracts a certain method or class has to fulfill to be considered correct.}
 }
+
 
 

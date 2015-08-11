@@ -62,6 +62,11 @@ Carroll Morgan and Trevor Vickers.
 \newblock {\em On the Refinement Calculus}.
 \newblock Springer London, 1992.
 
+\bibitem[Pla08]{PlatzerDl}
+André Platzer.
+\newblock Differential dynamic logic for hybrid systems.
+\newblock {\em Journal of Automated Reasoning}, 41(2):143--189, 2008.
+
 \bibitem[Pla10]{platzer2010b}
 Andr{\'e} Platzer.
 \newblock {\em {L}ogical {A}nalysis of {H}ybrid {S}ystems}.

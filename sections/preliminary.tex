@@ -75,7 +75,7 @@ As an example we take a look at the hybrid program notation of a train control s
 	\(q := accel;\)\newline
 	\(((?q = accel; z^{\prime}= v, v^{\prime}= a)\) \newline
 	\(\cup~(?q = accel \wedge z \geq SB; a := -b, q:= brake; ?v \geq 0)\) \newline
-	\(\cup~(?q = brake; z^{\prime}=v, v^{\prime}= -b \wedge v \geq 0)\) \newline
+	\(\cup~(?q = brake; z^{\prime}=v, v^{\prime}= -b ~ \& ~ v \geq 0)\) \newline
 	\(\cup~(?q = brake \wedge v \leq 1; a := a+5; q := accel))^\ast\)
 	\caption{A simplified train control system as a Hybrid Program~\cite{platzer2010b}.}
 	\label{fig:etcs_hp}
@@ -84,11 +84,11 @@ As an example we take a look at the hybrid program notation of a train control s
 \section{Dynamic Logic}
 \label{sec:pre:DL}
 
-Dynamic logic is a multi-modal logic and has two basic operators (one of which is relevant to this thesis): Either \textit{safety} (\([]\)) in which a first-order-logic formula \(\phi\) holds true in all exit states of the program \(\alpha\). Or \textit{liveness} (\(\langle\rangle\)), where a possible execution of the program \(\alpha\) exists, after which the first-order-logic formula \(\phi\) holds. In this paper only the safety operator is used. They can be expressed as in Eq.~\ref{eq:ddl}, whereby \(\alpha\) denotes the (hybrid) program that is enacted, and \(\phi\) is the postcondition expressed in first-order-logic.
+Dynamic logic is a multi-modal logic and has two basic operators (one of which is relevant to this thesis): Either \textit{safety} (\([]\)) in which a first-order-logic formula \(\phi\) holds true in all exit states of the program \(\alpha\). Or \textit{liveness} (\(\langle\rangle\)), where a possible execution of the program \(\alpha\) exists, after which the first-order-logic formula \(\phi\) holds. In this paper only the safety operator is used. The operators can be expressed as in Eq.~\ref{eq:ddl}, whereby \(\alpha\) denotes the (hybrid) program that is enacted, and \(\phi\) is the postcondition expressed in first-order-logic.
 
 \begin{equation}
 	\begin{split}
-		Safety: [\alpha]\phi \\
+		\mathit{Safety}: [\alpha]\phi \\
 		Liveliness: \langle\alpha\rangle\phi \equiv \neg ([\alpha] \neg \phi) \\
 	\end{split}
 	\label{eq:ddl}
@@ -97,7 +97,9 @@ Dynamic logic is a multi-modal logic and has two basic operators (one of which i
 \subsection{Differential Dynamic Logic}
 \label{subsec:DDL}
 
-As dynamic logic in itself was not specifically devised for hybrid programs, this means we need a way to express differential equations, as most continuous movement or behavior is expressed by differential equations. DDL or d\(\mathcal{L}\), the language also used by our verification tool \keym, has ways to express differential equations, as can be seen in Table~\ref{tab:hp}.
+As dynamic logic in itself was not specifically devised for hybrid programs, this means we need a way to express differential equations, as most continuous movement or behavior is expressed by differential equations. DDL or d\(\mathcal{L}\), the language also used by our verification tool \keym, has ways to express differential equations, as can be seen in Table~\ref{tab:hp}. d\(\mathcal{L}\) is a \begin{quote} ``free variable proof calculus [...] with a [...] combination of real-valued free variables and Skolemisation for lifting quantifier elimination for real arithmetic to dynamic logic''~\cite{PlatzerDl}.\end{quote}
+
+The d\(\mathcal{L}\) formulas use the syntax from Table~\ref{tab:hp}, and are defined as in first-order dynamic logic, using the operators described in the previous section, propositional connectives (\(\neg, \wedge, \vee, \implies, \iff\)), as well as quantifiers (\(\forall, \exists\)).
 
 \subsection{JML: Verification of Java Programs using \key}
 \label{subsec:jml}
@@ -110,8 +112,8 @@ In this thesis we also deal with the verification of Java programs (the control 
 \begin{lstlisting}[label=lst:jml_example]
 
 /*@ public normal_behavior
-   @ requires a >= 0
-   @ ensures b >= 2
+  @ requires a >= 0
+  @ ensures b >= 2
   */
   public int getPlusTwo(int a) {
   	b = a + 2;
@@ -120,12 +122,17 @@ In this thesis we also deal with the verification of Java programs (the control 
 
 \end{lstlisting}
 
-As one can see, the JML proof obligation needs to have the access level and a name and (for our purposes) always will have a \textit{requires} precondition that must hold true before the method is called for all arguments or some class variables and a \textit{ensures} postcondition clause, that has to hold true for all exit states of the method (where the precondition was true before calling it). This means the JML above could also be expressed in Java Dynamic Logic as:
+As one can see, the JML contract needs to have an access level and (for our purposes) always will have a \textit{requires} precondition that must hold true before the method is called for all arguments or some class variables and a \textit{ensures} postcondition clause, that has to hold true for all exit states of the method (where the precondition was true before calling it). This means the JML contract above produces the proof obligation below:
 
 \begin{equation}
-	a \geq 0 \implies [b := getPlusTwo(a) ] b \geq 2
+	a \geq 0 \implies [b = getPlusTwo(a) ] b \geq 2
 	\label{eq:jmlddl}
 \end{equation}
+
+\subsection{Java Dynamic Logic}
+\label{subsec:jdl}
+
+Internally, \key~translates the contract specified in JML into its own dynamic logic form, Java Card Dynamic Logic. It is a multi-modal logic, that makes the formulation of statements about the program behavior possible. Therefore it combines Java programs and dynamic formulas in a single language. It is based on first-order Dynamic logic as is DDL and can be seen as an extension of Hoare Logic. While a proof obligation \(\alpha[p]\beta\) is similar to the Hoare triple \(\{\alpha\}p\{\beta\}\), in JDL, \(\alpha\) and \(\beta\) both can contain further programs, while in Hoare Logic they are strictly first-order formulas~\cite{keybook2007}.
 
 \section{\keym~as our Verification Tool for Hybrid Programs}
 \label{sec:pre:key}

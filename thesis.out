@@ -10,40 +10,41 @@
 \BOOKMARK [1][-]{section.2.2}{Dynamic Logic}{chapter.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.1}{Differential Dynamic Logic}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.2}{JML: Verification of Java Programs using KeY}{section.2.2}% 12
-\BOOKMARK [1][-]{section.2.3}{KeYmaera as our Verification Tool for Hybrid Programs}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{Motivating Example: Refinement of CPS ``Watertank''}{}% 14
-\BOOKMARK [1][-]{section.3.1}{Detailing the Watertank CPS}{chapter.3}% 15
-\BOOKMARK [2][-]{subsection.3.1.1}{The original Hybrid Program}{section.3.1}% 16
-\BOOKMARK [1][-]{section.3.2}{The ``Hook'': Concrete Control Value Assisgnment}{chapter.3}% 17
-\BOOKMARK [2][-]{subsection.3.2.1}{Remodelled Hybrid Program}{section.3.2}% 18
-\BOOKMARK [1][-]{section.3.3}{Implementation Safety Condition}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.4}{The \(simple\) Java Control Program}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.5}{Glue between Java and Hybrid Model}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.6}{Verification based on KeYmaera}{chapter.3}% 22
-\BOOKMARK [0][-]{chapter.4}{Formalized approach of refining hybrid models into implementation}{}% 23
-\BOOKMARK [1][-]{section.4.1}{Modelling Hybrid System with Implementation Hook}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.2}{Devising Control Value Safety Postcondition}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.3}{Implementation according to Postcondition and its Verification}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.4}{Glue between Hybrid Model and Implementation and its Verification}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.5}{Validating Verificiation results against Implementation}{chapter.4}% 28
-\BOOKMARK [0][-]{chapter.5}{Evaluation using Example CPS: ``Traffic Speed Control''}{}% 29
-\BOOKMARK [1][-]{section.5.1}{Remodelling with Hook}{chapter.5}% 30
-\BOOKMARK [2][-]{subsection.5.1.1}{Remodelled Hybrid Program}{section.5.1}% 31
-\BOOKMARK [1][-]{section.5.2}{Safety Hook Postconditions}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.3}{Implementation according to postconditions}{chapter.5}% 33
-\BOOKMARK [2][-]{subsection.5.3.1}{The Car Control Program}{section.5.3}% 34
-\BOOKMARK [2][-]{subsection.5.3.2}{The Speed Limit Control Program}{section.5.3}% 35
-\BOOKMARK [1][-]{section.5.4}{Glue between Java and Hybrid Program}{chapter.5}% 36
-\BOOKMARK [2][-]{subsection.5.4.1}{Glue for the Car Control Program}{section.5.4}% 37
-\BOOKMARK [2][-]{subsection.5.4.2}{Glue for the Speed Limit Control Program}{section.5.4}% 38
-\BOOKMARK [1][-]{section.5.5}{Validation of Results}{chapter.5}% 39
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 40
-\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 41
-\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 42
-\BOOKMARK [1][-]{section.A.1}{Images}{appendix.A}% 43
-\BOOKMARK [1][-]{section.A.2}{Negative Acceleration Glue Traffic Control CPS}{appendix.A}% 44
-\BOOKMARK [1][-]{section.A.3}{Listings}{appendix.A}% 45
-\BOOKMARK [1][-]{section.A.4}{Watertank simulator}{appendix.A}% 46
-\BOOKMARK [1][-]{section.A.5}{Traffic Control Simulator}{appendix.A}% 47
-\BOOKMARK [1][-]{section.A.6}{Complete Hybrid Programs in correct ASCII notation}{appendix.A}% 48
-\BOOKMARK [0][-]{section*.18}{Glossary}{}% 49
+\BOOKMARK [2][-]{subsection.2.2.3}{Java Dynamic Logic}{section.2.2}% 13
+\BOOKMARK [1][-]{section.2.3}{KeYmaera as our Verification Tool for Hybrid Programs}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{Motivating Example: Refinement of CPS ``Water tank''}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Detailing the Water tank CPS}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{The original Hybrid Program}{section.3.1}% 17
+\BOOKMARK [1][-]{section.3.2}{The ``Hook'': Concrete Control Value Assignment}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.2.1}{Remodeled Hybrid Program}{section.3.2}% 19
+\BOOKMARK [1][-]{section.3.3}{Implementation Safety Condition}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.4}{The \(simple\) Java Control Program}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.5}{Glue between Java and Hybrid Model}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.6}{Verification based on KeYmaera}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{Formalized approach of refining hybrid models into implementation}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Modeling Hybrid System with Implementation Hook}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{Devising Control Value Safety Postcondition}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{Implementation according to Postcondition and its Verification}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.4}{Glue between Hybrid Model and Implementation and its Verification}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.5}{Validating Verification results against Implementation}{chapter.4}% 29
+\BOOKMARK [0][-]{chapter.5}{Evaluation using Example CPS: ``Traffic Speed Control''}{}% 30
+\BOOKMARK [1][-]{section.5.1}{Remodeling with Hook}{chapter.5}% 31
+\BOOKMARK [2][-]{subsection.5.1.1}{Remodeled Hybrid Program}{section.5.1}% 32
+\BOOKMARK [1][-]{section.5.2}{Safety Hook Postconditions}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.3}{Implementation according to postconditions}{chapter.5}% 34
+\BOOKMARK [2][-]{subsection.5.3.1}{The Car Control Program}{section.5.3}% 35
+\BOOKMARK [2][-]{subsection.5.3.2}{The Speed Limit Control Program}{section.5.3}% 36
+\BOOKMARK [1][-]{section.5.4}{Glue between Java and Hybrid Program}{chapter.5}% 37
+\BOOKMARK [2][-]{subsection.5.4.1}{Glue for the Car Control Program}{section.5.4}% 38
+\BOOKMARK [2][-]{subsection.5.4.2}{Glue for the Speed Limit Control Program}{section.5.4}% 39
+\BOOKMARK [1][-]{section.5.5}{Validation of Results}{chapter.5}% 40
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 41
+\BOOKMARK [1][-]{section.6.1}{Future Work}{chapter.6}% 42
+\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 43
+\BOOKMARK [1][-]{section.A.1}{Images}{appendix.A}% 44
+\BOOKMARK [1][-]{section.A.2}{Negative Acceleration Glue Traffic Control CPS}{appendix.A}% 45
+\BOOKMARK [1][-]{section.A.3}{Listings}{appendix.A}% 46
+\BOOKMARK [1][-]{section.A.4}{Water tank simulator}{appendix.A}% 47
+\BOOKMARK [1][-]{section.A.5}{Traffic Control Simulator}{appendix.A}% 48
+\BOOKMARK [1][-]{section.A.6}{Complete Hybrid Programs in correct ASCII notation}{appendix.A}% 49
+\BOOKMARK [0][-]{section*.18}{Glossary}{}% 50

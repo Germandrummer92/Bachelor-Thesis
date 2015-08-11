@@ -13,40 +13,41 @@
 \contentsline {section}{\numberline {2.2}Dynamic Logic}{7}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Differential Dynamic Logic}{7}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}JML: Verification of Java Programs using Ke\kern -.1emY}{8}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Ke\kern -.1emYmaera~as our Verification Tool for Hybrid Programs}{8}{section.2.3}
-\contentsline {chapter}{\numberline {3}Motivating Example: Refinement of CPS ``Watertank''}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Detailing the Watertank CPS}{9}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}The original Hybrid Program}{10}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}The ``Hook'': Concrete Control Value Assisgnment}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Remodelled Hybrid Program}{11}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Implementation Safety Condition}{12}{section.3.3}
-\contentsline {section}{\numberline {3.4}The (simple) Java Control Program}{13}{section.3.4}
-\contentsline {section}{\numberline {3.5}Glue between Java and Hybrid Model}{14}{section.3.5}
-\contentsline {section}{\numberline {3.6}Verification based on Ke\kern -.1emYmaera}{15}{section.3.6}
-\contentsline {chapter}{\numberline {4}Formalized approach of refining hybrid models into implementation}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Modelling Hybrid System with Implementation Hook}{18}{section.4.1}
-\contentsline {section}{\numberline {4.2}Devising Control Value Safety Postcondition}{18}{section.4.2}
-\contentsline {section}{\numberline {4.3}Implementation according to Postcondition and its Verification}{18}{section.4.3}
-\contentsline {section}{\numberline {4.4}Glue between Hybrid Model and Implementation and its Verification}{19}{section.4.4}
-\contentsline {section}{\numberline {4.5}Validating Verificiation results against Implementation}{19}{section.4.5}
-\contentsline {chapter}{\numberline {5}Evaluation using Example CPS: ``Traffic Speed Control''}{21}{chapter.5}
-\contentsline {section}{\numberline {5.1}Remodelling with Hook}{21}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Remodelled Hybrid Program}{21}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Safety Hook Postconditions}{23}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementation according to postconditions}{24}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}The Car Control Program}{24}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}The Speed Limit Control Program}{25}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}Glue between Java and Hybrid Program}{27}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Glue for the Car Control Program}{27}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Glue for the Speed Limit Control Program}{29}{subsection.5.4.2}
-\contentsline {section}{\numberline {5.5}Validation of Results}{30}{section.5.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{31}{chapter.6}
-\contentsline {section}{\numberline {6.1}Future Work}{31}{section.6.1}
-\contentsline {chapter}{\numberline {A}Appendix}{35}{appendix.A}
-\contentsline {section}{\numberline {A.1}Images}{35}{section.A.1}
-\contentsline {section}{\numberline {A.2}Negative Acceleration Glue Traffic Control CPS}{36}{section.A.2}
-\contentsline {section}{\numberline {A.3}Listings}{36}{section.A.3}
-\contentsline {section}{\numberline {A.4}Watertank simulator}{41}{section.A.4}
-\contentsline {section}{\numberline {A.5}Traffic Control Simulator}{43}{section.A.5}
-\contentsline {section}{\numberline {A.6}Complete Hybrid Programs in correct ASCII notation}{45}{section.A.6}
+\contentsline {subsection}{\numberline {2.2.3}Java Dynamic Logic}{8}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Ke\kern -.1emYmaera~as our Verification Tool for Hybrid Programs}{9}{section.2.3}
+\contentsline {chapter}{\numberline {3}Motivating Example: Refinement of CPS ``Water tank''}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Detailing the Water tank CPS}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}The original Hybrid Program}{12}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}The ``Hook'': Concrete Control Value Assignment}{13}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Remodeled Hybrid Program}{13}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Implementation Safety Condition}{14}{section.3.3}
+\contentsline {section}{\numberline {3.4}The (simple) Java Control Program}{15}{section.3.4}
+\contentsline {section}{\numberline {3.5}Glue between Java and Hybrid Model}{16}{section.3.5}
+\contentsline {section}{\numberline {3.6}Verification based on Ke\kern -.1emYmaera}{17}{section.3.6}
+\contentsline {chapter}{\numberline {4}Formalized approach of refining hybrid models into implementation}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Modeling Hybrid System with Implementation Hook}{20}{section.4.1}
+\contentsline {section}{\numberline {4.2}Devising Control Value Safety Postcondition}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implementation according to Postcondition and its Verification}{21}{section.4.3}
+\contentsline {section}{\numberline {4.4}Glue between Hybrid Model and Implementation and its Verification}{21}{section.4.4}
+\contentsline {section}{\numberline {4.5}Validating Verification results against Implementation}{22}{section.4.5}
+\contentsline {chapter}{\numberline {5}Evaluation using Example CPS: ``Traffic Speed Control''}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Remodeling with Hook}{23}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Remodeled Hybrid Program}{23}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Safety Hook Postconditions}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementation according to postconditions}{26}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}The Car Control Program}{26}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}The Speed Limit Control Program}{27}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Glue between Java and Hybrid Program}{29}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Glue for the Car Control Program}{29}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Glue for the Speed Limit Control Program}{31}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Validation of Results}{32}{section.5.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{33}{chapter.6}
+\contentsline {section}{\numberline {6.1}Future Work}{33}{section.6.1}
+\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}
+\contentsline {section}{\numberline {A.1}Images}{37}{section.A.1}
+\contentsline {section}{\numberline {A.2}Negative Acceleration Glue Traffic Control CPS}{38}{section.A.2}
+\contentsline {section}{\numberline {A.3}Listings}{38}{section.A.3}
+\contentsline {section}{\numberline {A.4}Water tank simulator}{43}{section.A.4}
+\contentsline {section}{\numberline {A.5}Traffic Control Simulator}{45}{section.A.5}
+\contentsline {section}{\numberline {A.6}Complete Hybrid Programs in correct ASCII notation}{47}{section.A.6}
 \contentsline {chapter}{Glossary}{57}{section*.18}

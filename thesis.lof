@@ -6,11 +6,11 @@
 \contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces A simple Hybrid Automata~\cite {platzer2010b}.}}{6}{figure.2.1}
 \contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces A simplified train control system as a Hybrid Program~\cite {platzer2010b}.}}{7}{figure.2.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Picture of possible Watertank configuration: Watertank that can get drained at all times and has a valve controlled by a control program~\cite {keymaeraGuide}.}}{9}{figure.3.1}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces The Watertank CPS expressed as a hybrid automata~\cite {keymaeraGuide}.}}{10}{figure.3.2}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Picture of possible Water tank configuration: Water tank that can get drained at all times and has a valve controlled by a control program~\cite {keymaeraGuide}.}}{11}{figure.3.1}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces The Water tank CPS expressed as a hybrid automaton~\cite {keymaeraGuide}.}}{12}{figure.3.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces The set-up of this CPS~\cite {keymaera}.}}{21}{figure.5.1}
+\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces The set-up of this CPS~\cite {keymaera}.}}{23}{figure.5.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Watertank Hybrid Automata with Non-Deterministic Control Program Abstraction marked.}}{35}{figure.A.1}
+\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces Water tank Hybrid Automaton with Non-Deterministic Control Program Abstraction marked.}}{37}{figure.A.1}

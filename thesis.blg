@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2014/W32TeX)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: sections/declaration.aux
+A level-1 auxiliary file: sections/abstract_en.aux
+A level-1 auxiliary file: sections/abstract_de.aux
+A level-1 auxiliary file: sections/introduction.aux
+A level-1 auxiliary file: sections/preliminary.aux
+Case mismatch error between cite keys Keybook2007 and keybook2007
+---line 35 of file sections/preliminary.aux
+ : \citation{Keybook2007
+ :                      }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: sections/content.aux
+A level-1 auxiliary file: sections/conclusion.aux
+The style file: alpha.bst
+A level-1 auxiliary file: sections/appendix.aux
+Database file #1: thesis.bib
+You've used 18 entries,
+            2543 wiz_defined-function locations,
+            694 strings with 7403 characters,
+and the built_in function-call counts, 7605 in all, are:
+= -- 748
+> -- 352
+< -- 15
++ -- 117
+- -- 114
+* -- 513
+:= -- 1222
+add.period$ -- 60
+call.type$ -- 18
+change.case$ -- 108
+chr.to.int$ -- 17
+cite$ -- 18
+duplicate$ -- 323
+empty$ -- 582
+format.name$ -- 136
+if$ -- 1617
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 18
+newline$ -- 94
+num.names$ -- 61
+pop$ -- 128
+preamble$ -- 1
+purify$ -- 130
+quote$ -- 0
+skip$ -- 274
+stack$ -- 0
+substring$ -- 379
+swap$ -- 78
+text.length$ -- 15
+text.prefix$ -- 6
+top$ -- 0
+type$ -- 128
+warning$ -- 0
+while$ -- 70
+width$ -- 22
+write$ -- 239
+(There was 1 error message)
