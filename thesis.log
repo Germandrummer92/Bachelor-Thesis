@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  11 AUG 2015 17:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/W32TeX) (preloaded format=pdflatex 2015.2.22)  13 AUG 2015 13:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2066,11 +2066,6 @@ Package pdftex.def Info: images/watertank_ha.png used on input line 39.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12 <./images/watertank_ha.png (PNG copy)>]
-
-LaTeX Warning: Reference `eq:Main_LogicRefinement' on page 13 undefined on inpu
-t line 70.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
@@ -2107,7 +2102,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 236--238
 
 [19] [20] [21] [22]
 Chapter 5.
-<images/trafficControl.png, id=625, 218.31563pt x 57.21375pt>
+<images/trafficControl.png, id=626, 218.31563pt x 57.21375pt>
 File: images/trafficControl.png Graphic file (type png)
 
 <use images/trafficControl.png>
@@ -2157,7 +2152,7 @@ Chapter 6.
 
  (./sections/appendix.tex
 Appendix A.
-<Images/ha_control.png, id=807, 517.4532pt x 407.121pt>
+<Images/ha_control.png, id=808, 517.4532pt x 407.121pt>
 File: Images/ha_control.png Graphic file (type png)
 
 <use Images/ha_control.png>
@@ -2183,7 +2178,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank_hp.pdf, id=1239, 614.295pt x 794.97pt>
+<images/watertank_hp.pdf, id=1240, 614.295pt x 794.97pt>
 File: images/watertank_hp.pdf Graphic file (type pdf)
 
 <use images/watertank_hp.pdf>
@@ -2205,7 +2200,7 @@ ound PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank_hp.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank_hp.pdf, id=1282, page=1, 614.295pt x 794.97pt>
+<images/watertank_hp.pdf, id=1283, page=1, 614.295pt x 794.97pt>
 File: images/watertank_hp.pdf Graphic file (type pdf)
 
 <use images/watertank_hp.pdf, page 1>
@@ -2238,7 +2233,7 @@ Package pdftex.def Info: images/watertank_hp.pdf, page1 used on input line 509.
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank.pdf, id=1315, 614.295pt x 794.97pt>
+<images/watertank.pdf, id=1316, 614.295pt x 794.97pt>
 File: images/watertank.pdf Graphic file (type pdf)
 
 <use images/watertank.pdf>
@@ -2260,7 +2255,7 @@ d PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./images/watertank.pdf): PDF inclusion: foun
 d PDF version <1.7>, but at most version <1.5> allowed
-<images/watertank.pdf, id=1318, page=1, 614.295pt x 794.97pt>
+<images/watertank.pdf, id=1319, page=1, 614.295pt x 794.97pt>
 File: images/watertank.pdf Graphic file (type pdf)
 
 <use images/watertank.pdf, page 1>
@@ -2288,7 +2283,7 @@ Package pdftex.def Info: images/watertank.pdf, page1 used on input line 510.
 
 pdfTeX warning: pdflatex.exe (file ./images/glue.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
-<images/glue.pdf, id=1351, 614.295pt x 794.97pt>
+<images/glue.pdf, id=1352, 614.295pt x 794.97pt>
 File: images/glue.pdf Graphic file (type pdf)
  <use images/glue.pdf>
 Package pdftex.def Info: images/glue.pdf used on input line 511.
@@ -2309,7 +2304,7 @@ pdfTeX warning: pdflatex.exe (file ./images/glue.pdf): PDF inclusion: found PDF
 
 pdfTeX warning: pdflatex.exe (file ./images/glue.pdf): PDF inclusion: found PDF
  version <1.7>, but at most version <1.5> allowed
-<images/glue.pdf, id=1354, page=1, 614.295pt x 794.97pt>
+<images/glue.pdf, id=1355, page=1, 614.295pt x 794.97pt>
 File: images/glue.pdf Graphic file (type pdf)
 
 <use images/glue.pdf, page 1>
@@ -2343,7 +2338,7 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlOrig.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/trafficControlOrig.pdf, id=1387, 614.295pt x 794.97pt>
+<images/trafficControlOrig.pdf, id=1388, 614.295pt x 794.97pt>
 File: images/trafficControlOrig.pdf Graphic file (type pdf)
 
 <use images/trafficControlOrig.pdf>
@@ -2365,7 +2360,7 @@ ion: found PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlOrig.pdf): PDF inclus
 ion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/trafficControlOrig.pdf, id=1390, page=1, 614.295pt x 794.97pt>
+<images/trafficControlOrig.pdf, id=1391, page=1, 614.295pt x 794.97pt>
 File: images/trafficControlOrig.pdf Graphic file (type pdf)
 
 <use images/trafficControlOrig.pdf, page 1>
@@ -2406,7 +2401,7 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlRem.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/trafficControlRem.pdf, id=1423, 614.295pt x 794.97pt>
+<images/trafficControlRem.pdf, id=1424, 614.295pt x 794.97pt>
 File: images/trafficControlRem.pdf Graphic file (type pdf)
 
 <use images/trafficControlRem.pdf>
@@ -2428,7 +2423,7 @@ on: found PDF version <1.7>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./images/trafficControlRem.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<images/trafficControlRem.pdf, id=1426, page=1, 614.295pt x 794.97pt>
+<images/trafficControlRem.pdf, id=1427, page=1, 614.295pt x 794.97pt>
 File: images/trafficControlRem.pdf Graphic file (type pdf)
 
 <use images/trafficControlRem.pdf, page 1>
@@ -2469,7 +2464,7 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex.exe (file ./images/glue_traffic_1.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<images/glue_traffic_1.pdf, id=1459, 614.295pt x 794.97pt>
+<images/glue_traffic_1.pdf, id=1460, 614.295pt x 794.97pt>
 File: images/glue_traffic_1.pdf Graphic file (type pdf)
 
 <use images/glue_traffic_1.pdf>
@@ -2491,7 +2486,7 @@ pdfTeX warning: pdflatex.exe (file ./images/glue_traffic_1.pdf): PDF inclusion:
 
 pdfTeX warning: pdflatex.exe (file ./images/glue_traffic_1.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<images/glue_traffic_1.pdf, id=1462, page=1, 614.295pt x 794.97pt>
+<images/glue_traffic_1.pdf, id=1463, page=1, 614.295pt x 794.97pt>
 File: images/glue_traffic_1.pdf Graphic file (type pdf)
 
 <use images/glue_traffic_1.pdf, page 1>
@@ -2532,7 +2527,7 @@ Package pdfpages Warning: Option `page' is unknow to \includepdf.
 
 pdfTeX warning: pdflatex.exe (file ./images/glue_traffic_2.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<images/glue_traffic_2.pdf, id=1497, 614.295pt x 794.97pt>
+<images/glue_traffic_2.pdf, id=1498, 614.295pt x 794.97pt>
 File: images/glue_traffic_2.pdf Graphic file (type pdf)
 
 <use images/glue_traffic_2.pdf>
@@ -2554,7 +2549,7 @@ pdfTeX warning: pdflatex.exe (file ./images/glue_traffic_2.pdf): PDF inclusion:
 
 pdfTeX warning: pdflatex.exe (file ./images/glue_traffic_2.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
-<images/glue_traffic_2.pdf, id=1500, page=1, 614.295pt x 794.97pt>
+<images/glue_traffic_2.pdf, id=1501, page=1, 614.295pt x 794.97pt>
 File: images/glue_traffic_2.pdf Graphic file (type pdf)
 
 <use images/glue_traffic_2.pdf, page 1>
@@ -2615,13 +2610,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
  ) 
 Here is how much of TeX's memory you used:
- 32091 strings out of 493109
- 562027 string characters out of 6138587
- 921785 words of memory out of 5000000
- 33827 multiletter control sequences out of 15000+600000
+ 32090 strings out of 493109
+ 562002 string characters out of 6138587
+ 922785 words of memory out of 5000000
+ 33826 multiletter control sequences out of 15000+600000
  251019 words of font info for 322 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 80i,19n,74p,1788b,1986s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,19n,74p,1788b,1970s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{c:/tex
 live/2014/texmf-dist/fonts/enc/dvips/newtx/libertinealt.enc}{c:/texlive/2014/te
 xmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2014/texmf-dist/fonts/enc/dvip
@@ -2641,10 +2636,10 @@ b><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/
 blic/txfonts/txsyb.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/txfonts/t
 xsyc.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/newtx/zxlr.pfb><c:/texl
 ive/2014/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
-Output written on thesis.pdf (71 pages, 1190398 bytes).
+Output written on thesis.pdf (71 pages, 1190446 bytes).
 PDF statistics:
- 1769 PDF objects out of 2073 (max. 8388607)
- 1532 compressed objects within 16 object streams
+ 1770 PDF objects out of 2073 (max. 8388607)
+ 1533 compressed objects within 16 object streams
  748 named destinations out of 1000 (max. 500000)
  33356 words of extra memory for PDF output out of 35830 (max. 10000000)
 

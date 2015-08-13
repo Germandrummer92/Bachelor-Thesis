@@ -67,7 +67,7 @@ The hybrid program (see App.~\ref{app:sec:pdfs} for HP expressed in ASCII) has t
 \section{The ``Hook'': Concrete Control Value Assignment}
 \label{sec:Watertank:ControlValue}
 
-In order to be able to apply Eq.~\ref{eq:Main_LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automaton describing the Water tank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-deterministic manner and would not fit in the model of the CPS. A version of the hybrid automaton with the hook marked in red can be found at App.~\ref{fig:ex_control}. Our remodeled system features a clear ticked hook that is called upon at deterministic times (See Sec.~\ref{sec:watertank_hp_ref}).
+In order to be able to apply Eq.~\ref{eq:Main:LogicRefinement} to this concrete example, we first found a spot in which a (or multiple) concrete control value is actually assigned. We call this assignment the \textit{hook} as the actual implementation will ``hook'' into our hybrid model at this exact point. The Hybrid Automaton describing the Water tank (See Fig.~\ref{fig:watertank_ha}), required changing to be able to find our actual ``hook''. In the original model, a control value is never explicitly assigned, rather does the valve change its state non-deterministically, making a deterministic control program implementation impossible, as the program can not act in a non-deterministic manner and would not fit in the model of the CPS. A version of the hybrid automaton with the hook marked in red can be found at App.~\ref{fig:ex_control}. Our remodeled system features a clear ticked hook that is called upon at deterministic times (See Sec.~\ref{sec:watertank_hp_ref}).
 
 \subsection{Remodeled Hybrid Program}
 \label{sec:watertank_hp_ref}
@@ -460,7 +460,6 @@ public int control(int y, int v, int accel, int sl, int slPos) {
 \end{lstlisting}
 
 In the contract we define for the car control program (See List.~\ref{lst:CondCar}),  one can see we had to explicitly list the value of the TICK and MAXBREAK/MAXACCEL as to make the automatic verification with the amount of computational complexity possible. We also had to give both the invariant as well as safety condition of the hybrid program as a precondition for the method, as we also did in our first water tank example (See List.~\ref{lst:JDL}), or in this case, an abstraction of the safety condition, namely that if we break at the MAXBREAK speed, we will be safe (or due to flooring at the MAXBREAK+1 speed), the first two preconditions can be seen as an invariant of the method, as we cannot control the acceleration level in our limit, if the acceleration level we get already violates this safety condition.
-
 \begin{lstlisting}[label=lst:CondCar]
 /*@ public normal_behavior
 	  @ requires MAXBREAK <= accel - 1 && accel + 1 <= MAXACCEL && v >= 0 && sl >= 0 && TICK == 1 && MAXBREAK == -10 && MAXACCEL == 10 && ((!(y >= slPos - 1)) || ((MAXBREAK+2)*TICK <= ((sl - v) - 2 * TICK))) && ((!(y < slPos + 1)) || (slPos >= (y+1) + (v+1)*(v+1)  + (MAXBREAK + 2 + 1) * ((MAXBREAK + 2) * TICK*TICK + TICK * (v+1))));
@@ -517,7 +516,7 @@ public int[] control(int y, int v, int accel, int sl, int slPos) {
 
 
 In the contract we establish for the speed limit control method (See List.~\ref{lst:condSpeed}), \key~again only verified the method after we added explicit numbers for MAXBREAK, MAXACCEL and the TICK, but these can be replaced easily in the precondition and \key~still completes the verification.We had to add the postcondition from the car control program as well as the invariant/safety condition from the hybrid program as these are part of the entire system and have to hold true during the entire system's evolution.
-
+\newpage
 \begin{lstlisting}[label=lst:condSpeed]
 /*@ public normal_behavior
 	  @ requires MAXBREAK == -10 && MAXACCEL == 10 && TICK == 1 && v >= 0 && sl >= 0 && ((!(sl < v + 1)) || slPos  >= y+1+ (v+1)*(v+1) + (MAXACCEL + 1 + 1) * ((MAXACCEL+1) * TICK*TICK + TICK * (v+1))) && ((!(sl >= v - 1)) || accel*TICK <= ((sl - v) - 2 * TICK));
